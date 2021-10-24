@@ -7,3 +7,5 @@ user_password varchar(20) not null,
 email_address unique not null,
 physical_address varchar(50)
 );
+
+create table products()
