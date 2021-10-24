@@ -24,3 +24,5 @@ create table products(
     product_delivery_time varchar(20) not null,
     date_added date not null
 );
+
+create table ratings()
