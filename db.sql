@@ -33,3 +33,5 @@ create table ratings(
     rating_content varchar(25),
     star_count integer not null
 );
+
+create table comments()
