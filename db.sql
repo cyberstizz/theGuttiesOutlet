@@ -42,3 +42,5 @@ create table comments(
     comment_content varchar(120) not null,
     post_date date not null
 );
+
+create table orders()
