@@ -51,3 +51,5 @@ create table orders(
     total_price integer not null,
     order_date date not null
 );
+
+create table order_id()
