@@ -4,7 +4,7 @@ create table users(
 user_id varchar(20) primary key,
 session_id integer unique not null,
 user_password varchar(20) not null,
-email_address unique not null,
+email_address varchar(20) unique not null,
 physical_address varchar(50)
 );
 
@@ -56,7 +56,7 @@ create table orders(
 
 create table order_items(
     order_id integer references orders(order_id) not null,
-    product_id integer references products(product_id) not null.
+    product_id integer references products(product_id) not null,
     quantity integer not null,
     product_price integer references products(product_price) not null,
     total_price integer not null
