@@ -25,4 +25,11 @@ create table products(
     date_added date not null
 );
 
-create table ratings()
+--create the ratings table with user_id as a foreign key and product_id as a foreign key
+
+create table ratings(
+    user_id varchar(20) references users(user_id) not null,
+    product_id integer references products(product_id) not null,
+    rating_content varchar(25),
+    star_count integer not null
+);
