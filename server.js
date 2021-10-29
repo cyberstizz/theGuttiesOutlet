@@ -1,14 +1,15 @@
+//importing important variables
+
 const express = require('express'); 
 const app = express(); 
 const port = process.env.PORT || 5000; 
 const pool = require('./db');
 const cors = require('cors');
 
+// initiate use of those variables through middleware (or app.use)
+
 app.use(cors());
 
-
-// This displays message that the server running and listening to specified port
-app.listen(port, () => console.log(`Listening on port ${port}`)); 
 
 // create a GET route
 app.get('/express_backend', async (req, res) => { 
@@ -21,3 +22,7 @@ app.get('/express_backend', async (req, res) => {
     console.log(err.message);
   }
 });
+
+
+// This displays message that the server running and listening to specified port
+app.listen(port, () => console.log(`Listening on port ${port}`)); 
