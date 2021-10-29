@@ -4,18 +4,24 @@ const express = require('express');
 
 //creating a variable to represent the router for all products routes
 
-const productRouter = express.Router();
+const productRouter = express.Router(mergeParams: true);
 
 //this creates a route for a request of a particular product
 
-productRouter.get('/products/:product_id', async (req, res, next) => {
+productRouter.get('/:product_id', async (req, res, next) => {
 
     console.log('this route is working correctly!')
+    res.send('yes this seems to be working correctly')
+    
+    next()
 
 })
+
 
 
 
 //exporting the product router variale for use in the main server file
 
 module.exports = productRouter;
+
+
