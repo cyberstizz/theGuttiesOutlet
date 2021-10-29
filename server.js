@@ -14,7 +14,7 @@ app.use('/products', productRouter);
 
 
 // create a GET route
-app.get('/express_backend', async (req, res) => { 
+app.get('/', async (req, res) => { 
   try{
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
  const myTest = await pool.query('select now();');
