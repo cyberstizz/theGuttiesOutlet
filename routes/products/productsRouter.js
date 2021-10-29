@@ -10,6 +10,8 @@ const productRouter = express.Router();
 
 productRouter.get('/products/:product_id', async (req, res, next) => {
 
+    console.log('this route is working correctly!')
+
 })
 
 
