@@ -27,4 +27,4 @@ this project will be tested using Mocha and Chai
 
 Below is the Entity Relationship Diagram for Gutties Outlets database
 
-![Gutties Outlet ERD](/home/charleslambdev/projects/theGuttiesOutlet/Gutties Outlet (1).pdf)
+![Gutties Outlet ERD](./Gutties Outlet(1))
