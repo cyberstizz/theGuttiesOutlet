@@ -17,9 +17,9 @@ app.use('/products', productRouter);
 app.get('/', async (req, res) => { 
   try{
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
- const myTest = await pool.query('select now();');
+//  const myTest = await pool.query('select now();');
 
- console.log(myTest.rows[0])
+//  console.log(myTest.rows[0])
   } catch(err){
     console.log(err.message);
   }
