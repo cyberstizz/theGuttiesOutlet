@@ -14,7 +14,7 @@ const pool = new Pool({
 });
 
 //exporting the variable which represents the configured reference to the --
-//database
+//database for use by the server :)
 
 module.exports = pool;
 
