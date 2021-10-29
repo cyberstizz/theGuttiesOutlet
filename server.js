@@ -5,10 +5,12 @@ const app = express();
 const port = process.env.PORT || 5000; 
 const pool = require('./db');
 const cors = require('cors');
+const productRouter = require('./routes/products/productsRouter')
 
 // initiate use of those variables through middleware (or app.use)
 
 app.use(cors());
+app.use('/products', productRouter);
 
 
 // create a GET route
