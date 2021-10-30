@@ -4,7 +4,7 @@ const express = require('express');
 
 //creating a variable to represent the router for all products routes
 
-const productRouter = express.Router(mergeParams: true);
+const productRouter = express.Router();
 
 //this creates a route for a request of a particular product
 

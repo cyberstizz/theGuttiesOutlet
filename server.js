@@ -13,10 +13,17 @@ app.use(cors());
 app.use('/products', productRouter);
 
 
-// create a GET route
-app.get('/', async (req, res) => { 
+// create GET routex
+
+app.get('/', (req, res, next) => {
+  res.send('this seems to be working')
+})
+
+
+app.get('/express', async (req, res) => { 
   try{
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
+  console.log('this is working')
 //  const myTest = await pool.query('select now();');
 
 //  console.log(myTest.rows[0])
