@@ -16,7 +16,7 @@ app.use('/products', productRouter);
 // create GET routex
 
 app.get('/', (req, res, next) => {
-  res.send('this seems to be working')
+  res.sendFile('./client/src/index.js')
 })
 
 
