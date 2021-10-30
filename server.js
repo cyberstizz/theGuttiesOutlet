@@ -3,12 +3,14 @@
 const express = require('express'); 
 const app = express(); 
 const port = process.env.PORT || 5000; 
+const path = require('path')
 const pool = require('./db');
 const cors = require('cors');
 const productRouter = require('./routes/products/productsRouter')
 
 // initiate use of those variables through middleware (or app.use)
 
+app.use(express.static(path.join(__dirname, 'client/public')));
 app.use(cors());
 app.use('/products', productRouter);
 
@@ -16,7 +18,7 @@ app.use('/products', productRouter);
 // create GET routex
 
 app.get('/', (req, res, next) => {
-  res.send('this seems to be working')
+  res.sendFile(path.join(__dirname, 'client', '/public/index.html'));
 })
 
 
