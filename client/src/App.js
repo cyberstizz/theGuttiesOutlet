@@ -9,12 +9,12 @@ state = {
 
   componentDidMount() {
     this.callBackendAPI()
-      .then(res => this.setState({ data: res.express }))
+      .then(res => this.setState({ data: res.express}))
       .catch(err => console.log(err));
   }
     // fetching the GET route from the Express server which matches the GET route from server.js
   callBackendAPI = async () => {
-    const response = await fetch();
+    const response = await fetch('/express');
     const body = await response.json();
 
     if (response.status !== 200) {
