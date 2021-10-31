@@ -3,6 +3,11 @@
 
 const Pool = require('pg').Pool;
 
+//creating a variable representing the heroku environment variables
+const proConfig = {
+
+};
+
 //setting up the config with the correct user, credentials, database and port
 
 const pool = new Pool({
