@@ -10,7 +10,7 @@ const productRouter = require('./routes/products/productsRouter')
 
 // initiate use of those variables through middleware (or app.use)
 
-app.use(express.static(path.join(__dirname, 'client/public')));
+app.use(express.static(path.join(__dirname, 'client/src')));
 
 // enabling cors 
 app.use(cors());
