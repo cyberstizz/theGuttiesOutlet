@@ -30,7 +30,7 @@ app.get('/', (req, res, next) => {
 
 app.get('/express', async (req, res) => { 
   try{
-  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
+  res.send({ express: 'Gutties outlet coming soon!' }); 
   console.log('this is working')
 //  const myTest = await pool.query('select now();');
 
