@@ -11,16 +11,22 @@ const productRouter = require('./routes/products/productsRouter')
 // initiate use of those variables through middleware (or app.use)
 
 app.use(express.static(path.join(__dirname, 'client/public')));
+
+// enabling cors 
 app.use(cors());
+
+// sending all routes to its appropriate express router
 app.use('/products', productRouter);
 
 
-// create GET routex
+// create GET route for home page
 
 app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname, 'client', '/public/index.html'));
 })
 
+
+// just a test
 
 app.get('/express', async (req, res) => { 
   try{
@@ -35,5 +41,5 @@ app.get('/express', async (req, res) => {
 });
 
 
-// This displays message that the server running and listening to specified port
+// This displays message that the server is running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`)); 
