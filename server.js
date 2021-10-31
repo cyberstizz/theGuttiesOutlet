@@ -22,7 +22,7 @@ app.use('/products', productRouter);
 // create GET route for home page
 
 app.get('/', (req, res, next) => {
-  res.sendFile(path.join(__dirname, 'client', '/public/index.html'));
+  res.send('I am working');
 })
 
 

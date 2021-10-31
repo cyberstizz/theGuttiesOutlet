@@ -20,7 +20,7 @@ const localConfig = {
 
 //setting up the config with the correct user, credentials, database and port with turnery logic
 
-const pool = new Pool(process.env.NODE_ENV === 'production' ? proConfig : localConfig);
+const pool = new Pool(process.env.NODE_ENV === "production" ? proConfig : localConfig);
 
 //exporting the variable which represents the configured reference to the --
 //database for use by the server :)
