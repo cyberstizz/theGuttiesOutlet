@@ -3,10 +3,12 @@
 
 const Pool = require('pg').Pool;
 
-//creating a variable representing the heroku environment variables
+//creating a variable representing the heroku environment variables for postgres
 const proConfig = {
 
 };
+
+//creating a variable representing the local config for postgres
 
 const localConfig = {
     user: "postgres",
@@ -16,7 +18,7 @@ const localConfig = {
     port: 5432
 }
 
-//setting up the config with the correct user, credentials, database and port
+//setting up the config with the correct user, credentials, database and port with turnery logic
 
 const pool = new Pool(process.env.build === 'production' ? proConfig : localConfig);
 
