@@ -8,6 +8,10 @@ const proConfig = {
 
 };
 
+const localConfig = {
+    
+}
+
 //setting up the config with the correct user, credentials, database and port
 
 const pool = new Pool({
