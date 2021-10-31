@@ -30,9 +30,9 @@ app.get('/', (req, res, next) => {
 
 app.get('/express', async (req, res) => { 
   try{
-  res.send({ express: 'Gutties outlet coming soon!' }); 
-  console.log('this is working')
-//  const myTest = await pool.query('select now();');
+    const myTest = await pool.query('select now();');
+
+  res.send({ express: myTest.rows[0] }); 
 
 //  console.log(myTest.rows[0])
   } catch(err){
