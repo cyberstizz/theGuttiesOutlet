@@ -17,7 +17,7 @@
 }
 
 .Center_Header{
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     width: 60vw;
 }
@@ -33,9 +33,10 @@
 }
 
 .navitem{
-    margin-left: 4vw;
+    margin-left: 3vw;
     font-weight: bolder;
     font-size: larger;
+    color: #B48B22;
 }
 
 #searchbutton{
