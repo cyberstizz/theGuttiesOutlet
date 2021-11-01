@@ -4,9 +4,21 @@ import './Header.css';
 
  const Header = () => {
     return(
+        //first there will be a header element that houses three sub headers
         <header className='headerblock'>
-            <div className='Left_Header'></div>
-            <div className='Center_Header'></div>
+
+            {/* inside there are three sub headers left center and right */}
+            <div className='Left_Header'>
+
+                {/* the left header contains the logo */}
+                <div className='logo'> </div>
+            </div>
+
+            <div className='Center_Header'>
+                
+            </div>
+
+
             <div className='Right_Header'></div>
 
         </header>
