@@ -42,7 +42,11 @@ import './Header.css';
             </div>
 
 
-            <div className='Right_Header'></div>
+            <div className='Right_Header'>
+
+                {/* the right header will have the cart icon and the login and logout buttons */}
+                
+            </div>
 
         </header>
     )

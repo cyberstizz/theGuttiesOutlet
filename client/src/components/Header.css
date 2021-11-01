@@ -1,4 +1,6 @@
 .headerblock{
+    display: flex;
+    flex-direction: row;
     background-color: #281D6C;
     height: 20vh;
     width: 100vw;
@@ -6,5 +8,11 @@
 
 #navlist{
     list-style: none;
+    display: flex;
+    flex-direction: row;
 }
 
+.Left_Header{
+    width: 20vw;
+    border: 4px solid yellow;
+}
