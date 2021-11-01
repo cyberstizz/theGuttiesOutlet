@@ -16,3 +16,13 @@
     width: 20vw;
     border: 4px solid yellow;
 }
+
+.Center_Header{
+    border: 4px solid yellow;
+    width: 60vw;
+}
+
+.Right_Header{
+    border: 4px solid yellow;
+    width: 20vw;
+}
