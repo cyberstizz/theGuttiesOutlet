@@ -21,8 +21,8 @@ import './Header.css';
                 {/* the search bar will be placed within a form for easier access to the buttons input */}
                 <form onSubmit=''>
 
-                    <input type='text' placeholder="search"></input>
-                    <input type='submit'></input>
+                    <input id='searchbar' type='text' placeholder="search"></input>
+                    <input id='searchbutton' type='submit'></input>
 
                 </form>
 
@@ -45,7 +45,7 @@ import './Header.css';
             <div className='Right_Header'>
 
                 {/* the right header will have the cart icon and the login and logout buttons */}
-                
+
             </div>
 
         </header>
