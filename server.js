@@ -15,6 +15,9 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 // enabling cors 
 app.use(cors());
 
+// allowing access to the requst.body
+app.use(express.json());
+
 // sending all routes to its appropriate express router
 app.use('/products', productRouter);
 
