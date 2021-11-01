@@ -2,8 +2,10 @@ import React from "react";
 import './Header.css';
 
 
-export default const Header = () => {
+ const Header = () => {
     return(
         <header className='headerblock'></header>
     )
 };
+
+export default Header;
