@@ -26,6 +26,19 @@ import './Header.css';
 
                 </form>
 
+
+                    {/* the nav bar will be below the search bar in the center of the header */}
+                <nav>
+
+                    {/* the nav will be organized into an unordered list */}
+                    <ul id='navlist'>
+                        <li>New Arrivals</li>
+                        <li>Best Sellers</li>
+                        <li>Winter</li>
+                        <li>Discount</li>
+                    </ul>
+                </nav>
+
             </div>
 
 
