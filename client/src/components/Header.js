@@ -15,7 +15,17 @@ import './Header.css';
             </div>
 
             <div className='Center_Header'>
-                
+
+                {/* the center header contains the search bar and the nav bar both will be block elements */}
+
+                {/* the search bar will be placed within a form for easier access to the buttons input */}
+                <form onSubmit=''>
+
+                    <input type='text' placeholder="search"></input>
+                    <input type='submit'></input>
+
+                </form>
+
             </div>
 
 
