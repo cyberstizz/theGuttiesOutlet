@@ -45,3 +45,55 @@
 .Right_Header{
     width: 20vw;
 }
+
+@media only screen and(max-width: 640px){
+
+    .headerblock{
+        display: flex;
+        flex-direction: row;
+        background-color: #281D6C;
+        height: 20vh;
+        width: 100vw;
+    }
+    
+    #navlist{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .Left_Header{
+        width: 20vw;
+    }
+    
+    .Center_Header{
+        display: flex;
+        flex-direction: column;
+        width: 60vw;
+    }
+    
+    #searchbar{
+        margin-top: 4vh;
+        height: 4vh;
+        width: 40vw;
+    }
+    
+    #navlist{
+        margin-left: 5vw;
+    }
+    
+    .navitem{
+        margin-left: 4vw;
+        font-weight: bolder;
+        font-size: larger;
+    }
+    
+    #searchbutton{
+        height: 5vh;
+    }
+    
+    .Right_Header{
+        width: 20vw;
+    }
+
+}
