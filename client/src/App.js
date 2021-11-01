@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
 
 class App extends Component {
 state = {
@@ -28,7 +29,7 @@ state = {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">gutties outlet coming soon!</h1>
+          <Header />
         </header>
         <p className="App-intro">{this.state.data}</p>
       </div>
