@@ -28,6 +28,16 @@
     width: 40vw;
 }
 
+#navlist{
+    margin-left: 5vw;
+}
+
+.navitem{
+    margin-left: 4vw;
+    font-weight: bolder;
+    font-size: larger;
+}
+
 #searchbutton{
     height: 5vh;
 }

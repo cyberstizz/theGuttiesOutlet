@@ -32,10 +32,10 @@ import './Header.css';
 
                     {/* the nav will be organized into an unordered list */}
                     <ul id='navlist'>
-                        <li>New Arrivals</li>
-                        <li>Best Sellers</li>
-                        <li>Winter</li>
-                        <li>Discount</li>
+                        <li className='navitem'>New Arrivals</li>
+                        <li className='navitem'>Best Sellers</li>
+                        <li className='navitem'>Winter</li>
+                        <li className='navitem'>Discount</li>
                     </ul>
                 </nav>
 
