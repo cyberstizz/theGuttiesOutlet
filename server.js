@@ -10,7 +10,13 @@ const productRouter = require('./routes/products/productsRouter')
 
 // initiate use of those variables through middleware (or app.use)
 
+// initializing the entry point of the index.html from the build folder if in production
+
+if(process.env.NODE_ENV === "production"){
+
 app.use(express.static(path.join(__dirname, 'client/build')));
+
+}
 
 // enabling cors 
 app.use(cors());
