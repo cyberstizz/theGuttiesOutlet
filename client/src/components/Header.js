@@ -1,7 +1,6 @@
 import React from "react";
 import './Header.css';
 
-
  const Header = () => {
     return(
         //first there will be a header element that houses three sub headers
@@ -12,6 +11,7 @@ import './Header.css';
 
                 {/* the left header contains the logo */}
                 <div className='logo'> </div>
+                <div id='signIn'> Sign In</div>
             </div>
 
             <div className='Center_Header'>
@@ -22,7 +22,7 @@ import './Header.css';
                 <form onSubmit=''>
 
                     <input id='searchbar' type='text' placeholder="search"></input>
-                    <input id='searchbutton' type='submit'></input>
+                    <input id='searchbutton' type='submit' name="search"></input>
 
                 </form>
 
@@ -43,6 +43,8 @@ import './Header.css';
 
 
             <div className='Right_Header'>
+
+
 
                 {/* the right header will have the cart icon and the login and logout buttons */}
 

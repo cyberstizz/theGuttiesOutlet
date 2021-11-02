@@ -26,10 +26,10 @@ state = {
 
   render() {
     return (
-      <div className="App">
-          <Header />
+        <React.Fragment>
+        <Header />
         <p className="App-intro">{this.state.data}</p>
-      </div>
+        </React.Fragment>
     );
   }
 }

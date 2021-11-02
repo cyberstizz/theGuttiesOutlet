@@ -1,3 +1,13 @@
+*{
+    text-align: center;
+}
+
+
+/* importing custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Permanent+Marker&display=swap');
+
 .headerblock{
     display: flex;
     flex-direction: row;
@@ -14,12 +24,33 @@
 
 .Left_Header{
     width: 20vw;
+    border: solid #B48B22;
+
+}
+
+.logo{
+    background-image: url('../5c94dbc22f034501a72288ae529b65fe\ \(3\).png');
+    height: 14vh;
+    width: 12vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+#signIn{
+    margin-top: 2vh;
+    margin-left: 11vw;
+    font-family: 'Permanent Marker', cursive;
+    color: #B48B22;
+    font-size: 20px;
 }
 
 .Center_Header{
     display: inline-flex;
     flex-direction: column;
     width: 60vw;
+    border-bottom: solid #B48B22;
 }
 
 #searchbar{
@@ -41,60 +72,14 @@
 
 #searchbutton{
     height: 5vh;
+    width: 4vw;
+    background-color: #B48B22;
 }
+
+
 
 .Right_Header{
     width: 20vw;
+    border-bottom: solid #B48B22 2px;
 }
 
-@media only screen and(max-width: 640px){
-
-    .headerblock{
-        display: flex;
-        flex-direction: row;
-        background-color: #281D6C;
-        height: 20vh;
-        width: 100vw;
-    }
-    
-    #navlist{
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .Left_Header{
-        width: 20vw;
-    }
-    
-    .Center_Header{
-        display: flex;
-        flex-direction: column;
-        width: 60vw;
-    }
-    
-    #searchbar{
-        margin-top: 4vh;
-        height: 4vh;
-        width: 40vw;
-    }
-    
-    #navlist{
-        margin-left: 5vw;
-    }
-    
-    .navitem{
-        margin-left: 4vw;
-        font-weight: bolder;
-        font-size: larger;
-    }
-    
-    #searchbutton{
-        height: 5vh;
-    }
-    
-    .Right_Header{
-        width: 20vw;
-    }
-
-}
