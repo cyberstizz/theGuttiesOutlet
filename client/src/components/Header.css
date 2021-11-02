@@ -11,7 +11,7 @@
 .headerblock{
     display: flex;
     flex-direction: row;
-    background-color: #281D6C;
+    background-color: #0D2A57;
     height: 20vh;
     width: 100vw;
 }
@@ -83,6 +83,11 @@
 
 
 #cart{
+    font-size: 30px;
+    margin-top: 3vh;
+}
+
+.searchIcon{
     font-size: 30px;
     margin-top: 3vh;
 }

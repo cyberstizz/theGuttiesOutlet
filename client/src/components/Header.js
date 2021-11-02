@@ -11,6 +11,7 @@ import './Header.css';
 
                 {/* the left header contains the logo */}
                 <div className='logo'> </div>
+                <i class="fad fa-user-circle"></i>
                 <div id='signIn'> Sign In &#10140;</div>
             </div>
 
@@ -22,7 +23,8 @@ import './Header.css';
                 <form onSubmit=''>
 
                     <input id='searchbar' type='text' placeholder="search"></input>
-                    <input id='searchbutton' type='submit' name="search"></input>
+                    <input id='searchbutton' type='submit'> 
+                    </input>
                 </form>
 
 
