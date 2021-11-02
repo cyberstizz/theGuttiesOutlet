@@ -24,8 +24,7 @@
 
 .Left_Header{
     width: 20vw;
-    border: solid #B48B22;
-
+    border-right: solid #B48B22;
 }
 
 .logo{
@@ -50,13 +49,13 @@
     display: inline-flex;
     flex-direction: column;
     width: 60vw;
-    border-bottom: solid #B48B22;
 }
 
 #searchbar{
     margin-top: 4vh;
     height: 4vh;
     width: 40vw;
+    border-radius: 20px;
 }
 
 #navlist{
@@ -80,6 +79,10 @@
 
 .Right_Header{
     width: 20vw;
-    border-bottom: solid #B48B22 2px;
 }
 
+
+#cart{
+    font-size: 30px;
+    margin-top: 3vh;
+}

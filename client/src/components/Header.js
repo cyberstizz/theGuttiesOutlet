@@ -11,7 +11,7 @@ import './Header.css';
 
                 {/* the left header contains the logo */}
                 <div className='logo'> </div>
-                <div id='signIn'> Sign In</div>
+                <div id='signIn'> Sign In &#10140;</div>
             </div>
 
             <div className='Center_Header'>
@@ -23,7 +23,6 @@ import './Header.css';
 
                     <input id='searchbar' type='text' placeholder="search"></input>
                     <input id='searchbutton' type='submit' name="search"></input>
-
                 </form>
 
 
@@ -44,6 +43,7 @@ import './Header.css';
 
             <div className='Right_Header'>
 
+            <div id="cart">&#x1f6d2;</div>
 
 
                 {/* the right header will have the cart icon and the login and logout buttons */}
