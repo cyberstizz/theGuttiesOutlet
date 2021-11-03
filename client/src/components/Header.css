@@ -51,11 +51,19 @@
     width: 60vw;
 }
 
+.searchform{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 8vw;
+}
+
 #searchbar{
     margin-top: 4vh;
     height: 4vh;
     width: 40vw;
     border-radius: 20px;
+    z-index: 2;
 }
 
 #navlist{
@@ -73,6 +81,8 @@
     height: 5vh;
     width: 4vw;
     background-color: #B48B22;
+    margin-top: 4vh;
+    border-radius: -40px;
 }
 
 

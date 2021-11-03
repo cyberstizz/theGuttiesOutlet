@@ -1,5 +1,6 @@
 import React from "react";
 import './Header.css';
+import 'font-awesome/css/font-awesome.min.css';
 
  const Header = () => {
     return(
@@ -11,7 +12,7 @@ import './Header.css';
 
                 {/* the left header contains the logo */}
                 <div className='logo'> </div>
-                <i class="fad fa-user-circle"></i>
+               <div> <i class="fad fa-user-circle"></i></div>
                 <div id='signIn'> Sign In &#10140;</div>
             </div>
 
@@ -20,11 +21,11 @@ import './Header.css';
                 {/* the center header contains the search bar and the nav bar both will be block elements */}
 
                 {/* the search bar will be placed within a form for easier access to the buttons input */}
-                <form onSubmit=''>
+                <form className="searchform" onSubmit=''>
 
                     <input id='searchbar' type='text' placeholder="search"></input>
-                    <input id='searchbutton' type='submit'> 
-                    </input>
+                    <button id='searchbutton' type='submit' class="fa fa-search">
+                    </button>
                 </form>
 
 
