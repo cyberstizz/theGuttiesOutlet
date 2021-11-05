@@ -1,0 +1,7 @@
+#footerBlock{
+    height: 80vh;
+    width: 100vw;
+    background-color: goldenrod;
+    display: flex;
+    flex-direction: row;
+}

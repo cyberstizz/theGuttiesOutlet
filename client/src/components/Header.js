@@ -13,7 +13,7 @@ import 'font-awesome/css/font-awesome.min.css';
                 {/* the left header contains the logo */}
                 <div className='logo'> </div>
 
-                <div id='signIn'>  <span id="loginIcon"><i class="fa fa-user-circle-o" aria-hidden="true"></i> </span>
+                <div id='signIn'>  <span id="logo"><i class="fa fa-user-circle-o" aria-hidden="true"></i> </span>
                 
                 Sign In </div>
                 
