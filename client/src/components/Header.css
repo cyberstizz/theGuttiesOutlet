@@ -1,4 +1,6 @@
-
+*{
+    border: solid green 2px;
+}
 
 
 /* importing custom fonts */
@@ -25,14 +27,20 @@
     border-right: 1px solid #B48B22;
 }
 
+.logo-signIn-block{
+    width: 19vw;
+    height: 14vh;
+    position: flex;
+    flex-direction: row;
+}
+
 .logo{
     background-image: url('../5c94dbc22f034501a72288ae529b65fe\ \(3\).png');
     height: 14vh;
-    width: 12vw;
+    width: 10vw;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
 }
 
 .fa fa-user-circle-o{
@@ -41,11 +49,15 @@ border: solid 2px green;
 }
 
 #signIn{
-    margin-top: 2vh;
     margin-left: 11vw;
     font-family: 'Permanent Marker', cursive;
     color: #B48B22;
     font-size: 20px;
+    border: 2px solid green;
+}
+
+.cart-icon{
+    margin-right: 2vw;
 }
 
 #loginIcon{

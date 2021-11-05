@@ -11,12 +11,18 @@ import 'font-awesome/css/font-awesome.min.css';
             <div className='Left_Header'>
 
                 {/* the left header contains the logo */}
+
+                <section className="logo-signIn-block">
+
                 <div className='logo'> </div>
 
                 <div id='signIn'>  <span id="logo"><i class="fa fa-user-circle-o" aria-hidden="true"></i> </span>
                 
                 Sign In </div>
-                
+        
+              </section>
+              <span className="cart-icon">&#x1f6d2;</span>  
+
             </div>
 
             <div className='Center_Header'>
@@ -48,8 +54,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
 
             <div className='Right_Header'>
-            Cart
-            <div id="cart">&#x1f6d2;</div>
+           
 
 
                 {/* the right header will have the cart icon and the login and logout buttons */}
