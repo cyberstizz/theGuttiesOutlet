@@ -31,7 +31,6 @@
     position: flex;
     display: flex;
     flex-direction: row;
-    border: 2px solid red;
 }
 
 .logo{
@@ -52,7 +51,6 @@
     font-family: 'Permanent Marker', cursive;
     color: #B48B22;
     font-size: 20px;
-    border: 2px solid green;
     margin-left: 1vw;
 }
 
