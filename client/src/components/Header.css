@@ -31,13 +31,15 @@
     width: 19vw;
     height: 14vh;
     position: flex;
+    display: flex;
     flex-direction: row;
+    border: 2px solid red;
 }
 
 .logo{
     background-image: url('../5c94dbc22f034501a72288ae529b65fe\ \(3\).png');
     height: 14vh;
-    width: 10vw;
+    width: 8vw;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -49,7 +51,6 @@ border: solid 2px green;
 }
 
 #signIn{
-    margin-left: 11vw;
     font-family: 'Permanent Marker', cursive;
     color: #B48B22;
     font-size: 20px;
