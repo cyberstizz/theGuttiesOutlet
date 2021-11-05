@@ -52,6 +52,7 @@
     color: #B48B22;
     font-size: 20px;
     margin-left: 1vw;
+    margin-top: 3vh;
 }
 
 .cart-icon{
@@ -59,7 +60,7 @@
     color: #B48B22;
     font-family: 'Permanent Marker', cursive;
     margin-left: 1vw;
-    margin-top: 1vh;
+    margin-top: 2vh;
 }
 
 #loginIcon{
