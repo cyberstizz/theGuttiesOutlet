@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 class App extends Component {
 state = {
@@ -28,7 +29,7 @@ state = {
     return (
         <React.Fragment>
         <Header />
-        <p className="App-intro">{this.state.data}</p>
+        <Footer />
         </React.Fragment>
     );
   }
