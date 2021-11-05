@@ -12,8 +12,11 @@ import 'font-awesome/css/font-awesome.min.css';
 
                 {/* the left header contains the logo */}
                 <div className='logo'> </div>
-               <div> <i class="fad fa-user-circle"></i></div>
-                <div id='signIn'> Sign In &#10140;</div>
+
+                <div id='signIn'>  <i class="fa fa-user-circle-o" aria-hidden="true"></i> 
+                
+                Sign In &#10140;</div>
+                
             </div>
 
             <div className='Center_Header'>
@@ -45,7 +48,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
 
             <div className='Right_Header'>
-
+            Cart
             <div id="cart">&#x1f6d2;</div>
 
 

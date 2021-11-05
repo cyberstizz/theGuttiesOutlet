@@ -24,7 +24,7 @@
 
 .Left_Header{
     width: 20vw;
-    border-right: solid #B48B22;
+    border-right: 1px solid #B48B22;
 }
 
 .logo{
@@ -35,6 +35,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
+}
+
+.fa fa-user-circle-o{
+margin-left: 2vw;
+border: solid 2px green;
 }
 
 #signIn{
@@ -62,7 +67,8 @@
     margin-top: 4vh;
     height: 4vh;
     width: 40vw;
-    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     z-index: 2;
 }
 
@@ -82,7 +88,8 @@
     width: 4vw;
     background-color: #B48B22;
     margin-top: 4vh;
-    border-radius: -40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 
