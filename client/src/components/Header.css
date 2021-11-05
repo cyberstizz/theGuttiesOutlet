@@ -1,6 +1,4 @@
-*{
-    border: solid green 2px;
-}
+
 
 
 /* importing custom fonts */
@@ -45,9 +43,9 @@
     background-repeat: no-repeat;
 }
 
-.fa fa-user-circle-o{
-margin-left: 2vw;
-border: solid 2px green;
+.cart-signIn-block{
+    display: flex;
+    flex-direction: column;
 }
 
 #signIn{
@@ -61,6 +59,9 @@ border: solid 2px green;
 .cart-icon{
     font-size: 20px;
     color: #B48B22;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 1vw;
+    margin-top: 1vh;
 }
 
 #loginIcon{

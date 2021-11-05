@@ -16,13 +16,20 @@ import 'font-awesome/css/font-awesome.min.css';
 
                 <div className='logo'> </div>
 
+                <div className="cart-signIn-block">
+
                 <div id='signIn'> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In </div>
+                
+                
+                 {/* cart icon */}
+
+                <span className="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</span>
+
+                </div>
         
               </section>
 
-              {/* cart icon */}
-
-              <span className="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i> </span>
+    
 
             </div>
 
