@@ -15,7 +15,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
                 <div id='signIn'>  <i class="fa fa-user-circle-o" aria-hidden="true"></i> 
                 
-                Sign In &#10140;</div>
+                Sign In </div>
                 
             </div>
 
