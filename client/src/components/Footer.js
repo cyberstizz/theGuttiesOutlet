@@ -4,9 +4,9 @@ import './Footer.css';
  const Header = () => {
     return(
         <div id="footerBlock">
-            <section></section>
-            <section></section>
-            <section></section>
+            <section className="footer-left"></section>
+            <section className="footer-center"></section>
+            <section className="footer-right"></section>
         </div>
     )
 };
