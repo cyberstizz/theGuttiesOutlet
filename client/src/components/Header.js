@@ -19,7 +19,10 @@ import 'font-awesome/css/font-awesome.min.css';
                 <div id='signIn'> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In </div>
         
               </section>
-              <span className="cart-icon">&#x1f6d2;</span>  
+
+              {/* cart icon */}
+
+              <span className="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i> </span>
 
             </div>
 

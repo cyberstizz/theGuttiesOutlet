@@ -39,7 +39,7 @@
 .logo{
     background-image: url('../5c94dbc22f034501a72288ae529b65fe\ \(3\).png');
     height: 14vh;
-    width: 8vw;
+    width: 10vw;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -55,10 +55,12 @@ border: solid 2px green;
     color: #B48B22;
     font-size: 20px;
     border: 2px solid green;
+    margin-left: 1vw;
 }
 
 .cart-icon{
-    margin-right: 2vw;
+    font-size: 20px;
+    color: #B48B22;
 }
 
 #loginIcon{
