@@ -37,9 +37,9 @@ import 'font-awesome/css/font-awesome.min.css';
 
                     {/* the nav will be organized into an unordered list */}
                     <ul id='navlist'>
+                        <li className='navitem'>Home</li>
                         <li className='navitem'>New Arrivals</li>
                         <li className='navitem'>Best Sellers</li>
-                        <li className='navitem'>Winter</li>
                         <li className='navitem'>Discount</li>
                     </ul>
                 </nav>
