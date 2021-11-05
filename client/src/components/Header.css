@@ -1,6 +1,4 @@
-*{
-    text-align: center;
-}
+
 
 
 /* importing custom fonts */
@@ -50,6 +48,10 @@ border: solid 2px green;
     font-size: 20px;
 }
 
+#loginIcon{
+    margin-left: 2vw;
+}
+
 .Center_Header{
     display: inline-flex;
     flex-direction: column;
@@ -70,6 +72,7 @@ border: solid 2px green;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     z-index: 2;
+    text-align: center;
 }
 
 #navlist{
