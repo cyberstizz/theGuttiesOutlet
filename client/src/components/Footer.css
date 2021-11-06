@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Permanent+Marker&display=swap');
+
+
 #footerBlock{
     height: 50vh;
     width: 100vw;
@@ -8,19 +12,34 @@
     position: absolute;
 }
 
-.footer-logo{
+.footer-logo-section{
     width: 20vw;
     height: 40vh;
-    border: 2px solid green;
+    border-right: 2px solid #0D2A57;
     margin-top: 3vh;
     display:flex;
     flex-direction: column;
 }
 
+.footer-logo{
+    background-image: url('../5c94dbc22f034501a72288ae529b65fe\ \(3\).png');
+    height: 14vh;
+    width: 10vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 4vw;
+}
+
+.footer-conception-year{
+    font-family: 'Permanent Marker', cursive;
+    color: #0D2A57;
+    margin-left: 7vw;
+}
+
 .footer-left{
 height: 40vh;
 width: 20vw;
-border: 2px solid green;
 margin-top: 3vh;
 display: flex;    
 flex-direction: column;
@@ -29,7 +48,6 @@ flex-direction: column;
 .footer-center{
     height: 40vh;
     width: 20vw;
-    border: 2px solid green;
     margin-top: 3vh;
     display: flex;    
     flex-direction: column;
@@ -38,7 +56,6 @@ flex-direction: column;
 .footer-right{
     height: 40vh;
     width: 20vw;
-    border: 2px solid green;
     margin-top: 3vh;
     display: flex;    
     flex-direction: column;
@@ -47,7 +64,6 @@ flex-direction: column;
 .footer-social-media{
     height: 40vh;
     width: 20vw;
-    border: 2px solid green; 
     margin-top: 3vh;
     display: flex;    
     flex-direction: column;

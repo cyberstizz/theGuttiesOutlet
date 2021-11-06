@@ -1,7 +1,7 @@
 import React from "react";
 import './Footer.css';
 
- const Header = () => {
+ const Footer = () => {
     return(
 
         // first there is the main footer block which contains all footer elements and is set to a flex direction of row
@@ -10,10 +10,13 @@ import './Footer.css';
 
              {/* first section will contain the logo and year of conception */}
 
-            <section className="footer-logo">
+            <section className="footer-logo-section">
 
 
-                
+            <div className="footer-logo"> </div>
+
+            <div className="footer-conception-year"> @2021 </div>
+
             </section>
 
 
@@ -31,4 +34,4 @@ import './Footer.css';
     )
 };
 
-export default Header;
+export default Footer;
