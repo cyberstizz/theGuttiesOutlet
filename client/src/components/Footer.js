@@ -20,7 +20,17 @@ import './Footer.css';
             </section>
 
 
-            <section className="footer-left"></section>
+            <section className="footer-left">
+
+                <ul className="footer-list-block">
+                    <li className="footer-section-header">sitemap</li>
+                    <li className="footer-list-item">Home</li>
+                    <li className="footer-list-item">New Arrivals</li>
+                    <li className="footer-list-item">Best Sellers</li>
+                    <li className="footer-list-item">Discount</li>
+
+                </ul>
+            </section>
 
 
             <section className="footer-center"></section>

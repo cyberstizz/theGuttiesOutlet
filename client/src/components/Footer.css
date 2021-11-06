@@ -37,12 +37,35 @@
     margin-left: 7vw;
 }
 
+.footer-list-block{
+    list-style: none;
+}
+
+.footer-section-header{
+    padding-bottom: 2vh;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    color: whitesmoke;
+    margin-left: 3vw;
+}
+
+.footer-list-item{
+    font-family: 'Permanent Marker', cursive;
+    color: #0D2A57;
+    margin-left: 3vw;
+    padding-bottom: .5vh;
+    font-size: 20px;
+
+
+}
+
 .footer-left{
 height: 40vh;
 width: 20vw;
 margin-top: 3vh;
 display: flex;    
 flex-direction: column;
+border-right: 2px solid #0D2A57;
 }
 
 .footer-center{
@@ -51,6 +74,7 @@ flex-direction: column;
     margin-top: 3vh;
     display: flex;    
     flex-direction: column;
+    border-right: 2px solid #0D2A57;
 }
 
 .footer-right{
@@ -59,6 +83,7 @@ flex-direction: column;
     margin-top: 3vh;
     display: flex;    
     flex-direction: column;
+    border-right: 2px solid #0D2A57;
 }
 
 .footer-social-media{
