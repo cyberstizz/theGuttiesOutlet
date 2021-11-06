@@ -15,7 +15,6 @@
 .footer-logo-section{
     width: 20vw;
     height: 40vh;
-    border-right: 2px solid #0D2A57;
     margin-top: 3vh;
     display:flex;
     flex-direction: column;
@@ -65,7 +64,6 @@ width: 20vw;
 margin-top: 3vh;
 display: flex;    
 flex-direction: column;
-border-right: 2px solid #0D2A57;
 }
 
 .footer-center{
@@ -74,7 +72,6 @@ border-right: 2px solid #0D2A57;
     margin-top: 3vh;
     display: flex;    
     flex-direction: column;
-    border-right: 2px solid #0D2A57;
 }
 
 .footer-right{
@@ -83,13 +80,17 @@ border-right: 2px solid #0D2A57;
     margin-top: 3vh;
     display: flex;    
     flex-direction: column;
-    border-right: 2px solid #0D2A57;
 }
 
 .footer-social-media{
     height: 40vh;
     width: 20vw;
-    margin-top: 3vh;
+    margin-top: 5.3vh;
     display: flex;    
     flex-direction: column;
+}
+
+.social-media-buttons-block{
+    display: flex;
+    flex-direction: row;
 }

@@ -55,7 +55,11 @@ import './Footer.css';
             </section>
 
 
-            <section className="footer-social-media"></section>
+            <section className="footer-social-media">
+                    <header className="footer-section-header">Follow Us</header>
+                    <div className="social-media-buttons-block"></div>
+                
+            </section>
         </footer>
     )
 };
