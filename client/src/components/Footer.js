@@ -3,11 +3,12 @@ import './Footer.css';
 
  const Header = () => {
     return(
-        <div id="footerBlock">
+        <footer id="footerBlock">
+            <section className="footer-logo"></section>
             <section className="footer-left"></section>
             <section className="footer-center"></section>
             <section className="footer-right"></section>
-        </div>
+        </footer>
     )
 };
 

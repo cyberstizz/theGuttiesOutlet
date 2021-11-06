@@ -1,19 +1,29 @@
 #footerBlock{
-    height: 80vh;
+    height: 50vh;
     width: 100vw;
     background-color: goldenrod;
     display: flex;
     flex-direction: row;
+    bottom: 0px;
+    position: absolute;
+}
+
+.footer-logo{
+    width: 20vw;
+    height: 40vh;
 }
 
 .footer-left{
-
+height: 40vh;
+width: 20vw;
 }
 
 .footer-center{
-
+    height: 40vh;
+    width: 20vw;
 }
 
 .footer-right{
-
+    height: 40vh;
+    width: 20vw;
 }
