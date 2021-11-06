@@ -33,10 +33,26 @@ import './Footer.css';
             </section>
 
 
-            <section className="footer-center"></section>
+            <section className="footer-center">
+            <ul className="footer-list-block">
+                    <li className="footer-section-header">Company</li>
+                    <li className="footer-list-item">About Us</li>
+                    <li className="footer-list-item">Contact</li>
+                </ul>
 
 
-            <section className="footer-right"></section>
+            </section>
+
+
+            <section className="footer-right">
+
+            <ul className="footer-list-block">
+                    <li className="footer-section-header">Policies</li>
+                    <li className="footer-list-item">Privacy Policy</li>
+                    <li className="footer-list-item">Cookie Policy</li>
+                </ul>
+
+            </section>
 
 
             <section className="footer-social-media"></section>
