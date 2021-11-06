@@ -29,6 +29,7 @@ state = {
     return (
         <React.Fragment>
         <Header />
+        <section id="comingsoon"> </section>
         <Footer />
         </React.Fragment>
     );

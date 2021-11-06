@@ -50,13 +50,14 @@ import './Footer.css';
                     <li className="footer-section-header">Policies</li>
                     <li className="footer-list-item">Privacy Policy</li>
                     <li className="footer-list-item">Cookie Policy</li>
+                    <li className="footer-list-item">Terms Of Use</li>
                 </ul>
 
             </section>
 
 
             <section className="footer-social-media">
-                    <header className="footer-section-header">Follow Us</header>
+                    <header className="footer-section-header-follow-us">Follow Us</header>
                     <div className="social-media-buttons-block"></div>
                 
             </section>

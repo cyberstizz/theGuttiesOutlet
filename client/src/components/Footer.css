@@ -9,31 +9,32 @@
     display: flex;
     flex-direction: row;
     bottom: 0px;
-    position: absolute;
 }
 
 .footer-logo-section{
     width: 20vw;
     height: 40vh;
-    margin-top: 3vh;
     display:flex;
+    margin-top: 5vh;
+    margin-left: 3vh;
     flex-direction: column;
 }
 
 .footer-logo{
-    background-image: url('');
+    background-image: url('../guttiesoutletpurplefixed.png');
     height: 14vh;
     width: 10vw;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     margin-left: 4vw;
+    margin-top: 3vh;
 }
 
 .footer-conception-year{
     font-family: 'Permanent Marker', cursive;
     color: #0D2A57;
-    margin-left: 7vw;
+    margin-left: 7.3vw;
 }
 
 .footer-list-block{
@@ -45,6 +46,14 @@
     font-family: 'Permanent Marker', cursive;
     font-size: 25px;
     color: whitesmoke;
+    margin-left: 3vw;
+}
+
+.footer-section-header-follow-us{
+    padding-bottom: 2vh;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
+    color: #251B66;
     margin-left: 3vw;
 }
 
