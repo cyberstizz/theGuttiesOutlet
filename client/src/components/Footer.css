@@ -12,28 +12,43 @@
     width: 20vw;
     height: 40vh;
     border: 2px solid green;
+    margin-top: 3vh;
+    display:flex;
+    flex-direction: column;
 }
 
 .footer-left{
 height: 40vh;
 width: 20vw;
 border: 2px solid green;
+margin-top: 3vh;
+display: flex;    
+flex-direction: column;
 }
 
 .footer-center{
     height: 40vh;
     width: 20vw;
     border: 2px solid green;
+    margin-top: 3vh;
+    display: flex;    
+    flex-direction: column;
 }
 
 .footer-right{
     height: 40vh;
     width: 20vw;
     border: 2px solid green;
+    margin-top: 3vh;
+    display: flex;    
+    flex-direction: column;
 }
 
 .footer-social-media{
     height: 40vh;
     width: 20vw;
     border: 2px solid green; 
+    margin-top: 3vh;
+    display: flex;    
+    flex-direction: column;
 }
