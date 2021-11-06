@@ -8,6 +8,7 @@ import './Footer.css';
             <section className="footer-left"></section>
             <section className="footer-center"></section>
             <section className="footer-right"></section>
+            <section className="footer-social-media"></section>
         </footer>
     )
 };
