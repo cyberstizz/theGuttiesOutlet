@@ -3,9 +3,20 @@ import './Header.css';
 import 'font-awesome/css/font-awesome.min.css';
 
  const Header = () => {
+
+    const scrollFunction = () => {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 80) {
+          document.getElementById("headerblock").style.height = "30vh";
+          document.getElementById("navlist").style.height = "25vh";
+        }
+    }
+
+    window.onscroll = scrollFunction()
+
+
     return(
         //first there will be a header element that houses three sub headers
-        <header className='headerblock'>
+        <header id='headerblock'>
 
             {/* inside there are three sub headers left center and right */}
             <div className='Left_Header'>
@@ -20,6 +31,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
                 <div id='signIn'> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In </div>
                 
+            
                 
                  {/* cart icon */}
 
