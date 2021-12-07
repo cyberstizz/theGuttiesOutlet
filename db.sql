@@ -61,3 +61,26 @@ create table order_items(
     product_price integer references products(product_price) not null,
     total_price integer not null
 );
+
+-- new table just for testing purposes
+
+create table cos(
+    name varchar(20),
+    age integer,
+    skill integer
+);
+
+-- creating lots of entries to test filling up the database
+--insert into cos(name, age, skill) values('Stizz', 37, 10);
+
+insert into cos(name, age, skill) values('Rexx', 29, 6);
+
+insert into cos(name, age, skill) values('Harry-Matos', 39, 10);
+
+insert into cos(name, age, skill) values('Techs-Chambers', 37, 10);
+
+insert into cos(name, age, skill) values('Drama', 33, 8);insert into cos(name, age, skill) values('Stizz', 37, 10);
+
+insert into cos(name, age, skill) values('Taz', 32, 5);insert into cos(name, age, skill) values('Stizz', 37, 10);
+
+insert into cos(name, age, skill) values('Z', 30, 7);

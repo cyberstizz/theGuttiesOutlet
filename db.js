@@ -8,17 +8,23 @@ const proConfig = process.env.DATABASE_URL;
 
 //creating a variable representing the local config for postgres
 
-const localConfig = {
+// const localConfig = {
+//     user: "postgres",
+//     password: "waterfall",
+//     host: "localhost",
+//     database: "cos",
+//     port: 5432
+// }
+
+//setting up the config with the correct user, credentials, database and port with turnery logic
+
+const pool = new Pool({
     user: "postgres",
     password: "waterfall",
     host: "localhost",
     database: "postgres",
     port: 5432
-}
-
-//setting up the config with the correct user, credentials, database and port with turnery logic
-
-const pool = new Pool({connectionString: process.env.NODE_ENV === "production" ? proConfig : localConfig});
+});
 
 //exporting the variable which represents the configured reference to the --
 //database for use by the server :)

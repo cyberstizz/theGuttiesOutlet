@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Home from './components/Home';
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import ProductDescription from './components/ProductDescription';
 
 class App extends Component {
 state = {
     data: null
   };
 
-  componentDidMount() {
-    this.callBackendAPI()
-      .then(res => this.setState({ data: res.express}))
-      .catch(err => console.log(err));
-  }
+
     // fetching the GET route from the Express server which matches the GET route from server.js
     //broadway check this out
   callBackendAPI = async () => {
-    const response = await fetch('/express');
+    const response = await fetch('http://localhost:5001/');
     const body = await response.json();
 
     if (response.status !== 200) {
@@ -27,11 +24,13 @@ state = {
 
   render() {
     return (
-        <React.Fragment>
-        <Header />
-        <section id="comingsoon"> </section>
-        <Footer />
-        </React.Fragment>
+        <Router>
+        <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/:productId' element={<ProductDescription />} />
+
+        </Routes>
+        </Router>
     );
   }
 }
