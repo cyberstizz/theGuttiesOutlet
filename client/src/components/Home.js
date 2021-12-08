@@ -11,7 +11,7 @@ const [artist, setArtist] = useState('')
     useEffect(() => {
         
     const mountCall = async () => {
-    const response = await fetch('http://localhost:5005/');
+    const response = await fetch('http://localhost:5001/');
     const body = await response.text();
     setArtist(body)
     console.log(body)
@@ -25,7 +25,7 @@ const [artist, setArtist] = useState('')
         <React.Fragment>
         <Header />
         <section id="comingsoon"> </section>
-       <Link to={`/${artist}`}> <button id="randomButton">{artist}</button></Link>
+       <Link to={`/products/${artist}`}> <button id="randomButton">{artist}</button></Link>
         <Footer />
         </React.Fragment>
     )

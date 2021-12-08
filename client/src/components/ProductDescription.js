@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,7 +16,7 @@ const ProductDescription = () => {
 
 
         const callTheDatabase = async () => {
-            const firstCall = await fetch(`http://localhost:5005/${productId}`)
+            const firstCall = await fetch(`http://localhost:5001/${productId}`)
 
             const theResponse = await firstCall.text()
 
@@ -29,7 +30,13 @@ const ProductDescription = () => {
     console.log(data)
 
     return (
+        <React.Fragment>
         <div>{data}</div>
+     <Link to='/CreatePage'><button type='submit'>Create Artists</button></Link>
+     <Link to='/DeletePage'><button type='submit'>Delete Artists</button></Link>
+
+        </React.Fragment>
+
     )
 }
         // the first div will be the header block that contains the picture of the item as well as the name and minor details like product id

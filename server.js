@@ -2,7 +2,7 @@
 
 const express = require('express'); 
 const app = express(); 
-const port = process.env.PORT || 5005; 
+const port = process.env.PORT || 5001; 
 const path = require('path')
 const pool = require('./db');
 const cors = require('cors');
@@ -69,6 +69,23 @@ console.log(myTest.rows[0])
 
   next();
 });
+
+app.delete('/products/:artist',  async (req, res, next)=> {
+
+console.log('uh ohh a request just came in!')
+
+  const { artist } = req.params;
+
+  try{
+
+  const deathRow = await pool.query('delete from cos where name = $1', [artist])
+  
+  const completed = await deathRow.text();
+  res.status(204).send();
+} catch(err){
+    console.log(err)
+  }
+})
 
 
 
