@@ -35,7 +35,7 @@ app.use(express.json());
 
 app.get('/', async (req, res, next) => { 
   try{
-    const myTest = await pool.query('select name from cos where age = 29');
+    const myTest = await pool.query('select name from cos where age = 32');
 console.log(myTest.rows[0].name)
   res.send(myTest.rows[0].name); 
 
@@ -86,6 +86,25 @@ console.log('uh ohh a request just came in!')
     console.log(err)
   }
 })
+
+app.post('/products/:artist',  async (req, res, next)=> {
+
+  console.log('everyday a request is born!')
+  
+    const { name, age, skill } = req.body;
+  
+    try{
+  
+    const deathRow = await pool.query('insert into cos(name, age, skill) values($1, $2, $3)', [name, age, skill])
+    
+    const completed = await deathRow.text();
+    res.status(204).send();
+  } catch(err){
+      console.log(err)
+    }
+  })
+  
+
 
 
 
