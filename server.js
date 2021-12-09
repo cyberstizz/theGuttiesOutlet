@@ -121,6 +121,8 @@ app.post('/products/:artist',  async (req, res, next)=> {
  
  console.log('everyday a request is born!')
     const { name, age, skill } = req.body;
+
+    console.log(`this is the name I destructured from the request ${name}`)
  
    console.log(req.body)
     try{
