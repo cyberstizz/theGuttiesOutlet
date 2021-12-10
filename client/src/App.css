@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Permanent+Marker&display=swap');
-
+*{
+    text-decoration: none;
+}
 
 #comingsoon{
     height: 100vh;

@@ -1,5 +1,6 @@
 *{
     text-align: center;
+    text-decoration: none
 }
 
 /* importing custom fonts */
@@ -12,11 +13,29 @@
     margin-top: 40vh;
     margin-left: 10vw;
     height: 50vh;
-    width: 45vw;
+    width: 30vw;
+    text-decoration: none;
     border-radius: 12px;
-    background-color: rgb(221, 221, 221);
+    background-color: #0D2A57;
     font-family: 'Permanent Marker', cursive;
-    color: black;
+    color: white;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+:hover .entireCard{
+    position: relative;
+    margin-top: 40vh;
+    margin-left: 10vw;
+    height: 50vh;
+    width: 30vw;
+    text-decoration: none;
+    border-radius: 12px;
+    background-color: #B48B22;
+    font-family: 'Permanent Marker', cursive;
+    color: #0D2A57;
     font-size: 17px;
     display: flex;
     flex-direction: column;
