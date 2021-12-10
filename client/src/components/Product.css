@@ -1,9 +1,23 @@
+*{
+    text-align: center;
+}
+
+/* importing custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Permanent+Marker&display=swap');
+
 .entireCard{
-    position: absolute;
+    position: relative;
     margin-top: 40vh;
     margin-left: 10vw;
     height: 50vh;
     width: 45vw;
     border-radius: 12px;
     background-color: rgb(221, 221, 221);
+    font-family: 'Permanent Marker', cursive;
+    color: black;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
 }

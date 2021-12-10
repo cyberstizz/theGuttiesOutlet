@@ -25,9 +25,9 @@ const [artist, setArtist] = useState('')
     return(
         <React.Fragment>
         <Header />
-        <Product name={artist} age={40} skill={10}/>
-        <section id="comingsoon"> </section>
-       <Link to={`/products/${artist}`}> <button id="randomButton">{artist}</button></Link>
+        <div></div>
+        <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>
+        <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>
         <Footer />
         </React.Fragment>
     )
