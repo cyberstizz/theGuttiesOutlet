@@ -17,7 +17,10 @@ import { useState } from 'react';
         const theArtist = formData;
 
         const postRequest = await fetch(`http://localhost:5001/products/${theArtist}`, {
-              method: 'DELETE'
+             header: {
+              'Access-Control-Allow-Origin': true
+             },
+            method: 'DELETE'
         });
 
         const deletion = await postRequest.text();

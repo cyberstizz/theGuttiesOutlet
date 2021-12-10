@@ -93,6 +93,9 @@ console.log(myTest.rows[0])
  
 app.delete('/products/:artist',  async (req, res, next)=> {
  
+  res.header("Access-Control-Allow-Origin", "*");
+
+
 console.log('--uh ohh a delete request just came in! I"ll tell you how it goes')
  
  const { artist } = req.params;
@@ -109,7 +112,7 @@ console.log('--uh ohh a delete request just came in! I"ll tell you how it goes')
     console.log('--ok I made the query, if you"re reading this its to late.')
  
  console.log(`--Done! ok since my part here is finished, I will send the response now btw `)
- res.status(204).send();
+//  res.redirect('http://localhost:3000/');
 } catch(err){
    console.log(err)
  }

@@ -1,0 +1,9 @@
+.entireCard{
+    position: absolute;
+    margin-top: 40vh;
+    margin-left: 10vw;
+    height: 50vh;
+    width: 45vw;
+    border-radius: 12px;
+    background-color: rgb(221, 221, 221);
+}
