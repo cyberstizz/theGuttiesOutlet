@@ -33,7 +33,6 @@ const [artist, setArtist] = useState('')
         <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>
 
         </div>
-        <Footer />
         </React.Fragment>
     )
 }

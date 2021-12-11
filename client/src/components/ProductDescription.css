@@ -1,0 +1,23 @@
+
+
+#fullPageBlock{
+display: flex;
+flex-direction: column;
+}
+
+.topBlock{
+height: 40vh;
+width: 95vw;
+border: solid 4px green;
+margin: 0 auto;
+}
+
+.middleBlock{
+    height: 40vh;
+    width: 100vw;
+}
+
+.bottomBlock{
+    height: 20vh;
+    width: 100vw;
+}

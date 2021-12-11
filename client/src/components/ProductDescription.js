@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Header from './Header';
+import './ProductDescription.css';
 
 
 
@@ -31,9 +33,16 @@ const ProductDescription = () => {
 
     return (
         <React.Fragment>
+            <Header />
         <div>{data}</div>
-     <Link to='/CreatePage'><button type='submit'>Create Artists</button></Link>
-     <Link to='/DeletePage'><button type='submit'>Delete Artists</button></Link>
+        <main id="fullPageBlock">
+
+        <section className="topBlock"></section>
+        <section className="middleBlock"></section>
+        <section className="bottomBlock"></section>
+
+
+        </main>
 
         </React.Fragment>
 

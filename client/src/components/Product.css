@@ -10,9 +10,7 @@
 
 .entireCard{
     position: relative;
-    margin-top: 3vh;
-    margin-left: .5vw;
-    margin-right: .5vw;
+    margin: 4vh 1vw;
     height: 50vh;
     width: 30vw;
     text-decoration: none;
@@ -28,9 +26,7 @@
 
  .entireCard:hover{
     position: relative;
-    margin-top: 3vh;
-    margin-left: .5vw;
-    margin-right: .5vw;
+    margin: 3vh 1vw;
     height: 50vh;
     width: 30vw;
     border: solid #0D2A57 2px;

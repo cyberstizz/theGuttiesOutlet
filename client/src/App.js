@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import ProductDescription from './components/ProductDescription';
 import CreatePage from './components/CreatePage';
 import DeletePage from './components/DeletePage';
+import Footer from './components/Footer';
 
 class App extends Component {
 state = {
@@ -27,6 +28,7 @@ state = {
   render() {
     return (
         <Router>
+          
         <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products/:productId' element={<ProductDescription />} />
@@ -34,6 +36,7 @@ state = {
         <Route path='/deletePage' element={<DeletePage />} />
 
         </Routes>
+        <Footer />
         </Router>
     );
   }
