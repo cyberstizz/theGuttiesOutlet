@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Permanent+Marker&display=swap');
 
 #headerblock{
-    position: fixed;
+    position: sticky;
     display: flex;
     flex-direction: row;
     background-color: #0D2A57;

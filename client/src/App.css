@@ -21,3 +21,15 @@
     font-family: 'Permanent Marker', cursive;
     color: black;
 }
+
+.productsContainer{
+    position: relative;
+    display: inline-flex;
+    flex-flow: wrap;
+    border: 2px solid #B48B22;
+    width: 95vw;
+    height: 200vh;
+    overflow: visible;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}

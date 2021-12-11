@@ -25,9 +25,12 @@ const [artist, setArtist] = useState('')
     return(
         <React.Fragment>
         <Header />
-        <div>
+        <div className='productsContainer'>
         <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>
         <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>
+        <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link> 
+        <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>
+
         </div>
         <Footer />
         </React.Fragment>

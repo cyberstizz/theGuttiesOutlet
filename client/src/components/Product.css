@@ -10,12 +10,13 @@
 
 .entireCard{
     position: relative;
-    margin-top: 40vh;
-    margin-left: 10vw;
+    margin-top: 15vh;
+    margin-left: 1vw;
     height: 50vh;
     width: 30vw;
     text-decoration: none;
     border-radius: 12px;
+    border: solid 2px #0D2A57;
     background-color: #0D2A57;
     font-family: 'Permanent Marker', cursive;
     color: white;
@@ -25,12 +26,13 @@
     margin-bottom: 10px;
 }
 
-:hover .entireCard{
+ .entireCard:hover{
     position: relative;
-    margin-top: 40vh;
-    margin-left: 10vw;
+    margin-top: 15vh;
+    margin-left: 1vw;
     height: 50vh;
     width: 30vw;
+    border: solid #0D2A57 2px;
     text-decoration: none;
     border-radius: 12px;
     background-color: #B48B22;
