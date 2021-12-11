@@ -10,8 +10,9 @@
 
 .entireCard{
     position: relative;
-    margin-top: 15vh;
-    margin-left: 1vw;
+    margin-top: 3vh;
+    margin-left: .5vw;
+    margin-right: .5vw;
     height: 50vh;
     width: 30vw;
     text-decoration: none;
@@ -23,13 +24,13 @@
     font-size: 17px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
 }
 
  .entireCard:hover{
     position: relative;
-    margin-top: 15vh;
-    margin-left: 1vw;
+    margin-top: 3vh;
+    margin-left: .5vw;
+    margin-right: .5vw;
     height: 50vh;
     width: 30vw;
     border: solid #0D2A57 2px;

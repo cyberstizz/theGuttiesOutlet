@@ -25,6 +25,7 @@ const [artist, setArtist] = useState('')
     return(
         <React.Fragment>
         <Header />
+        <div className='productsListHeader'></div>
         <div className='productsContainer'>
         <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>
         <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>

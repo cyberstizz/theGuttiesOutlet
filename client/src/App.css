@@ -26,10 +26,18 @@
     position: relative;
     display: inline-flex;
     flex-flow: wrap;
-    border: 2px solid #B48B22;
     width: 95vw;
     height: 200vh;
     overflow: visible;
-    margin-left: 1vw;
+    margin-left: .5vw;
     margin-top: 2vh;
+}
+
+.productsListHeader{
+    height: 10vh;
+    width: 10vw;
+    margin: 0 auto;
+    background-image: url('./guttieslogoblue.png');
+    background-repeat: no-repeat;
+    background-position: center;
 }
