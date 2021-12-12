@@ -12,7 +12,7 @@ flex-direction: column;
 width: 95vw;
 /* border: solid 4px #B48B22; */
 margin: 0 auto;
-overflow: hidden;
+overflow: wrap;
 display: inline-flex;
 flex-direction: row;
 flex-flow: wrap;
@@ -24,6 +24,7 @@ flex-flow: wrap;
     margin-left: 3vw;
     margin-top: 3vh;
     margin-bottom: 3vh;
+    border: #0D2A57 1px solid;
 }
 
 .productPurchaseSection{
@@ -44,28 +45,39 @@ flex-flow: wrap;
     width: 100vw;
 }
 
+#headline{
+    text-align: center;
+    margin-left: auto;
+}
+
 .purchaseSections{
 margin-top: 3vh;
 font-family: 'Permanent Marker', cursive;
+word-wrap: break-word;
+overflow: wrap;
 font-size: 30px;
 color: white;
+text-align: left;
+margin-left: 5vw;
 }
 
 .buttonsDiv{
 display: flex;
 flex-direction: column;
-height: 15vh;
+height: 17vh;
 width: 20vw;
 align-items: center;
 margin: 0 auto;
 }
 #purchaseButtons{
-    height: 5vh;
+    height: 7vh;
     width: 18vw;
     margin-top: 2vh;
-    border-radius: 5px;
     background-color: #B48B22;
     color: #0D2A57;
+    border: solid 2px #0D2A57;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 27px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -73,9 +85,13 @@ margin: 0 auto;
 }
 
 #price{
+    display: flex;
+    flex-direction: row;
+    margin-right: 3vw;
+    margin-left: 7vw;
     color: #B48B22;
-    letter-spacing: 3px;
-    font-weight: 700;
-    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    font-size: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

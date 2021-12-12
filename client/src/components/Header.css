@@ -132,3 +132,8 @@
     font-size: 30px;
     margin-top: 3vh;
 }
+
+#settingsLogoutBlock{
+    width: 10vw;
+    margin-left: 8vw;
+}

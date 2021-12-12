@@ -14,6 +14,11 @@ const ProductDescription = () => {
 
     const [data, setData] = useState();
 
+    const [price, setPrice] = useState();
+
+    const [quantity, setQuantity] = useState();
+
+
 
     useEffect(() => {
 
@@ -44,10 +49,20 @@ const ProductDescription = () => {
             
             <section className="productPurchaseSection">
             <div className="rightSectionBlock">
-                <div className="purchaseSections">Brand new Yeezy's</div>
-                <div className="purchaseSections">This is a cool sneaker made by a cool rapper so you should buy it!</div>
-                <div className="purchaseSections" id="price">$659.99</div>
-                <div className="purchaseSections">Estimated Delivery: January 9th, 2022</div>
+                <div className="purchaseSections" id="headline">Brand new Yeezy's</div>
+                <div className="purchaseSections">new sneaker made by a cool rapper!</div>
+                <div className="purchaseSections" id="price"><div style={{color: 'white', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Price:</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}> $659.99</span></div>
+                <div className="purchaseSections" style={{marginLeft: '9vw'}}> Quantity:
+                      <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+
+                      </select>
+                </div>
+                <div className="purchaseSections">Est. Delivery: January 9th, 2022</div>
                 <div className="buttonsDiv"><button id="purchaseButtons">Add to cart</button>  <button id="purchaseButtons">Buy now</button> </div>
                 <div className="purchaseSections"></div>
 

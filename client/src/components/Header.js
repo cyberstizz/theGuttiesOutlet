@@ -76,9 +76,16 @@ import 'font-awesome/css/font-awesome.min.css';
             <div className='Right_Header'>
            
 
-
+            <div id="settingsLogoutBlock">
                 {/* the right header will have the cart icon and the login and logout buttons */}
+                <div id='signIn'> <i class="fa fa-cog" aria-hidden="true"></i> Settings </div>
+                
+            
+                
+                {/* cart icon */}
 
+               <span className="cart-icon"><i class="fa fa-lock" aria-hidden="true"></i>    Logout</span>
+           </div>
             </div>
 
         </header>
