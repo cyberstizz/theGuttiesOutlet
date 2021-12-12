@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import './ProductDescription.css';
+import yeey from '../yeey.png';
 
 
 
@@ -37,7 +38,25 @@ const ProductDescription = () => {
         <div>{data}</div>
         <main id="fullPageBlock">
 
-        <section className="topBlock"></section>
+        <section className="topBlock">
+            {/*this is the picture*/}
+            <img className="productPic" src={yeey} />
+            
+            <section className="productPurchaseSection">
+            <div className="rightSectionBlock">
+                <div className="purchaseSections">Brand new Yeezy's</div>
+                <div className="purchaseSections">This is a cool sneaker made by a cool rapper so you should buy it!</div>
+                <div className="purchaseSections" id="price">$659.99</div>
+                <div className="purchaseSections">Estimated Delivery: January 9th, 2022</div>
+                <div className="buttonsDiv"><button id="purchaseButtons">Add to cart</button>  <button id="purchaseButtons">Buy now</button> </div>
+                <div className="purchaseSections"></div>
+
+            </div>
+
+            </section>
+        </section>
+
+
         <section className="middleBlock"></section>
         <section className="bottomBlock"></section>
 

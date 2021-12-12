@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Permanent+Marker&display=swap');
 
 
 #fullPageBlock{
@@ -6,10 +9,29 @@ flex-direction: column;
 }
 
 .topBlock{
-height: 40vh;
 width: 95vw;
-border: solid 4px green;
+/* border: solid 4px #B48B22; */
 margin: 0 auto;
+overflow: hidden;
+display: inline-flex;
+flex-direction: row;
+flex-flow: wrap;
+}
+
+.productPic{
+    width: 45vw;
+    height: 65vh;
+    margin-left: 3vw;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.productPurchaseSection{
+    width: 45vw;
+    height: 65vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    background-color: #0D2A57;
 }
 
 .middleBlock{
@@ -20,4 +42,40 @@ margin: 0 auto;
 .bottomBlock{
     height: 20vh;
     width: 100vw;
+}
+
+.purchaseSections{
+margin-top: 3vh;
+font-family: 'Permanent Marker', cursive;
+font-size: 30px;
+color: white;
+}
+
+.buttonsDiv{
+display: flex;
+flex-direction: column;
+height: 15vh;
+width: 20vw;
+align-items: center;
+margin: 0 auto;
+}
+#purchaseButtons{
+    height: 5vh;
+    width: 18vw;
+    margin-top: 2vh;
+    border-radius: 5px;
+    background-color: #B48B22;
+    color: #0D2A57;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#price{
+    color: #B48B22;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
