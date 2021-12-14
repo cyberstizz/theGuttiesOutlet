@@ -16,8 +16,20 @@ const ProductDescription = () => {
 
     const [price, setPrice] = useState();
 
+
     const [quantity, setQuantity] = useState();
 
+    
+
+    const selectChangeHandler = (event) => {
+        event.preventDefault();
+        setPrice(400)
+        setQuantity(event.target.value)
+        console.log((400 * quantity))
+
+        setPrice(400 * quantity)
+
+    }
 
 
     useEffect(() => {
@@ -37,6 +49,7 @@ const ProductDescription = () => {
 
     console.log(data)
 
+
     return (
         <React.Fragment>
             <Header />
@@ -51,9 +64,9 @@ const ProductDescription = () => {
             <div className="rightSectionBlock">
                 <div className="purchaseSections" id="headline">Brand new Yeezy's</div>
                 <div className="purchaseSections">new sneaker made by a cool rapper!</div>
-                <div className="purchaseSections" id="price"><div style={{color: 'white', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Price:</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}> $659.99</span></div>
+                <div className="purchaseSections" id="price"><div style={{color: 'white', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Price:</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}> ${price}</span></div>
                 <div className="purchaseSections" style={{marginLeft: '9vw'}}> Quantity:
-                      <select>
+                      <select onChange={selectChangeHandler} style={{marginLeft: '1vw',backgroundColor:'#0D2A57', color: '#B48B22'}}>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -62,8 +75,8 @@ const ProductDescription = () => {
 
                       </select>
                 </div>
-                <div className="purchaseSections">Est. Delivery: January 9th, 2022</div>
-                <div className="buttonsDiv"><button id="purchaseButtons">Add to cart</button>  <button id="purchaseButtons">Buy now</button> </div>
+                <div className="purchaseSections">Est. Delivery: <span id="date">January 9th, 2022</span></div>
+                <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtons">Add to cart</button></Link>  <button id="purchaseButtons">Buy now</button> </div>
                 <div className="purchaseSections"></div>
 
             </div>

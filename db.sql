@@ -84,3 +84,12 @@ insert into cos(name, age, skill) values('Drama', 33, 8);insert into cos(name, a
 insert into cos(name, age, skill) values('Taz', 32, 5);insert into cos(name, age, skill) values('Stizz', 37, 10);
 
 insert into cos(name, age, skill) values('Z', 30, 7);
+
+-- more test entries to test how the bytea fits in my components
+
+create table pictester(
+    sneaker bytea not null,
+    name varchar(20) unique not null,
+    price integer not null,
+    description varchar(100) not null
+);

@@ -6,6 +6,9 @@ import ProductDescription from './components/ProductDescription';
 import CreatePage from './components/CreatePage';
 import DeletePage from './components/DeletePage';
 import Footer from './components/Footer';
+import Cart from './components/Cart';
+import TestPage from './components/testPage';
+import TestView from './components/TestView';
 
 class App extends Component {
 state = {
@@ -32,8 +35,15 @@ state = {
         <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products/:productId' element={<ProductDescription />} />
-        <Route path='/createPage' element={<CreatePage />} />
+        <Route path='/
+        createPage' element={<CreatePage />} />
         <Route path='/deletePage' element={<DeletePage />} />
+        <Route path='products/:user/Cart/:user' element={<Cart />} />
+        <Route path='/test' element={<TestPage />} />
+        <Route path='/testview' element={<TestView />} />
+
+
+
 
         </Routes>
         <Footer />

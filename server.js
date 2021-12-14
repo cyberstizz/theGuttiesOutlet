@@ -142,6 +142,37 @@ app.post('/products/:artist',  async (req, res, next)=> {
  })
  
  
+
+
+ app.post('/test',  async (req, res, next)=> {
+ 
+ 
+ 
+  console.log('everyday a request is born!')
+     const { pic, name, price, description } = req.body;
+ 
+     console.log(`this is the name I destructured from the request ${name}`)
+  
+    console.log(req.body)
+     try{
+     const newLife = await pool.query('insert into pictester(sneaker, name, price, description) values($1, $2, $3, $4)', [pic, name, price, description])
+  
+    console.log('got those out of the way')
+    console.log(`${name} has been added to the system`)
+    res.status(201).send(`${name} has been added to the system`);
+  } catch(err){
+      console.log(err)
+    }
+  
+  
+  })
+  
+
+
+
+
+
+
  
  
 // This displays message that the server is running and listening to specified port
