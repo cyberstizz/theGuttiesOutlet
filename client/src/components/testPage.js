@@ -17,16 +17,36 @@ import './testPage.css';
   // function to set the state of the name field
 
 
-  const picUploadHandler = (image) => {
+  const picUploadHandler = async (event) => {
 
-    let thePicBinary = image;
+    let thePicBinary = event.target.files.onlyFile
+    console.log(thePicBinary)
+
+
 
     console.log(thePicBinary)
+
+    const base64 = await btoa(thePicBinary)
 
     setPic(thePicBinary);
     console.log(pic)
 
-  }
+  };
+
+  // const convertBase64 = async (file) => {
+  //   return new Promise((res, rej) => {
+  //     const fileReader = new FileReader();
+  //     const conversion = fileReader.readAsDataURL(file)
+
+  //     fileReader.onload = () => {
+  //       res(fileReader.result)
+  //     } 
+      
+  //     fileReader.onerror = (error) => {
+  //       rej(error)
+  //     }
+  //   })
+  // }
 
   const handleNameChange = (event) => {
       event.preventDefault();
@@ -94,7 +114,7 @@ const handleDescriptionChange = (event) => {
         </form> */}
         <div className='cartBlock'>test page
         <form onSubmit={handleSubmit}>
-            <input type='file' onChange={picUploadHandler}/>
+            <input type='file' onChange={picUploadHandler} name='onlyFile'/>
             <input type='text'  placeholder='name' onChange={handleNameChange}/>
             <input type='text' placeholder='price' onChange={handlePriceChange}/>
             <input type='text' placeholder='description' onChange={handleDescriptionChange}/>

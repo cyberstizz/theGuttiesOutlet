@@ -35,8 +35,7 @@ state = {
         <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products/:productId' element={<ProductDescription />} />
-        <Route path='/
-        createPage' element={<CreatePage />} />
+        <Route path='/createPage' element={<CreatePage />} />
         <Route path='/deletePage' element={<DeletePage />} />
         <Route path='products/:user/Cart/:user' element={<Cart />} />
         <Route path='/test' element={<TestPage />} />

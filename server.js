@@ -6,6 +6,8 @@ const port = process.env.PORT || 5001;
 const path = require('path')
 const pool = require('./db');
 const cors = require('cors');
+const fileUpload = require('express-fileupload')
+const { encode } = require('punycode');
 // initiate use of those variables through middleware (or app.use)
  
 // initializing the entry point of the index.html from the build folder if in production
@@ -21,6 +23,8 @@ app.use(express.json());
 // sending all routes to its appropriate express router
 // app.use('/products', productRouter);
  
+
+app.use(fileUpload())
  
 // create GET route for home page
  
@@ -58,42 +62,31 @@ app.get('/', async (req, res, next) => {
    const myTest = await pool.query(`select name from cos where age = ${randomArtist}`);
  
 console.log(myTest.rows[0].name);
- res.send(myTest.rows[0].name);
+ return res.send(myTest.rows[0].name);
  
 //  console.log(myTest.rows[0])
  } catch(err){
    console.log(err.message);
  }
  
- 
- 
- next();
 });
  
  
-app.get('/:productId', async (req, res, next) => {
+app.get('/products/:productId', async (req, res, next) => {
  const { productId } = req.params;
- 
  console.log(productId)
- 
  try{
    const myTest = await pool.query('select * from cos where name = $1', [productId]);
 console.log(myTest.rows[0])
- res.send(myTest.rows[0]);
- 
+ return res.send(myTest.rows[0]);
 //  console.log(myTest.rows[0])
  } catch(err){
    console.log(err.message);
  }
- 
- 
- 
- next();
 });
  
 app.delete('/products/:artist',  async (req, res, next)=> {
  
-  res.header("Access-Control-Allow-Origin", "*");
 
 
 console.log('--uh ohh a delete request just came in! I"ll tell you how it goes')
@@ -133,11 +126,10 @@ app.post('/products/:artist',  async (req, res, next)=> {
  
    console.log('got those out of the way')
    console.log(`${name} has been added to the system`)
-   res.status(201).send(`${name} has been added to the system`);
+   return res.status(201).send(`${name} has been added to the system`);
  } catch(err){
      console.log(err)
    }
- 
  
  })
  
@@ -146,12 +138,32 @@ app.post('/products/:artist',  async (req, res, next)=> {
 
  app.post('/test',  async (req, res, next)=> {
  
+  let chickenTest = 'c-stizzytheBeast'
+
+    console.log('this is a chicken test')
+
+    console.log('so basically the point of this exercise is to test encoding:')
+
+    console.log(`this a random word I put into a variable: ${chickenTest}`)
+    
+    console.log(`I also wanted to see if there is something in req.files so here is what I got: ${req.pic}`)
+
+    const encodedIt = btoa(chickenTest);
+
+    console.log(`now this is the base 64 encoded version the above variable: ${encodedIt}`)
+
+    console.log(`now this is the decoded version which should be same word: ${atob(encodedIt)}`)
+
+    console.log('now back to regularly scheduled programming......')
  
  
   console.log('everyday a request is born!')
      const { pic, name, price, description } = req.body;
  
      console.log(`this is the name I destructured from the request ${name}`)
+
+     console.log(`this is the pic it should be encoded: ${pic}`)
+
   
     console.log(req.body)
      try{
@@ -159,12 +171,22 @@ app.post('/products/:artist',  async (req, res, next)=> {
   
     console.log('got those out of the way')
     console.log(`${name} has been added to the system`)
-    res.status(201).send(`${name} has been added to the system`);
+    return res.status(201).send(`${name} has been added to the system`);
   } catch(err){
       console.log(err)
-    }
-  
-  
+    }  
+  });
+
+  app.get('/test', async (req, res, next) => {
+    console.log('a request came into the test route')
+    try{
+    const getem = await pool.query('select * from pictester where price = 0')
+      const answer = await getem.rows[0].sneaker
+    console.log(answer)
+    return res.send(answer)
+  } catch(err){
+    console.log(err);
+  }
   })
   
 
