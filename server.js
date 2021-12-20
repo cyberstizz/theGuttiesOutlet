@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === 'production') {
   // })
 }
 // app.use(express.static(path.join(__dirname, '/client')));
+app.use(express.static(path.join(__dirname, 'client/build')))
  
 // enabling cors
 app.use(cors());
