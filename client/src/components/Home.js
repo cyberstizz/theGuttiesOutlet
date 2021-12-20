@@ -12,7 +12,7 @@ const [artist, setArtist] = useState('')
     useEffect(() => {
         
     const mountCall = async () => {
-    const response = await fetch('https://guttiesoutlet.herokuapp.com/');
+    const response = await fetch('/');
     const body = await response.text();
     setArtist(body)
     console.log(body)
