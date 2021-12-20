@@ -12,7 +12,7 @@ const { encode } = require('punycode');
  
 // initializing the entry point of the index.html from the build folder if in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('./client/build'))
+  app.use(express.static('./client'))
 
   // app.get('*', (req, res) => {
   //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')) // relative path
