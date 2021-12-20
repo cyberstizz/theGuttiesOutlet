@@ -12,7 +12,7 @@ const [artist, setArtist] = useState('')
     useEffect(() => {
         
     const mountCall = async () => {
-    const response = await fetch('http://localhost:5001/');
+    const response = await fetch('/');
     const body = await response.text();
     setArtist(body)
     console.log(body)
