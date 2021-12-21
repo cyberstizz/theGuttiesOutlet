@@ -25,10 +25,19 @@ ssl: {
     rejectUnauthorized: false
   }
 });
+
 }
-  let pool = new Pool(localConfig)
+  // let pool = new Pool(localConfig)
 //exporting the variable which represents the configured reference to the --
 //database for use by the server :)
+
+let pool = new Pool({connectionString: proConfig,
+  ssl: {
+      rejectUnauthorized: false
+    }
+  });
+  
+
 
 module.exports = pool;
 
