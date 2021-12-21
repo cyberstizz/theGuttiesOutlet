@@ -20,7 +20,7 @@ const localConfig = {
 
 if(process.env.NODE_ENV === "production"){
 
-let pool = new Pool({connectionString: process.env.NODE_ENV === "production" ? proConfig : localConfig,
+let pool = new Pool({connectionString: localConfig,
 ssl: {
     rejectUnauthorized: false
   }
