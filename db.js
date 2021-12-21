@@ -18,26 +18,19 @@ const localConfig = {
 
 //setting up the config with the correct user, credentials, database and port with turnery logic
 
-if(process.env.NODE_ENV === "production"){
 
-let pool = new Pool({connectionString: proConfig,
+let pool = process.env.NODE_ENV === "production" ? new Pool({connectionString: proConfig,
 ssl: {
     rejectUnauthorized: false
   }
-});
+}) : new Pool(localConfig); 
 
-}
+
   // let pool = new Pool(localConfig)
 //exporting the variable which represents the configured reference to the --
 //database for use by the server :)
 
-let pool = new Pool({connectionString: proConfig,
-  ssl: {
-      rejectUnauthorized: false
-    }
-  });
-  
+
 
 
 module.exports = pool;
-

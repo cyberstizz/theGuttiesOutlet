@@ -59,7 +59,7 @@ app.get('/', async (req, res, next) => {
 
   const fullList = fullListCall.rows;
 
-  console.log(`okay so these are the results that I have reseived ${fullList}`)
+  console.log(`okay so these are the results that I have received ${fullList}`)
 
   const normalFullListNames = fullList.map(item => item.name)
 
