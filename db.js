@@ -12,18 +12,21 @@ const localConfig = {
     user: "postgres",
     password: "waterfall",
     host: "localhost",
-    database: "cos",
+    database: "postgres",
     port: 5432
 }
 
 //setting up the config with the correct user, credentials, database and port with turnery logic
 
-const pool = new Pool({connectionString: process.env.NODE_ENV === "production" ? proConfig : localConfig,
+if(process.env.NODE_ENV === "production"){
+
+let pool = new Pool({connectionString: process.env.NODE_ENV === "production" ? proConfig : localConfig,
 ssl: {
     rejectUnauthorized: false
   }
 });
-
+}
+  let pool = new Pool(localConfig)
 //exporting the variable which represents the configured reference to the --
 //database for use by the server :)
 

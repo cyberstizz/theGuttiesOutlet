@@ -18,9 +18,10 @@ if (process.env.NODE_ENV === 'production') {
   //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')) // relative path
   // })
 }
+
+
 // app.use(express.static(path.join(__dirname, '/client')));
-app.use(express.static('client/build'))
- 
+app.use(express.static(path.join(__dirname, '/client')));
 // enabling cors
 app.use(cors());
  
@@ -45,13 +46,20 @@ app.use(fileUpload())
 app.get('/', async (req, res, next) => {
 
 
- 
- console.log('ok a request came into the server')
- try{
+  try{
 
-  const fullListCall = await pool.query('select * from cos');
+  console.log('ok a request came into the server')
 
-  const fullList = await fullListCall.rows;
+
+  console.log('okay lets test this line by line, this first line will be my directly befor the first database call')
+
+  const fullListCall = await pool.query('select * from cos')
+
+  console.log('okay I just queried the database for the first time succesfully, hopefully that char thing hasnt happened yet')
+
+  const fullList = fullListCall.rows;
+
+  console.log(`okay so these are the results that I have reseived ${fullList}`)
 
   const normalFullListNames = fullList.map(item => item.name)
 
@@ -133,7 +141,7 @@ app.post('/products/:artist',  async (req, res, next)=> {
  
    console.log('got those out of the way')
    console.log(`${name} has been added to the system`)
-   return res.status(201).send(`${name} has been added to the system`);
+    res.status(201).send(`${name} has been added to the system`);
  } catch(err){
      console.log(err)
    }
@@ -178,7 +186,7 @@ app.post('/products/:artist',  async (req, res, next)=> {
   
     console.log('got those out of the way')
     console.log(`${name} has been added to the system`)
-    return res.status(201).send(`${name} has been added to the system`);
+     res.status(201).send(`${name} has been added to the system`);
   } catch(err){
       console.log(err)
     }  
@@ -190,7 +198,7 @@ app.post('/products/:artist',  async (req, res, next)=> {
     const getem = await pool.query('select * from pictester where price = 0')
       const answer = await getem.rows[0].sneaker
     console.log(answer)
-    return res.send(answer)
+     res.send(answer)
   } catch(err){
     console.log(err);
   }
