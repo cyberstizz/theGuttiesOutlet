@@ -17,11 +17,10 @@ if (process.env.NODE_ENV === 'production') {
   // app.get('*', (req, res) => {
   //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')) // relative path
   // })
-}
-
-
+} else{
 // app.use(express.static(path.join(__dirname, '/client')));
 app.use(express.static(path.join(__dirname, '/client')));
+}
 // enabling cors
 app.use(cors());
  
