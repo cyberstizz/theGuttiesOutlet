@@ -12,7 +12,7 @@ const [artist, setArtist] = useState('')
     useEffect(() => {
         
     const mountCall = async () => {
-    const response = await fetch('/');
+    const response = await fetch('/home');
     const body = await response.text();
     setArtist(body)
     console.log(body)
