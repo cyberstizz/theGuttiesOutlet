@@ -36,7 +36,7 @@ const ProductDescription = () => {
 
 
         const callTheDatabase = async () => {
-            const firstCall = await fetch(`http://localhost:5001/products/${productId}`)
+            const firstCall = await fetch(`/products/${productId}`)
 
             const theResponse = await firstCall.text()
 
