@@ -4,7 +4,9 @@
 const Pool = require('pg').Pool;
 
 //creating a variable representing the heroku environment variables for postgres
-const proConfig = process.env.DATABASE_URL
+const proConfig ={
+  connectionString: process.env.DATABASE_URL
+};
 
 //creating a variable representing the local config for postgres
 
@@ -19,11 +21,7 @@ const localConfig = {
 //setting up the config with the correct user, credentials, database and port with turnery logic
 
 
-let pool = process.env.NODE_ENV === "production" ? new Pool({connectionString: proConfig,
-ssl: {
-    rejectUnauthorized: false
-  }
-}) : new Pool(localConfig); 
+let pool = new Pool(process.env.NODE_ENV === "production" ? proConfig : localConfig); 
 
 
   // let pool = new Pool(localConfig)
