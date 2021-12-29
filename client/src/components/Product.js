@@ -11,7 +11,7 @@ const Product = (props) => {
 
     return(
         // <Link to={`/products/${name}`}> </link>
-        <div className="entireCard" href={`/products/${name}`} style={{ textDecoration: 'none' }}>
+        <div className="entireCard" href={`/products/${theName}`} style={{ textDecoration: 'none' }}>
           
             <img src={thePath}/>
         <section id="nameSpace">{theName}</section>
