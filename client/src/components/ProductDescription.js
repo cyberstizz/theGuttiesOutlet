@@ -74,7 +74,7 @@ const ProductDescription = () => {
 
         <section className="topBlock">
             {/*this is the picture*/}
-            <img className="productPic" src={yeey} />
+            <img className="productPic" src={SneakerPath} />
             
             <section className="productPurchaseSection">
             <div className="rightSectionBlock">
