@@ -39,7 +39,6 @@ state = {
         <Route path='/deletePage' element={<DeletePage />} />
         <Route path='products/:user/Cart/:user' element={<Cart />} />
         <Route path='/test' element={<TestPage />} />
-        <Route path='/testview' element={<TestView />} />
 
 
 

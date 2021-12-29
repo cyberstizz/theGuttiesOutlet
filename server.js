@@ -221,17 +221,7 @@ app.post('/products/:artist',  async (req, res, next)=> {
 
   // finally the get route for the test
 
-  app.get('/test', async (req, res, next) => {
-    console.log('a request came into the test route')
-    try{
-      const getem = await pool.query("select * from pictester where name = 'levelup'")
-      const answer =  getem.rows[0].sneaker
-      console.log(answer)
-      res.send(answer)
-  } catch(err){
-    console.log(err);
-  }
-  })
+ 
   
 
 
