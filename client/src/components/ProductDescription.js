@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import './ProductDescription.css';
 import yeey from '../yeey.png';
+import axios from 'axios';
 
 
 
@@ -12,10 +13,13 @@ const ProductDescription = () => {
 
     const { productId } = useParams();
 
-    const [data, setData] = useState();
+    const [Name, setName] = useState('');
 
-    const [price, setPrice] = useState();
+    const [Description, setDescription] = useState('');
 
+    const [Price, setPrice] = useState();
+
+    const [SneakerPath, setSneakerPath] = useState('');
 
     const [quantity, setQuantity] = useState();
 
@@ -27,7 +31,7 @@ const ProductDescription = () => {
         setQuantity(event.target.value)
         console.log((400 * quantity))
 
-        setPrice(400 * quantity)
+        setPrice(quantity != 1 ? (400 * quantity) : 400)
 
     }
 
@@ -36,25 +40,36 @@ const ProductDescription = () => {
 
 
         const callTheDatabase = async () => {
-            const firstCall = await fetch(`/products/${productId}`)
 
-            const theResponse = await firstCall.text()
+            // const response = await axios.get('/home');
 
-            console.log(theResponse)
-            setData(theResponse);
+            // const responseComplete = await response.data;
+        
+            // console.log(responseComplete)
+            // const { theName, thePrice, theDescription, theSneakerPath } = responseComplete;
+            
+            const firstCall = await axios.get(`/products/${productId}`)
+            const firstCallResponse = await firstCall.data;
+
+            const { theName, thePrice, theDescription, theSneakerPath } = firstCallResponse;
+
+            console.log(theName)
+            setSneakerPath(theSneakerPath);
+            setPrice(thePrice);
+            setDescription(theDescription);
+            setSneakerPath(theSneakerPath);
         }
 
         callTheDatabase()
     })
 
 
-    console.log(data)
 
 
     return (
         <React.Fragment>
             <Header />
-        <div>{data}</div>
+        <div>{Name}</div>
         <main id="fullPageBlock">
 
         <section className="topBlock">
@@ -63,9 +78,9 @@ const ProductDescription = () => {
             
             <section className="productPurchaseSection">
             <div className="rightSectionBlock">
-                <div className="purchaseSections" id="headline">Brand new Yeezy's</div>
-                <div className="purchaseSections">new sneaker made by a cool rapper!</div>
-                <div className="purchaseSections" id="price"><div style={{color: 'white', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Price:</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}> ${price}</span></div>
+                <div className="purchaseSections" id="headline">{Name}</div>
+                <div className="purchaseSections">{Description}</div>
+                <div className="purchaseSections" id="price"><div style={{color: 'white', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Price:</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}>{Price}</span></div>
                 <div className="purchaseSections" style={{marginLeft: '9vw'}}> Quantity:
                       <select onChange={selectChangeHandler} style={{marginLeft: '1vw',backgroundColor:'#0D2A57', color: '#B48B22'}}>
                         <option>1</option>

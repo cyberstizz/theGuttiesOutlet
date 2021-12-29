@@ -5,17 +5,37 @@ import { useEffect, useState } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
 import Product from './Product';
+import axios from 'axios';
 
 const Home = () => {
 
-const [artist, setArtist] = useState('')
+const [Name, setName] = useState('')
+
+const [Price, setPrice] = useState()
+
+const [Description, setDescription] = useState('')
+
+const [Path, setPath] = useState('')
+
     useEffect(() => {
         
     const mountCall = async () => {
-    const response = await fetch('/home');
-    const body = await response.text();
-    setArtist(body)
-    console.log(body)
+    const response = await axios.get('/home');
+
+    const responseComplete = await response.data;
+
+    console.log(responseComplete)
+
+
+    const { theName, thePrice, theDescription, theSneakerPath } = responseComplete;
+   
+    setName(theName)
+    setPrice(thePrice)
+    setDescription(theDescription)
+    setPath(theSneakerPath)
+
+
+    console.log(theDescription)
     }
 
     mountCall();
@@ -27,10 +47,10 @@ const [artist, setArtist] = useState('')
         <Header />
         <div className='productsListHeader'></div>
         <div className='productsContainer'>
-        <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>
-        <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>
-        <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link> 
-        <Link to={`/products/${artist}`}><Product name={artist} age={40} skill={10}/></Link>
+        <Link to={`/products/${Name}`}><Product theName={Name} thePrice={Price} theDescription={Description} thePath={Path}/></Link>
+        <Link to={`/products/${Name}`}><Product theName={Name} thePrice={Price} theDescription={Description} thePath={Path}/></Link>
+        <Link to={`/products/${Name}`}><Product theName={Name} thePrice={Price} theDescription={Description} thePath={Path}/></Link>
+        <Link to={`/products/${Name}`}><Product theName={Name} thePrice={Price} theDescription={Description} thePath={Path}/></Link>
 
         </div>
         </React.Fragment>

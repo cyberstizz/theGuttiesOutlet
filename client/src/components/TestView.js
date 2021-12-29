@@ -17,16 +17,12 @@ const TestView = () => {
 const picFetcher = async () => {
     const backendCall = await fetch('http://localhost:5001/test')
 
-    const responseBack =  await backendCall.text();
+    const responseBack =   backendCall.text();
 
-    console.log(responseBack);
+    console.log(backendCall);
 
 
-    const theStringConverted = /*Buffer.from(responseBack, 'base64')*/ atob(responseBack)
-
-    console.log(theStringConverted);
-
-    setPic(theStringConverted)
+    setPic(backendCall)
 
 
 
@@ -42,7 +38,7 @@ return picFetcher();
     return(
         <React.Fragment>
         <div>water</div>
-        <img src={pic} className="theImport"/>
+        <img src='../public/pics/lil ceasars' className="theImport"/>
 
         </React.Fragment>
     )

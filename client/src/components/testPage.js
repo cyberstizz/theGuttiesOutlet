@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Cart.css';
 import { Link } from 'react-router-dom';
 import './testPage.css';
+import axios from 'axios';
+
 
 
  const TestPage = () => {
@@ -12,24 +14,40 @@ import './testPage.css';
 
   const [description, setDescription] = useState();
 
-  const [pic, setPic] = useState();
+  const [pic, setPic] = useState('');
+
+  const [picName, setPicName] = useState('');
+
+  const [uploadedPic, setuploadedPic] = useState()
+
+  const [FileName, setFileName] = useState('');
+
+  const [FilePath, setFilePath] = useState('');
+
+
+
 
   // function to set the state of the name field
 
 
   const picUploadHandler = async (event) => {
 
-    let thePicBinary = event.target.files.onlyFile
-    console.log(thePicBinary)
+    let thePic = event.target.files[0]
+    let thePicName = event.target.files[0].name
 
 
 
-    console.log(thePicBinary)
+    console.log(thePic)
 
-    const base64 = await btoa(thePicBinary)
+    setPic(thePic)
+    setPicName(thePicName)
 
-    setPic(thePicBinary);
-    console.log(pic)
+
+
+
+
+    setPic(thePic);
+    console.log(picName)
 
   };
 
@@ -59,7 +77,7 @@ import './testPage.css';
       console.log(name)
   };
 
-// function to set the state of the age field
+// function to set the state of the price field
 
   const handlePriceChange = (event) => {
     event.preventDefault();
@@ -85,20 +103,46 @@ const handleDescriptionChange = (event) => {
 }
 
      const handleSubmit = async (event) => {
-
+      //preventing the page from refreshing after submit with prevent default
         event.preventDefault();
 
+      // creating a formdata instance to send to the server efficiently
+        const formData = new FormData();
+
       console.log(`this is the name: ${name} this is the age: ${price} this is the skill: ${description}`)
-        const postRequest = await fetch('http://localhost:5001/test', {
-            method: 'POST',
-            headers: { 'Content-Type':'application/json' },
-            body: JSON.stringify({
-              pic: `${pic}`,
-              name: `${name}`,
-              price: `${price}`,
-              description: `${description}`
-            })
-        });
+      console.log(`this is the pic ${pic}, and this is the pics name ${picName}`) 
+      
+
+      //adding items to the formData instance
+      formData.append('name', name)
+      formData.append('pic', pic)
+      formData.append('price', price)
+      formData.append('description', description)
+
+      
+       //now the post request to the server
+       const postRequest = await axios.post('http://localhost:5001/test', formData, {
+            headers: { 'Content-Type':'multipart/form-data' }
+            // body: JSON.stringify({
+            //   pic: `${pic}`,
+            //   name: `${name}`,
+            //   price: `${price}`,
+            //   description: `${description}`,
+            //   data: formData
+            // })
+                  });
+
+                  console.log(postRequest.data)
+
+                  const { fileName, filePath } = postRequest.data;
+
+                  console.log(fileName)
+
+
+                  setuploadedPic(name)
+                  setFileName(fileName)
+                  setFilePath(filePath)
+
      }
 
     return(
@@ -113,14 +157,26 @@ const handleDescriptionChange = (event) => {
         
         </form> */}
         <div className='cartBlock'>test page
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
             <input type='file' onChange={picUploadHandler} name='onlyFile'/>
             <input type='text'  placeholder='name' onChange={handleNameChange}/>
             <input type='text' placeholder='price' onChange={handlePriceChange}/>
             <input type='text' placeholder='description' onChange={handleDescriptionChange}/>
             <input type='submit' />
+        </form> */}
+         {/* <form id='uploadForm' 
+               action='/test' 
+               method='post' 
+               encType="multipart/form-data"> */}
+               <form onSubmit={handleSubmit}>
+            <input type='file' onChange={picUploadHandler} name='onlyFile'/>
+            <input type='text'  name='name' placeholder='name' onChange={handleNameChange}/>
+            <input type='text' name='price' placeholder='price' onChange={handlePriceChange}/>
+            <input type='text' name='description' placeholder='description' onChange={handleDescriptionChange}/>
+            <input type='submit' />
         </form>
-        
+
+        <img src={FilePath} className='picture'/>
         </div>
 
          </React.Fragment>

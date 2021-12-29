@@ -7,16 +7,16 @@ import { Link } from 'react-router-dom';
 
 const Product = (props) => {
 
-    const { name, age, skill } = props;
+    const { theName, thePrice, theDescription, thePath } = props;
 
     return(
         // <Link to={`/products/${name}`}> </link>
         <div className="entireCard" href={`/products/${name}`} style={{ textDecoration: 'none' }}>
           
-            <img src={Yeezy}/>
-        <section id="nameSpace">{name}</section>
-        <section id="ageSpace">{age}</section>
-        <section id="skillSpace">{skill}</section>
+            <img src={thePath}/>
+        <section id="nameSpace">{theName}</section>
+        <section id="ageSpace">{thePrice}</section>
+        <section id="skillSpace">{theDescription}</section>
         </div>
     )
 };

@@ -93,3 +93,10 @@ create table pictester(
     price integer not null,
     description varchar(100) not null
 );
+
+create table pictesterTwo(
+    sneakerPath varchar(120) not null,
+    name varchar(20) unique not null,
+    price integer not null,
+    description varchar(100) not null
+);

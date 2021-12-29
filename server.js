@@ -3,10 +3,10 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5001;
-const path = require('path')
+const path = require('path');
 const pool = require('./db');
 const cors = require('cors');
-const fileUpload = require('express-fileupload')
+const fileUpload = require('express-fileupload');
 const { encode } = require('punycode');
 // initiate use of those variables through middleware (or app.use)
  
@@ -49,17 +49,17 @@ app.get('/home', async (req, res, next) => {
 
   console.log('okay lets test this line by line, this first line will be my directly befor the first database call')
 
-  const fullListCall = await pool.query('select * from cos')
+  const fullListCall = await pool.query('select * from pictestertwo')
 
   console.log('okay I just queried the database for the first time succesfully, hopefully that char thing hasnt happened yet')
 
   const fullList = fullListCall.rows;
 
-  console.log(`okay so these are the results that I have received ${fullList}`)
+  console.log(`okay so these are the results that I have received ${fullList.map(item => item.description)}`)
 
   const normalFullListNames = fullList.map(item => item.name)
 
-  const normalFullListAges = fullList.map(item => item.age)
+  const normalFullListAges = fullList.map(item => item.price)
 
 
   console.log(`okay I grabbed the full list from the database, this is what it looks like: ${normalFullListNames}`)
@@ -68,13 +68,14 @@ app.get('/home', async (req, res, next) => {
 
   let randomArtist = normalFullListAges[Math.floor(Math.random() * theRandomNumber)]
 
-  console.log(` this is the age of the artist I got from the randomArtist variable: ${randomArtist}`)
+  console.log(` this is the price of the product I got from the random variable: ${randomArtist}`)
 
-   const myTest = await pool.query(`select name from cos where age = ${randomArtist}`);
+   const myTest = await pool.query(`select * from pictestertwo where price = $1`, [`${randomArtist}`]);
  
-console.log(myTest.rows[0].name);
- return res.send(myTest.rows[0].name);
- 
+console.log(`this is all the data that came back from my query: ${myTest.rows[0].name}`);
+
+
+  res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": `${myTest.rows[0].price}`, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
 //  console.log(myTest.rows[0])
  } catch(err){
    console.log(err.message);
@@ -87,15 +88,25 @@ app.get('/products/:productId', async (req, res, next) => {
  const { productId } = req.params;
  console.log(productId)
  try{
-   const myTest = await pool.query('select * from cos where name = $1', [productId]);
+   const myTest = await pool.query(`select * from pictestertwo where name = $1`, [`${productId}`]);
 console.log(myTest.rows[0])
- return res.send(myTest.rows[0]);
-//  console.log(myTest.rows[0])
+console.log(myTest.rows[0].name)
+console.log(myTest.rows[0].price)
+console.log(myTest.rows[0].description)
+
+  res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": `${myTest.rows[0].price}`, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
+
+  //  console.log(myTest.rows[0])
  } catch(err){
    console.log(err.message);
  }
 });
  
+
+
+
+
+
 app.delete('/products/:artist',  async (req, res, next)=> {
  
 
@@ -145,56 +156,78 @@ app.post('/products/:artist',  async (req, res, next)=> {
  })
  
  
+ // the post route for the test
 
 
  app.post('/test',  async (req, res, next)=> {
- 
-  let chickenTest = 'c-stizzytheBeast'
 
-    console.log('this is a chicken test')
+  // the first thing to do is check if the photo is present, and if it is not respond with status of 400
+  if (req.files === null) {
+    return res.status(400).json({ msg: 'No file uploaded' });
+  }
 
-    console.log('so basically the point of this exercise is to test encoding:')
+  console.log('before doing anything lets check to see what request.files contains')
 
-    console.log(`this a random word I put into a variable: ${chickenTest}`)
+  console.log(req.files)
+
+  // step one.... setup
+
+  const file = req.files.pic;
+
+  console.log(file)
+  
+  const { name, price, description } = req.body;
+
+  const movePath = `${__dirname}/client/public/pics/${name}photo-${file.name}`;
+
+  const imagePath = `/pics/${name}photo-${file.name}`
+
+  console.log('I am first going to try to log the contents of the req.body')
+
+  console.log(req.body)
     
-    console.log(`I also wanted to see if there is something in req.files so here is what I got: ${req.pic}`)
-
-    const encodedIt = btoa(chickenTest);
-
-    console.log(`now this is the base 64 encoded version the above variable: ${encodedIt}`)
-
-    console.log(`now this is the decoded version which should be same word: ${atob(encodedIt)}`)
-
-    console.log('now back to regularly scheduled programming......')
- 
- 
-  console.log('everyday a request is born!')
-     const { pic, name, price, description } = req.body;
- 
+  
      console.log(`this is the name I destructured from the request ${name}`)
 
-     console.log(`this is the pic it should be encoded: ${pic}`)
+
+     // step two ... the query
 
   
-    console.log(req.body)
      try{
-     const newLife = await pool.query('insert into pictester(sneaker, name, price, description) values($1, $2, $3, $4)', [pic, name, price, description])
+     const newLife = await pool.query('insert into pictestertwo(sneakerPath, name, price, description) values($1, $2, $3, $4)', [imagePath, name, price, description])
   
+
+
+
+
+     // step three... uploading the file
+
+      file.mv(movePath, err => {
+        if(err){
+          console.log(err)
+        }
+      
+
     console.log('got those out of the way')
     console.log(`${name} has been added to the system`)
-     res.status(201).send(`${name} has been added to the system`);
+     res.status(201).json({"fileName": `${name}`, "filePath": imagePath });
+    })
   } catch(err){
-      console.log(err)
+      console.log(err.message)
     }  
   });
+
+
+
+  // finally the get route for the test
 
   app.get('/test', async (req, res, next) => {
     console.log('a request came into the test route')
     try{
-    const getem = await pool.query('select * from pictester where price = 0')
-      const answer = await getem.rows[0].sneaker
-    console.log(answer)
-     res.send(answer)
+      const getem = await pool.query("select * from pictester where price = 3")
+      const answer =  getem.rows[0].sneaker
+      console.log(answer)
+      res.send(answer)
   } catch(err){
     console.log(err);
   }
