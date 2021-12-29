@@ -100,3 +100,5 @@ create table pictesterTwo(
     price integer not null,
     description varchar(100) not null
 );
+
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/levelupphoto-yeey.png', 'levelup', 5, 'just do it');

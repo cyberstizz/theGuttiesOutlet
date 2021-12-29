@@ -224,7 +224,7 @@ app.post('/products/:artist',  async (req, res, next)=> {
   app.get('/test', async (req, res, next) => {
     console.log('a request came into the test route')
     try{
-      const getem = await pool.query("select * from pictester where price = 3")
+      const getem = await pool.query("select * from pictester where price = 5")
       const answer =  getem.rows[0].sneaker
       console.log(answer)
       res.send(answer)
