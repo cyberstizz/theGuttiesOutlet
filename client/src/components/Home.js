@@ -48,9 +48,9 @@ const [Path, setPath] = useState('')
         <div className='productsListHeader'></div>
         <div className='productsContainer'>
         <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
-        <Link to={`/products/${Name}`}><Product theName={Name} thePrice={Price} theDescription={Description} thePath={Path}/></Link>
-        <Link to={`/products/${Name}`}><Product theName={Name} thePrice={Price} theDescription={Description} thePath={Path}/></Link>
-        <Link to={`/products/${Name}`}><Product theName={Name} thePrice={Price} theDescription={Description} thePath={Path}/></Link>
+        <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
+        <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
+        <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
 
         </div>
         </React.Fragment>
