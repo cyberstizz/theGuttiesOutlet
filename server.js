@@ -189,7 +189,7 @@ app.post('/products/:artist',  async (req, res, next)=> {
   
      console.log(`this is the name I destructured from the request ${name}`)
 
-
+    console.log(`by the way this is the path that is going in the databsae ${imagePath}`)
      // step two ... the query
 
   

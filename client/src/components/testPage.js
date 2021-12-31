@@ -132,9 +132,11 @@ const handleDescriptionChange = (event) => {
             // })
                   });
 
-                  console.log(postRequest.data)
+                  const theAnswer = await postRequest.data
 
-                  const { fileName, filePath } = postRequest.data;
+                  console.log(theAnswer)
+
+                  const { fileName, filePath } = theAnswer;
 
                   console.log(fileName)
 

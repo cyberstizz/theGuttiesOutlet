@@ -15,7 +15,7 @@ const Product = (props) => {
           
             <img src={thePath}/>
         <section id="nameSpace">{theName}</section>
-        <section id="ageSpace">{thePrice}</section>
+        <section id="ageSpace">$ {thePrice}</section>
         <section id="skillSpace">{theDescription}</section>
         </div>
     )

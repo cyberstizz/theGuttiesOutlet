@@ -102,3 +102,29 @@ create table pictesterTwo(
 );
 
 insert into pictestertwo(sneakerPath, name, price, description) values('/pics/levelupphoto-yeey.png', 'levelup', 5, 'just do it');
+
+
+--these will be the queries for twenty items buit before the pic is added
+--then I will add the pic after manual querying through the client
+
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Jordan-10sphoto-jordanTen.jpg', 'Jordan-10s', 299, 'The second best jordans ever');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Air-Force-Onephoto-airfoceones.jpeg', 'Air-Force-One', 129, 'For the classic man!');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Timsphoto-Tims.webp', 'Tims', 249, 'So she can feel your thug');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Crocsphoto-crocs.jpg', 'Crocs', 35, 'No idea why these are a thing');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Jordan-3sphoto-jordan3.jpg', 'Jordan-3s', 400, 'Perfection');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Jordan-9sphoto-jordan9.jpg', 'Jordan-9s', 500, 'my favorite');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Jordan-12sphoto-jordan12.jpg', 'Jordan-12s', 100, 'Because your going bowling');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Jordan-13sphoto-jordan13.jpg', 'Jordan-13s', 250, 'Astronauts need love to');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Oxfordsphoto-oxford.webp', 'Oxfords', 79, 'If you wear these you get it');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Starburysphoto-starbury.jpg', 'Starburys', 49, 'Look he tried. I had a pair');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/John-Cletasphoto-johncletas.jpg', 'John-Cletas', 49, 'Miami swag');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Kyrie-Irvingsphoto-kyrie.jpg', 'Kyrie-Irvings', 1000, 'God body!!!!!!!!');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Chuck-Taylorsphoto-chuckTaylor.jpg', 'Chuck-Taylors', 129, 'Simply wack');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Reebok-Pumpsphoto-pump.jpeg', 'Reebok-Pumps', 249, 'Remember these? lol your old');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Air-Penny 2photo-penny.jpg', 'Air-Penny 2', 275, 'Single ugliest sneaker ever');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Foamposite-Onephoto-foam.jpg', 'Foamposite-One', 600, 'When you wanna wear the batmobile');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Red-Octobers!!!photo-Yeezy-2.jpg', 'Red-Octobers!!!', 52000, 'Ohhh Yeahh');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Vansphoto-vans.jpg', 'Vans', 349, 'because your girlfriends Russian');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/New-Balance-576photo-newBalance.jpg', 'New-Balance-576', 249, 'Show you have a deep bag');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Nike-Dunkphoto-dunk.jpeg ', 'Nike-Dunk', 249, 'The originator');
+insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Nike-Cortezphoto-Cortez.jpg', 'Nike-Cortez', 69, 'Money makin Mitch!');
