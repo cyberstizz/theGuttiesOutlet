@@ -163,7 +163,7 @@ app.post('/products/:artist',  async (req, res, next)=> {
 
   // the first thing to do is check if the photo is present, and if it is not respond with status of 400
   if (req.files === null) {
-    return res.status(400).json({ msg: 'No file uploaded' });
+    return res.status(404).json({ msg: 'No file uploaded' });
   }
 
   console.log('before doing anything lets check to see what request.files contains')
