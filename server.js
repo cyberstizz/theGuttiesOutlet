@@ -10,18 +10,13 @@ const testRouter = require('./routes/test/testRouter');
 // initializing the entry point of the index.html from the build folder if in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname,'client/build')))
-} 
-// sending all routes to its appropriate express router
- 
-// initiate use of those router variables through middleware (or app.get)
+}  
+// initiate use of those router variables through middleware (or app.use)
 app.use('/home', homeRouter);
 
 app.use('/products', productsRouter);
  
 app.use('/test',testRouter);
-
- 
- 
 // This displays message that the server is running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`));
 

@@ -13,7 +13,7 @@ const Product = (props) => {
         // <Link to={`/products/${name}`}> </link>
         <div className="entireCard" href={`/products/${theName}`} style={{ textDecoration: 'none' }}>
           
-            <img src={thePath}/>
+            <img src={thePath} width="461" height="270" />
         <section id="nameSpace">{theName}</section>
         <section id="ageSpace">$ {thePrice}</section>
         <section id="skillSpace">{theDescription}</section>
