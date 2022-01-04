@@ -73,12 +73,37 @@ margin: 0 auto;
 }
 
 
-#purchaseButtons{
+#purchaseButtonCart{
     height: 7vh;
     width: 18vw;
     margin-top: 2vh;
     margin-left: 1vw;
     background-color: #B48B22;
+    color: #0D2A57;
+    border: solid 2px #0D2A57;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 22px;
+}
+
+#purchaseButtonBuy{
+    height: 7vh;
+    width: 18vw;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    background-color: #0D2A57;
+    color: #B48B22;
+    border: solid 2px #0D2A57;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 22px;
+    border: solid 2px #B48B22;
+}
+
+#purchaseButtonBuy:hover{
+    height: 7vh;
+    width: 18vw;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    background-color: green;
     color: #0D2A57;
     border: solid 2px #0D2A57;
     font-family: 'Permanent Marker', cursive;

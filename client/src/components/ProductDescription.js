@@ -90,7 +90,7 @@ const ProductDescription = () => {
                 <div className="purchaseSections" id="price"><div style={{color: 'green', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}><span style={{color: 'white', marginLeft: '-1.2vw'}}>Total:  </span>${!quantity ? Price : (Price * quantity)}</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}></span></div>
 
                 <div className="purchaseSections">Est. Delivery: <span id="date">January 9th, 2022</span></div>
-                <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtons">Add to cart</button></Link>  <button id="purchaseButtons">Buy now</button> </div>
+                <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtonCart">Add to cart</button></Link>  <button id="purchaseButtonBuy">Buy now</button> </div>
 
             </div>
 
