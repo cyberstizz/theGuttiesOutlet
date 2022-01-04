@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Permanent+Marker&display=swap');
 
 
+
+
 #fullPageBlock{
 display: flex;
 flex-direction: column;
@@ -51,7 +53,7 @@ flex-flow: wrap;
 }
 
 .purchaseSections{
-margin-top: 3vh;
+margin-top: 1.5vh;
 font-family: 'Permanent Marker', cursive;
 word-wrap: break-word;
 overflow: wrap;
@@ -63,34 +65,34 @@ margin-left: 5vw;
 
 .buttonsDiv{
 display: flex;
-flex-direction: column;
-height: 17vh;
-width: 20vw;
+flex-direction: row;
+height: 14vh;
+width: 40vw;
 align-items: center;
 margin: 0 auto;
 }
+
+
 #purchaseButtons{
     height: 7vh;
     width: 18vw;
     margin-top: 2vh;
+    margin-left: 1vw;
     background-color: #B48B22;
     color: #0D2A57;
     border: solid 2px #0D2A57;
     font-family: 'Permanent Marker', cursive;
-    font-size: 27px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    font-size: 22px;
+    border: solid 2px green;
 }
 
 #price{
     display: flex;
     flex-direction: row;
-    margin-right: 3vw;
+    margin-right: 3.5vw;
     margin-left: 7vw;
     color: #B48B22;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     font-weight: 100;
     font-size: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
