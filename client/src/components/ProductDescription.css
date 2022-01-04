@@ -85,6 +85,20 @@ margin: 0 auto;
     font-size: 22px;
 }
 
+/* 762FA0 */
+#purchaseButtonCart:hover{
+    height: 7vh;
+    width: 18vw;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    background-color: #762FA0;
+    color: #B48B22;
+    border: solid 2px #0D2A57;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 22px;
+}
+
+
 #purchaseButtonBuy{
     height: 7vh;
     width: 18vw;

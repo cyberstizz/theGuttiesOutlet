@@ -170,7 +170,7 @@ const handleDescriptionChange = (event) => {
                action='/test' 
                method='post' 
                encType="multipart/form-data"> */}
-               <form onSubmit={handleSubmit}>
+               <form style={{marginRight: '13vw'}} onSubmit={handleSubmit}>
             <input type='file' onChange={picUploadHandler} name='onlyFile'/>
             <input type='text'  name='name' placeholder='name' onChange={handleNameChange}/>
             <input type='text' name='price' placeholder='price' onChange={handlePriceChange}/>
