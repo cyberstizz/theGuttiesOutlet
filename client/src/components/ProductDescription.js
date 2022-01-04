@@ -27,11 +27,7 @@ const ProductDescription = () => {
 
     const selectChangeHandler = (event) => {
         event.preventDefault();
-        setPrice(400)
         setQuantity(event.target.value)
-        console.log((400 * quantity))
-
-        setPrice(quantity != 1 ? (400 * quantity) : 400)
 
     }
 
@@ -54,6 +50,7 @@ const ProductDescription = () => {
             const { theName, thePrice, theDescription, theSneakerPath } = firstCallResponse;
 
             console.log(theName)
+            setName(theName)
             setSneakerPath(theSneakerPath);
             setPrice(thePrice);
             setDescription(theDescription);
@@ -69,7 +66,6 @@ const ProductDescription = () => {
     return (
         <React.Fragment>
             <Header />
-        <div>{Name}</div>
         <main id="fullPageBlock">
 
         <section className="topBlock">
@@ -79,7 +75,7 @@ const ProductDescription = () => {
             <section className="productPurchaseSection">
             <div className="rightSectionBlock">
                 <div className="purchaseSections" id="headline">{Name}</div>
-                <div className="purchaseSections">{Description}</div>
+                <div className="purchaseSections" style={{textAlign: 'center'}}>{Description}</div>
                 <div className="purchaseSections" id="price"><div style={{color: 'white', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Price:</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}>{Price}</span></div>
                 <div className="purchaseSections" style={{marginLeft: '9vw'}}> Quantity:
                       <select onChange={selectChangeHandler} style={{marginLeft: '1vw',backgroundColor:'#0D2A57', color: '#B48B22'}}>
@@ -91,6 +87,8 @@ const ProductDescription = () => {
 
                       </select>
                 </div>
+                <div className="purchaseSections" id="price"><div style={{color: 'green', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Total:{Price * quantity}</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}></span></div>
+
                 <div className="purchaseSections">Est. Delivery: <span id="date">January 9th, 2022</span></div>
                 <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtons">Add to cart</button></Link>  <button id="purchaseButtons">Buy now</button> </div>
                 <div className="purchaseSections"></div>

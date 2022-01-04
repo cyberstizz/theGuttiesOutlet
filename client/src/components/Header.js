@@ -1,6 +1,7 @@
 import React from "react";
 import './Header.css';
 import 'font-awesome/css/font-awesome.min.css';
+import { Link } from "react-router-dom";
 
  const Header = () => {
 
@@ -25,7 +26,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
               <section className="logo-signIn-block">
 
-                <div className='logo'> </div>
+              <Link to='/'><div className='logo'> </div></Link>
 
                 <div className="cart-signIn-block">
 
@@ -35,7 +36,7 @@ import 'font-awesome/css/font-awesome.min.css';
                 
                  {/* cart icon */}
 
-                <span className="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</span>
+              <Link to='/Cart/;user'><span className="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</span></Link>
 
                 </div>
         

@@ -9,7 +9,7 @@ import axios from 'axios';
 
 const Home = () => {
 
-const [Name, setName] = useState('')
+const [Products, setProducts] = useState([])
 
 const [Price, setPrice] = useState()
 
@@ -22,20 +22,21 @@ const [Path, setPath] = useState('')
     const mountCall = async () => {
     const response = await axios.get('/home');
 
-    const responseComplete = await response.data;
+    const responseComplete = await response.data.data.map(item => item);
 
     console.log(responseComplete)
 
+    setProducts(responseComplete)
 
-    const { theName, thePrice, theDescription, theSneakerPath } = responseComplete;
+    // const { theName, thePrice, theDescription, theSneakerPath } = responseComplete;
    
-    setName(theName)
-    setPrice(thePrice)
-    setDescription(theDescription)
-    setPath(theSneakerPath)
+    // setName(theName)
+    // setPrice(thePrice)
+    // setDescription(theDescription)
+    // setPath(theSneakerPath)
 
 
-    console.log(theDescription)
+    // console.log(theDescription)
     }
 
     mountCall();
@@ -48,11 +49,12 @@ const [Path, setPath] = useState('')
         <div className='productsListHeader'></div>
        <Link to='/test'><button>create</button></Link>
         <div className='productsContainer'>
+        {/* <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
         <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
         <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
-        <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
-        <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
-
+        <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link> */}
+        {Products.map(product => <Link key={`${product.name}`} to={`/products/${product.name}`}><Product theName={product.name} thePrice={product.price} theDescription={product.description} thePath={product.sneakerpath}/></Link>
+)}
         </div>
         </React.Fragment>
     )
