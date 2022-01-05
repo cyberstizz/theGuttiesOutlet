@@ -74,7 +74,7 @@ const ProductDescription = () => {
             
             <section className="productPurchaseSection">
             <div className="rightSectionBlock">
-                <div className="purchaseSections" id="headline">{Name}</div>
+                <div className="purchaseSections" id="headline" style={{color: '#B48B22'}}>{Name}</div>
                 <div className="purchaseSections" style={{textAlign: 'center'}}>{Description}</div>
                 <div className="purchaseSections" id="price"><div style={{color: 'white', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Price:</div> <span style={{marginLeft: '1vw', "font-family": "'Permanent Marker', cursive"}}>${Price}</span></div>
                 <div className="purchaseSections" style={{marginLeft: '9vw', borderBottom: 'solid 3px #B48B22', width: '25vw', paddingBottom: '4px'}}> Quantity:
