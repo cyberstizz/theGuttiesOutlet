@@ -117,6 +117,18 @@
 }
 
 
+#searchbutton:hover{
+    height: 5vh;
+    width: 4vw;
+    background-color: #762FA0;
+    color: #B48B22;
+    margin-top: 4vh;
+    border: 2px solid #251B66;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
 
 .Right_Header{
     width: 20vw;
