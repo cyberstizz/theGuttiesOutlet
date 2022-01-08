@@ -6,6 +6,7 @@ import Header from './Header';
 import './ProductDescription.css';
 import yeey from '../yeey.png';
 import axios from 'axios';
+import StripeCheckout from 'react-stripe-checkout';
 
 
 
@@ -28,6 +29,11 @@ const ProductDescription = () => {
     const selectChangeHandler = (event) => {
         event.preventDefault();
         setQuantity(event.target.value)
+
+    }
+
+    const handleToken = (token, addresses) => {
+        console.log(token)
 
     }
 
@@ -105,7 +111,14 @@ const ProductDescription = () => {
                 <div className="purchaseSections">Est. Delivery: <span id="date">January 9th, 2022</span></div>
                  {/* and the two buttons are below */}
                 <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtonCart">Add to cart</button></Link>  <button id="purchaseButtonBuy">Buy now</button> </div>
-
+                < StripeCheckout 
+                   stripeKey="pk_test_51KD0MTBGolAm0YdrCJ4QlFJf3Bdv4WckkNGl6tKyrBvXE5GvP9WCWpOQEzyNT1wQD6zCKZQNj7AmDF1dRfWiZ7Y400CfbKGLoM"
+                   token={handleToken}
+                   amount={Price * 100}
+                   name={Name}
+                  billingAddress
+                  shippingAddress
+                />
             </div>
 
             </section>
