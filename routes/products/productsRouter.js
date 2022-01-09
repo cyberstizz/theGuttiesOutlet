@@ -2,12 +2,13 @@
 
 const express = require('express');
 const cors = require('cors');
+const stripe = require('stripe')(process.env.StripeSecretKey)
 
 //creating a variable to represent the router for all products routes
 
 const productsRouter = express.Router({mergeParams: true});
 
-// can't forget the database object
+// can't forget the database object 
 
 const pool = require('../../db');
 
@@ -93,7 +94,18 @@ productsRouter.get('/:productId', async (req, res, next) => {
       }
     
     })
-    
+
+    productsRouter.post('/checkout',  async (req, res, next)=> {
+      stripe.sessions.checkout.create({
+        Payment_methods_type: ['card'],
+        mode: "payment",
+        line_items: req.addresses,
+        success_url: 'somePath',
+        cancel_url: 'somePath'
+      })
+      res.json({data: 'someData'});
+    });
+
 
 
 

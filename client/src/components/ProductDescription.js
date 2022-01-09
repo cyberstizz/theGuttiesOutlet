@@ -108,11 +108,11 @@ const ProductDescription = () => {
                 {/* this section diplays the price */}
                 <div className="purchaseSections" id="price"><div style={{color: 'green', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}><span style={{color: 'white', marginLeft: '-1.2vw'}}>Total:  </span>${!quantity ? Price : (Price * quantity)}</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}></span></div>
                 {/* this div is for the estimated delivery */}
-                <div className="purchaseSections">Est. Delivery: <span id="date">January 9th, 2022</span></div>
+                <div className="purchaseSections">Est. Delivery: <span id="date">January 18th, 2022</span></div>
                  {/* and the two buttons are below */}
                 <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtonCart">Add to cart</button></Link>  <button id="purchaseButtonBuy">Buy now</button> </div>
                 < StripeCheckout 
-                   stripeKey="pk_test_51KD0MTBGolAm0YdrCJ4QlFJf3Bdv4WckkNGl6tKyrBvXE5GvP9WCWpOQEzyNT1wQD6zCKZQNj7AmDF1dRfWiZ7Y400CfbKGLoM"
+                   stripeKey={process.env.StripePublicKey}
                    token={handleToken}
                    amount={Price * 100}
                    name={Name}

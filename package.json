@@ -1,7 +1,7 @@
 {
   "name": "theguttiesoutlet",
   "version": "1.0.0",
-  "description": "",
+  "description": "An online retail store focused on low prices and fast delivery",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
