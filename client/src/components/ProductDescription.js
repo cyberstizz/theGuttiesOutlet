@@ -96,7 +96,7 @@ const ProductDescription = () => {
                 <div className="purchaseSections" id="price"><div style={{color: 'black', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Price:</div> <span style={{marginLeft: '1vw', "font-family": "'Permanent Marker', cursive"}}>${Price}</span></div>
                 {/* this is the quantity section where the user can select their quantity via a dropdown */}
                 <div className="purchaseSections" style={{marginLeft: '9vw', borderBottom: 'solid 3px #2c972c', width: '25vw', paddingBottom: '4px'}}> Quantity:
-                      <select onChange={selectChangeHandler} style={{marginLeft: '1vw',backgroundColor:'rgb(83, 16, 16)', color: '#B48B22', "font-family": "'Permanent Marker', cursive", height: '30px', width: '35px', fontSize: '26px', border:'solid 1px #0D2A57'}}>
+                      <select onChange={selectChangeHandler} style={{marginLeft: '1vw',backgroundColor:'rgb(83, 16, 16)', color: 'white', "font-family": "'Permanent Marker', cursive", height: '30px', width: '35px', fontSize: '26px', border:'solid 1px white'}}>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -108,7 +108,6 @@ const ProductDescription = () => {
                 {/* this section diplays the price */}
                 <div className="purchaseSections" id="price"><div style={{color: 'green', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}><span style={{color: 'black', marginLeft: '-1.2vw'}}>Total:  </span>${!quantity ? Price : (Price * quantity)}</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}></span></div>
                 {/* this div is for the estimated delivery */}
-                <div className="purchaseSections">Est. Delivery: <span id="date">January 18th, 2022</span></div>
                  {/* and the two buttons are below */}
                 <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtonCart">Add to cart</button></Link> 
                 < StripeCheckout 
