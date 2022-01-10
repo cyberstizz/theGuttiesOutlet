@@ -44,7 +44,7 @@ const [Path, setPath] = useState('')
 
 
     return(
-        <React.Fragment>
+        <div className='everything'>
         <Header />
         <div className='productsListHeader'></div>
         <div className='productsContainer'>
@@ -55,7 +55,7 @@ const [Path, setPath] = useState('')
         {Products.map(product => <Link key={`${product.name}`} to={`/products/${product.name}`}><Product theName={product.name} thePrice={product.price} theDescription={product.description} thePath={product.sneakerpath}/></Link>
 )}
         </div>
-        </React.Fragment>
+        </div>
     )
 }
 
