@@ -32,10 +32,10 @@
     border: solid rgb(83, 16, 16) 2px;
     text-decoration: none;
     border-radius: 12px;
-    background-color: #2c972c;
+    background-color: rgb(83, 16, 16);
     font-family: 'Permanent Marker', cursive;
-    color: rgb(83, 16, 16);
-    font-size: 17px;
+    color: black;
+    font-size: 21px;
     display: flex;
     flex-direction: column;
 }
