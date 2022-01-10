@@ -102,13 +102,13 @@
     margin-left: 4vw;
     font-family: 'Permanent Marker', cursive;
     font-size: larger;
-    color: #73ec73;
+    color: #2c972c;
 }
 
 #searchbutton{
     height: 5vh;
     width: 4vw;
-    background-color: #73ec73;
+    background-color: #2c972c;
     color: rgb(124, 28, 28);
     margin-top: 4vh;
     border: 2px solid rgb(124, 28, 28);
