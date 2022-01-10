@@ -38,6 +38,10 @@ flex-flow: wrap;
     background-color: rgb(83, 16, 16);
 }
 
+.rightSectionBlock{
+    margin-top: 9vh;
+}
+
 .middleBlock{
     height: 40vh;
     width: 100vw;
@@ -62,6 +66,7 @@ font-size: 30px;
 color: black;
 text-align: left;
 margin-left: 5vw;
+margin-top: 3vh;
 }
 
 .buttonsDiv{
@@ -79,9 +84,9 @@ margin: 0 auto;
     width: 18vw;
     margin-top: 2vh;
     margin-left: 1vw;
-    background-color: #2c972c;
-    color: rgb(83, 16, 16);
-    border: solid 2px rgb(83, 16, 16);
+    background-color: rgb(83, 16, 16);
+    color: black;
+    border: solid 4px black;
     font-family: 'Permanent Marker', cursive;
     font-size: 22px;
 }
@@ -92,9 +97,9 @@ margin: 0 auto;
     width: 18vw;
     margin-top: 2vh;
     margin-left: 1vw;
-    background-color: black;
-    color: rgb(83, 16, 16);
-    border: solid 2px rgb(83, 16, 16);
+    background-color: rgb(83, 16, 16);
+    color: #2c972c;
+    border: solid 3px black;
     font-family: 'Permanent Marker', cursive;
     font-size: 22px;
 }
@@ -118,7 +123,7 @@ margin: 0 auto;
     width: 18vw;
     margin-top: 2vh;
     margin-left: 1vw;
-    background-color: black;
+    background-color: #2c972c;
     color: rgb(83, 16, 16);
     border: solid 2px #0D2A57;
     font-family: 'Permanent Marker', cursive;
