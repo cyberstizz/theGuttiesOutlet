@@ -10,7 +10,7 @@
     position: sticky;
     display: flex;
     flex-direction: row;
-    background-color: #4E1515;
+    background-color: rgb(124, 28, 28);
     height: 20vh;
     width: 100vw;
     z-index: 100;
@@ -109,9 +109,9 @@
     height: 5vh;
     width: 4vw;
     background-color: #154E15;
-    color: rgb(83, 16, 16);
+    color: rgb(124, 28, 28);
     margin-top: 4vh;
-    border: 2px solid rgb(83, 16, 16);
+    border: 2px solid rgb(124, 28, 28);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
