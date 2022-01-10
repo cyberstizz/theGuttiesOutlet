@@ -91,12 +91,12 @@ const ProductDescription = () => {
             {/* this block represents the left side with the buttons and details */}
             <div className="rightSectionBlock">
                 {/* this section is for the title of the product */}
-                <div className="purchaseSections" id="headline" style={{color: '#B48B22'}}>{Name}</div>
+                <div className="purchaseSections" id="headline" style={{color: '#2c972c'}}>{Name}</div>
                 {/* this section is for the price */}
-                <div className="purchaseSections" id="price"><div style={{color: 'white', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Price:</div> <span style={{marginLeft: '1vw', "font-family": "'Permanent Marker', cursive"}}>${Price}</span></div>
+                <div className="purchaseSections" id="price"><div style={{color: 'black', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}>Price:</div> <span style={{marginLeft: '1vw', "font-family": "'Permanent Marker', cursive"}}>${Price}</span></div>
                 {/* this is the quantity section where the user can select their quantity via a dropdown */}
-                <div className="purchaseSections" style={{marginLeft: '9vw', borderBottom: 'solid 3px #B48B22', width: '25vw', paddingBottom: '4px'}}> Quantity:
-                      <select onChange={selectChangeHandler} style={{marginLeft: '1vw',backgroundColor:'#0D2A57', color: '#B48B22', "font-family": "'Permanent Marker', cursive", height: '30px', width: '35px', fontSize: '26px', border:'solid 1px #0D2A57'}}>
+                <div className="purchaseSections" style={{marginLeft: '9vw', borderBottom: 'solid 3px #2c972c', width: '25vw', paddingBottom: '4px'}}> Quantity:
+                      <select onChange={selectChangeHandler} style={{marginLeft: '1vw',backgroundColor:'rgb(83, 16, 16)', color: '#B48B22', "font-family": "'Permanent Marker', cursive", height: '30px', width: '35px', fontSize: '26px', border:'solid 1px #0D2A57'}}>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -106,7 +106,7 @@ const ProductDescription = () => {
                       </select>
                 </div>
                 {/* this section diplays the price */}
-                <div className="purchaseSections" id="price"><div style={{color: 'green', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}><span style={{color: 'white', marginLeft: '-1.2vw'}}>Total:  </span>${!quantity ? Price : (Price * quantity)}</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}></span></div>
+                <div className="purchaseSections" id="price"><div style={{color: 'green', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}><span style={{color: 'black', marginLeft: '-1.2vw'}}>Total:  </span>${!quantity ? Price : (Price * quantity)}</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}></span></div>
                 {/* this div is for the estimated delivery */}
                 <div className="purchaseSections">Est. Delivery: <span id="date">January 18th, 2022</span></div>
                  {/* and the two buttons are below */}
