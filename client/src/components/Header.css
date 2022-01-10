@@ -25,7 +25,7 @@
 
 .Left_Header{
     width: 20vw;
-    border-right: 1px solid #B48B22;
+    border-right: 1px solid #2c972c;
 }
 
 .logo-signIn-block{
@@ -52,7 +52,7 @@
 
 #signIn{
     font-family: 'Permanent Marker', cursive;
-    color: #B48B22;
+    color: #2c972c;
     font-size: 20px;
     margin-left: 1vw;
     margin-top: 3vh;
@@ -60,7 +60,7 @@
 
 .cart-icon{
     font-size: 20px;
-    color: #B48B22;
+    color: #2c972c;
     font-family: 'Permanent Marker', cursive;
     margin-left: 1vw;
     margin-top: 2vh;
@@ -121,7 +121,7 @@
     height: 5vh;
     width: 4vw;
     background-color: #762FA0;
-    color: #B48B22;
+    color: #2c972c;
     margin-top: 4vh;
     border: 2px solid #251B66;
     border-top-right-radius: 20px;
