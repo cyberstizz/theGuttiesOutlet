@@ -8,6 +8,7 @@
 #fullPageBlock{
 display: flex;
 flex-direction: column;
+background-color: black;
 }
 
 .topBlock{
