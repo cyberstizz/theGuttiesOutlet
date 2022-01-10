@@ -5,7 +5,7 @@
 #footerBlock{
     height: 50vh;
     width: 100vw;
-    background-color: #B48B22;
+    background-color: black;
     display: flex;
     flex-direction: row;
     position: relative;
