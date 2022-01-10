@@ -10,7 +10,7 @@
     position: sticky;
     display: flex;
     flex-direction: row;
-    background-color: rgb(83, 16, 16);
+    background-color: #4E1515;
     height: 20vh;
     width: 100vw;
     z-index: 100;
@@ -102,13 +102,13 @@
     margin-left: 4vw;
     font-family: 'Permanent Marker', cursive;
     font-size: larger;
-    color: rgb(21, 78, 21);
+    color: #154e15;
 }
 
 #searchbutton{
     height: 5vh;
     width: 4vw;
-    background-color: rgb(21, 78, 21);
+    background-color: #154E15;
     color: rgb(83, 16, 16);
     margin-top: 4vh;
     border: 2px solid rgb(83, 16, 16);
