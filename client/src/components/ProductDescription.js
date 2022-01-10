@@ -110,7 +110,7 @@ const ProductDescription = () => {
                 {/* this div is for the estimated delivery */}
                 <div className="purchaseSections">Est. Delivery: <span id="date">January 18th, 2022</span></div>
                  {/* and the two buttons are below */}
-                <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtonCart">Add to cart</button></Link>  <button id="purchaseButtonBuy">Buy now</button> </div>
+                <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtonCart">Add to cart</button></Link> 
                 < StripeCheckout 
                    stripeKey={process.env.StripePublicKey}
                    token={handleToken}
@@ -118,7 +118,10 @@ const ProductDescription = () => {
                    name={Name}
                   billingAddress
                   shippingAddress
-                />
+                > 
+                <button id="purchaseButtonBuy">Buy now</button>
+                </StripeCheckout>
+                </div>
             </div>
 
             </section>
