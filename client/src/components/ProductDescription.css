@@ -80,7 +80,7 @@ margin: 0 auto;
     margin-left: 1vw;
     background-color: #2c972c;
     color: rgb(83, 16, 16);
-    border: solid 2px #0D2A57;
+    border: solid 2px rgb(83, 16, 16);
     font-family: 'Permanent Marker', cursive;
     font-size: 22px;
 }
@@ -93,7 +93,7 @@ margin: 0 auto;
     margin-left: 1vw;
     background-color: black;
     color: rgb(83, 16, 16);
-    border: solid 2px #0D2A57;
+    border: solid 2px rgb(83, 16, 16);
     font-family: 'Permanent Marker', cursive;
     font-size: 22px;
 }
@@ -122,7 +122,7 @@ margin: 0 auto;
     border: solid 2px #0D2A57;
     font-family: 'Permanent Marker', cursive;
     font-size: 22px;
-    border: solid 2px green;
+    border: solid 2px rgb(83, 16, 16);
 }
 
 #price{
