@@ -45,8 +45,9 @@
     margin-top: 2vh;
     padding-bottom: 1vh;
     border-bottom: solid 3px #2c972c;
-    background-image: url('./guttieslogoblue.png');
+    background-image: url('./redAndBlack.png');
     background-repeat: no-repeat;
     background-position: center;
     background-color: black;
+    color: black;
 }
