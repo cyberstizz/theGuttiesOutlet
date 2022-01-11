@@ -32,8 +32,18 @@ const ProductDescription = () => {
 
     }
 
-    const handleToken = (token, addresses) => {
+    const handleToken =  async (token, addresses) => {
         console.log(token)
+
+        const makePayment = await axios.post('/payments', {
+            Header: 'applicatiion/json',
+            body: {
+                token,
+                addresses
+            }
+        })
+
+        console.log(makePayment.data)
 
     }
 

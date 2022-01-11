@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const stripe = require('stripe')(process.env.StripeSecretKey);
 const nodemailer = require('nodemailer');
+const uuid = require('uuidv4')
 //creating a variable to represent the router for all products routes
 
 const paymentsRouter = express.Router({mergeParams: true});
@@ -25,7 +26,7 @@ paymentsRouter.use(express.json());
 
 
 paymentsRouter.post('/', async (req, res, next) => {
-  
+        const {product, token } = req.body;
    });
     
    
