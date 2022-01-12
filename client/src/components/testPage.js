@@ -120,6 +120,10 @@ const handleDescriptionChange = (event) => {
       formData.append('description', description)
 
       
+
+
+    
+
        //now the post request to the server
        const postRequest = await axios.post('http://localhost:5001/test', formData, {
             headers: { 'Content-Type':'multipart/form-data' }

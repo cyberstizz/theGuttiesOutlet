@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import './ProductDescription.css';
-import yeey from '../yeey.png';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 
 
 
 const ProductDescription = () => {
+    // we start out our component by  setting up ourt params and state hooks
 
     const { productId } = useParams();
 
@@ -22,9 +22,9 @@ const ProductDescription = () => {
 
     const [SneakerPath, setSneakerPath] = useState('');
 
-    const [quantity, setQuantity] = useState();
+    const [Quantity, setQuantity] = useState();
 
-    
+    // next we defind a function to call the quantity hook
 
     const selectChangeHandler = (event) => {
         event.preventDefault();
@@ -32,20 +32,40 @@ const ProductDescription = () => {
 
     }
 
-    const handleToken =  async (token, addresses) => {
-        console.log(token)
+    //next is a function to handle the token property of the stripeCheckout component
 
-        const makePayment = await axios.post('/payments', {
-            Header: 'applicatiion/json',
-            body: {
-                token,
-                addresses
-            }
+    const handleToken =  async (token) => {
+        console.log(token);
+
+        const product = {
+            name: Name,
+            price: Price,
+            description: Description,
+            quantity: Quantity
+        }
+
+        const body = {
+            token,
+            product
+        };
+
+        const header = {
+            "Content-Type": "application/json"
+        }
+        try {     
+
+        const makePayment = await axios.post('/payments', body {
+            headers: header
         })
-
         console.log(makePayment.data)
+        }
+        catch (error) {
+            
+        }
 
     }
+
+    //we call the use effect function to run everytime there is an update
 
 
     useEffect(() => {
@@ -85,7 +105,7 @@ const ProductDescription = () => {
         callTheDatabase()
     })
 
-
+// and now below is the jsx of the actual component
 
 
     return (
@@ -116,12 +136,12 @@ const ProductDescription = () => {
                       </select>
                 </div>
                 {/* this section diplays the price */}
-                <div className="purchaseSections" id="price"><div style={{color: 'green', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}><span style={{color: 'black', marginLeft: '-1.2vw'}}>Total:  </span>${!quantity ? Price : (Price * quantity)}</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}></span></div>
+                <div className="purchaseSections" id="price"><div style={{color: 'green', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}><span style={{color: 'black', marginLeft: '-1.2vw'}}>Total:  </span>${!Quantity ? Price : (Price * Quantity)}</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}></span></div>
                 {/* this div is for the estimated delivery */}
                  {/* and the two buttons are below */}
                 <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtonCart">Add to cart</button></Link> 
-                < StripeCheckout 
-                   stripeKey={process.env.StripePublicKey}
+                <StripeCheckout 
+                   stripeKey={'pk_test_51KD0MTBGolAm0YdrCJ4QlFJf3Bdv4WckkNGl6tKyrBvXE5GvP9WCWpOQEzyNT1wQD6zCKZQNj7AmDF1dRfWiZ7Y400CfbKGLoM'}
                    token={handleToken}
                    amount={Price * 100}
                    name={Name}
@@ -147,27 +167,7 @@ const ProductDescription = () => {
 
     )
 }
-        // the first div will be the header block that contains the picture of the item as well as the name and minor details like product id
-        // <div className="product_header_block">
+       
 
-            /* inside there will be two divs representing the left and right side of the header,
-             the left side will the product image, while the right side will contain two sections: set to 
-             flex column with the name and other product info. */
-
-
-             /* product image */
-            /* <div className="product_image"> </div> */
-
-
-            /* product details */
-            /* <div className="product_details">
-
-
-                
-            </div> */
-
-//         </div>
-//     )
-// }
 
 export default ProductDescription;
