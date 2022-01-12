@@ -52,11 +52,16 @@ const ProductDescription = () => {
         const header = {
             "Content-Type": "application/json"
         }
+
         try {     
 
-        const makePayment = await axios.post('/payments', body {
-            headers: header
+        const makePayment = await fetch('/payments', {
+            method: "POST",
+            header,
+            body: JSON.stringify(body)
         })
+
+        
         console.log(makePayment.data)
         }
         catch (error) {
