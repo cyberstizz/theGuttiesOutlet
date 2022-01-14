@@ -22,7 +22,7 @@ const ProductDescription = () => {
 
     const [SneakerPath, setSneakerPath] = useState('');
 
-    const [Quantity, setQuantity] = useState();
+    const [Quantity, setQuantity] = useState(1);
 
     // next we defind a function to call the quantity hook
 
@@ -34,7 +34,7 @@ const ProductDescription = () => {
 
     //next is a function to handle the token property of the stripeCheckout component
 
-    const handleToken =  async (token) => {
+    const handleToken = token => {
         console.log(token);
 
         const product = {
@@ -42,33 +42,30 @@ const ProductDescription = () => {
             price: Price,
             description: Description,
             quantity: Quantity
-        }
+        };
 
         const body = {
             token,
             product
         };
 
-        const header = {
+        const headers = {
             "Content-Type": "application/json"
         }
 
-        try {     
 
-        const makePayment = await fetch('/payments', {
+        return fetch('/payments', {
             method: "POST",
-            header,
+            headers,
             body: JSON.stringify(body)
-        })
+        }).then(response => {
+            const { status } = response;
+            console.log(response)
+        }).catch(error => console.log(error));
 
-        
-        console.log(makePayment.data)
         }
-        catch (error) {
             
-        }
-
-    }
+    
 
     //we call the use effect function to run everytime there is an update
 
@@ -112,7 +109,6 @@ const ProductDescription = () => {
 
 // and now below is the jsx of the actual component
 
-
     return (
         <React.Fragment>
             <Header />
@@ -148,10 +144,8 @@ const ProductDescription = () => {
                 <StripeCheckout 
                    stripeKey={'pk_test_51KD0MTBGolAm0YdrCJ4QlFJf3Bdv4WckkNGl6tKyrBvXE5GvP9WCWpOQEzyNT1wQD6zCKZQNj7AmDF1dRfWiZ7Y400CfbKGLoM'}
                    token={handleToken}
-                   amount={Price * 100}
                    name={Name}
-                  billingAddress
-                  shippingAddress
+                   amount={Price * 100}
                 > 
                 <button id="purchaseButtonBuy">Buy now</button>
                 </StripeCheckout>

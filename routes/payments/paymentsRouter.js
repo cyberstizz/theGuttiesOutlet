@@ -25,34 +25,30 @@ paymentsRouter.use(express.json());
 
 
 
-paymentsRouter.post('/', async (req, res, next) => {
+paymentsRouter.post('/', async (req, res) => {
         const {product, token } = req.body;
+
+
 
         console.log('product:', product);
 
-        console.log('token:', token);
-
-
-
     // you must first create a unique identifier in to make sure customers are not double charged
-        const idompotencyKey = uuid();
+        const idempotencyKey = uuid();
 
 
         //you first create a customer instance
-        const customer = await stripe.customers.create({
+         stripe.customers.create({
             email: token.email,
             source: token.id
-        })
-        //you then create a charge instance to charge the customer
-        const charge = await stripe.charges.create({
+        }).then(customer => {
+            stripe.charges.create({
             amount: product.price * 100,
-            currenct: 'usd',
+            currency: 'usd',
             customer: customer.id,
             receipt_email: token.email,
-            description: prodict.description
-        }, {idompotencyKey})
-
-        console.log(charge)
+            description: product.description
+        }, {idempotencyKey})
+    }).then(result => res.status(200).json(result))
 
 
 
@@ -82,8 +78,6 @@ paymentsRouter.post('/', async (req, res, next) => {
         //       console.log(info);
         //     }
         // });
-
-        res.status(200).json({"data": charge})
    });
     
    
