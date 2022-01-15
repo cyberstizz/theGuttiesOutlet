@@ -15,8 +15,8 @@
     width: 30vw;
     text-decoration: none;
     border-radius: 12px;
-    border: solid 2px rgb(83, 16, 16);
-    background-color: rgb(83, 16, 16);
+    border: solid 2px #0D2A57;
+    background-color: #0D2A57;
     font-family: 'Permanent Marker', cursive;
     color: white;
     font-size: 17px;
@@ -29,14 +29,13 @@
     margin: 3vh 1vw;
     height: 50vh;
     width: 30vw;
-    border: solid rgb(83, 16, 16) 2px;
+    border: solid #0D2A57 2px;
     text-decoration: none;
     border-radius: 12px;
-    background-color: rgb(83, 16, 16);
+    background-color: #B48B22;
     font-family: 'Permanent Marker', cursive;
-    color: black;
-    font-size: 21px;
+    color: #333c49;
+    font-size: 17px;
     display: flex;
     flex-direction: column;
 }
-

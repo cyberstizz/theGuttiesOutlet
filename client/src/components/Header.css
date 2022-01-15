@@ -10,7 +10,7 @@
     position: sticky;
     display: flex;
     flex-direction: row;
-    background-color: rgb(83, 16, 16);
+    background-color: #0D2A57;
     height: 20vh;
     width: 100vw;
     z-index: 100;
@@ -25,7 +25,7 @@
 
 .Left_Header{
     width: 20vw;
-    border-right: 1px solid #2c972c;
+    border-right: 1px solid #B48B22;
 }
 
 .logo-signIn-block{
@@ -52,7 +52,7 @@
 
 #signIn{
     font-family: 'Permanent Marker', cursive;
-    color: #2c972c;
+    color: #B48B22;
     font-size: 20px;
     margin-left: 1vw;
     margin-top: 3vh;
@@ -60,7 +60,7 @@
 
 .cart-icon{
     font-size: 20px;
-    color: #2c972c;
+    color: #B48B22;
     font-family: 'Permanent Marker', cursive;
     margin-left: 1vw;
     margin-top: 2vh;
@@ -102,16 +102,16 @@
     margin-left: 4vw;
     font-family: 'Permanent Marker', cursive;
     font-size: larger;
-    color: #2c972c;
+    color: #B48B22;
 }
 
 #searchbutton{
     height: 5vh;
     width: 4vw;
-    background-color: #2c972c;
-    color: rgb(124, 28, 28);
+    background-color: #B48B22;
+    color: #251B66;
     margin-top: 4vh;
-    border: 2px solid rgb(124, 28, 28);
+    border: 2px solid #251B66;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -121,7 +121,7 @@
     height: 5vh;
     width: 4vw;
     background-color: #762FA0;
-    color: #2c972c;
+    color: #B48B22;
     margin-top: 4vh;
     border: 2px solid #251B66;
     border-top-right-radius: 20px;

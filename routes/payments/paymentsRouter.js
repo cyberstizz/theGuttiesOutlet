@@ -51,7 +51,6 @@ paymentsRouter.post('/', async (req, res) => {
     }).then(result => res.status(200).json(result))
 
 
-
         // let transport = nodemailer.createTransport({
         //     host: 'www.charles.lamb.dev@gmail.com',
         //     port: 2525,
