@@ -16,6 +16,7 @@ homeRouter.use(express.json());
 
 homeRouter.get('/', async (req, res,) => {
 
+  console.log(req.session)
  // everything is wrapped into a try catch block
 
     try{

@@ -6,6 +6,7 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 import Product from './Product';
 import axios from 'axios';
+import { loginModal } from './loginModal';
 
 const Home = () => {
 
@@ -46,6 +47,7 @@ const [Path, setPath] = useState('')
     return(
         <div className='everything'>
         <Header />
+        <loginModal />
         <div className='productsListHeader'></div>
         <div className='productsContainer'>
         {/* <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
