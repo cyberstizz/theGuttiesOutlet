@@ -18,10 +18,14 @@ if (process.env.NODE_ENV === 'production') {
 }  
 
 // initiate use of the session variable by setting up its config in app.use
+// also I set the cookie to expire in three days
 app.use(session({
   secret: 'secret',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 72
+  }
 }))
 // initiate use of those router variables through middleware (or app.use)
 app.use('/home', homeRouter);
