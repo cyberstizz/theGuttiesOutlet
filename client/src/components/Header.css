@@ -149,3 +149,13 @@
     width: 10vw;
     margin-left: 8vw;
 }
+
+.signUpModal{
+    position: absolute;
+    width: 30vw;
+    height: 40vh;
+    background-color: #B48B22;
+    border: 3px solid #251B66;
+    border-top: 3px solid black;
+    z-index: 4;
+}
