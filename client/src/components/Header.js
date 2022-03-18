@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 
     return(
         //first there will be a header element that houses three sub headers
+        <React.Fragment>
         <header id='headerblock'>
 
             {/* inside there are three sub headers left center and right */}
@@ -90,6 +91,8 @@ import { Link } from "react-router-dom";
             </div>
 
         </header>
+        <div class='signUpModal'></div>
+        </React.Fragment>
     )
 };
 
