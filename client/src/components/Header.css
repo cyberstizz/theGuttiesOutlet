@@ -58,9 +58,25 @@
     margin-top: 3vh;
 }
 
+#signIn:hover{
+    font-family: 'Permanent Marker', cursive;
+    color: green;
+    font-size: 20px;
+    margin-left: 1vw;
+    margin-top: 3vh;
+}
+
 .cart-icon{
     font-size: 20px;
     color: #B48B22;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}
+
+.cart-icon:hover{
+    font-size: 20px;
+    color: green;
     font-family: 'Permanent Marker', cursive;
     margin-left: 1vw;
     margin-top: 2vh;
@@ -150,12 +166,45 @@
     margin-left: 8vw;
 }
 
-.signUpModal{
+#settingsButton{
+    font-family: 'Permanent Marker', cursive;
+    color: #B48B22;
+    font-size: 20px;
+    margin-left: 1vw;
+    margin-top: 3vh;
+}
+
+
+#signUpModal{
     position: absolute;
-    width: 30vw;
+    width: 19.65vw;
     height: 40vh;
     background-color: #B48B22;
     border: 3px solid #251B66;
     border-top: 3px solid black;
     z-index: 4;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.signupTopContainer{
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+}
+
+.xOutButton{
+    height: 5vh;
+    width: 4vw;
+    margin-left: 13vw;
+    background-color: #251B66;
+    color: #B48B22;
+    font-size: large;
+    text-align: center;
+}
+
+.loginText{
+height: 5vh;
+
 }

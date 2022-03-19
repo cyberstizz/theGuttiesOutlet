@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 
     window.onscroll = scrollFunction()
 
-
     return(
         //first there will be a header element that houses three sub headers
         <React.Fragment>
@@ -31,13 +30,17 @@ import { Link } from "react-router-dom";
 
                 <div className="cart-signIn-block">
 
-                <div id='signIn'> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In </div>
-                
+                <div id='signIn' onClick={() => {
+                    const myself = document.getElementById("signIn")
+                    myself.style.color = '#762FA0'
+                 const thePop = document.getElementById("signUpModal")
+                 setTimeout(() => myself.style.color = '#B48B22', 200)
+                 thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In </div>
             
                 
                  {/* cart icon */}
 
-              <Link to='/Cart/;user'><span className="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</span></Link>
+              <Link to='/Cart/:user'><span className="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</span></Link>
 
                 </div>
         
@@ -80,7 +83,7 @@ import { Link } from "react-router-dom";
 
             <div id="settingsLogoutBlock">
                 {/* the right header will have the cart icon and the login and logout buttons */}
-                <div id='signIn'> <i class="fa fa-cog" aria-hidden="true"></i> Settings </div>
+                <div id='settingsButton'> <i class="fa fa-cog" aria-hidden="true"></i> Settings </div>
                 
             
                 
@@ -91,7 +94,32 @@ import { Link } from "react-router-dom";
             </div>
 
         </header>
-        <div class='signUpModal'></div>
+        <div id="signUpModal">
+        {/* this modal will contain seven divs for different sections */}
+
+    {/* the first div is a container of two divs. one div is */}
+            <div className="signupTopContainer">
+                <div className="loginText">Login</div>
+                <button className="xOutButton" onClick={() => {
+                 const thePop = document.getElementById("signUpModal")
+                 thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}>&#9747;</button>
+
+
+            </div>
+            {/* next will be a form to sign in of course */}
+            <form action="/signIn" method="POST" className="">
+                <span className="usernameCaption">Username</span>
+                <input type="text" className="signInUsername" placeholder="enter your username" name="username"></input>
+                <span className="emailCaption">Email</span>
+                <input type="text" className="signInPassword" placeholder="enter your email" name="password"></input>
+                <input type="submit" className="signInButton"></input>
+
+
+            </form>
+            {/* finally a  text link at the bottom to register*/}
+            <div className="createAccountLink">New here? Click here to create an account</div>
+        
+        </div>
         </React.Fragment>
     )
 };
