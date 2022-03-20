@@ -97,7 +97,7 @@ import { Link } from "react-router-dom";
         <div id="signUpModal">
         {/* this modal will contain seven divs for different sections */}
 
-    {/* the first div is a container of two divs. one div is */}
+    {/* the first div is a container of two divs. one div is the word login and the other is an x out button */}
             <div className="signupTopContainer">
                 <div className="loginText">Login</div>
                 <button className="xOutButton" onClick={() => {
@@ -107,7 +107,7 @@ import { Link } from "react-router-dom";
 
             </div>
             {/* next will be a form to sign in of course */}
-            <form action="/signIn" method="POST" className="">
+            <form action="/signIn" method="POST" className="signInForm">
                 <span className="usernameCaption">Username</span>
                 <input type="text" className="signInUsername" placeholder="enter your username" name="username"></input>
                 <span className="emailCaption">Email</span>
@@ -116,9 +116,25 @@ import { Link } from "react-router-dom";
 
 
             </form>
+
             {/* finally a  text link at the bottom to register*/}
+
+
             <div className="createAccountLink">New here? Click here to create an account</div>
         
+        </div>
+
+        {/* and another form to sign up */}
+        <div id='signOutModal'>
+            <form action="/signUp" method="POST" className="signUpForm">
+                <span className="usernameCaption">Username</span>
+                <input type="text" className="signInUsername" placeholder="create your username" name="username"></input>
+                <span className="emailCaption">Email</span>
+                <input type="text" className="signInPassword" placeholder="enter an email address" name="password"></input>
+                <input type="submit" className="signInButton"></input>
+
+            </form>
+
         </div>
         </React.Fragment>
     )

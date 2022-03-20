@@ -208,3 +208,16 @@
 height: 5vh;
 
 }
+
+#signOutModal{
+    position: absolute;
+    width: 19.65vw;
+    height: 40vh;
+    background-color: green;
+    border: 3px solid #251B66;
+    border-top: 3px solid black;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
