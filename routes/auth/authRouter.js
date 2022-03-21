@@ -2,10 +2,11 @@
 
 const express = require('express');
 const cors = require('cors');
+const passport = require('passport')
 
 //creating a variable to represent the router for all products routes
 
-const productsRouter = express.Router({mergeParams: true});
+const authRouter = express.Router({mergeParams: true});
 
 // can't forget the database object 
 
@@ -13,16 +14,16 @@ const pool = require('../../db');
 const { urlencoded } = require('express');
 
 // enabling cors
-productsRouter.use(cors());
+authRouter.use(cors());
  
 // allowing access to the requst.body
-productsRouter.use(express.json());
-productsRouter.use(urlencoded({extended: true}))
+authRouter.use(express.json());
+authRouter.use(urlencoded({extended: true}))
 
 
 // first the login route
 
-    authRouter.post('/login',  passport.authenticate('local'), async (req, res, next)=> {
+authRouter.post('/login',  passport.authenticate('local'), async (req, res, next)=> {
 
             const { username }  = req.user;
             
