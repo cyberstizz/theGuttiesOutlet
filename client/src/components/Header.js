@@ -107,7 +107,7 @@ import { Link } from "react-router-dom";
 
             </div>
             {/* next will be a form to sign in of course */}
-            <form action="/signIn" method="POST" className="signInForm">
+            <form action="/login" method="POST" className="signInForm">
                 <span className="usernameCaption">Username</span>
                 <input type="text" className="signInUsername" placeholder="enter your username" name="username"></input>
                 <span className="emailCaption">Email</span>
@@ -120,13 +120,20 @@ import { Link } from "react-router-dom";
             {/* finally a  text link at the bottom to register*/}
 
 
-            <div className="createAccountLink">New here? Click here to create an account</div>
+            <div className="createAccountLink" onClick={() => {
+                 const theOut = document.getElementById("signOutModal")
+                 theOut.style.visibility === 'hidden' ?  theOut.style.visibility = 'visible' : theOut.style.visibility = 'hidden'
+                 
+                 const thePop = document.getElementById("signUpModal")
+                 thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'
+                 
+                 }}>New here? Click here to create an account</div>
         
         </div>
 
         {/* and another form to sign up */}
         <div id='signOutModal'>
-            <form action="/signUp" method="POST" className="signUpForm">
+            <form action="/register" method="POST" className="signUpForm">
                 <span className="usernameCaption">Username</span>
                 <input type="text" className="signInUsername" placeholder="create your username" name="username"></input>
                 <span className="emailCaption">Email</span>

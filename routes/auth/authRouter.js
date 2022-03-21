@@ -2,7 +2,7 @@
 
 const express = require('express');
 const cors = require('cors');
-const passport = require('passport')
+const passport = require('passport');
 
 //creating a variable to represent the router for all products routes
 
@@ -35,7 +35,6 @@ authRouter.post('/login',  passport.authenticate('local'), async (req, res, next
                          this is what I have as the req.sessionid: ${req.sessionID}
                          and this is what I have as the req.user: ${req.user}`)
             
-              res.render('profile', {username: username})
             
             });
 
