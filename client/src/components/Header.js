@@ -2,6 +2,7 @@ import React from "react";
 import './Header.css';
 import 'font-awesome/css/font-awesome.min.css';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
  const Header = () => {
 
@@ -89,7 +90,7 @@ import { Link } from "react-router-dom";
                 
                 {/* cart icon */}
 
-               <span className="cart-icon"><i class="fa fa-lock" aria-hidden="true"></i>    Logout</span>
+               <span className="cart-icon" onClick={async () => { await axios.get('/logout')}}><i class="fa fa-lock" aria-hidden="true"></i>    Logout</span>
            </div>
             </div>
 

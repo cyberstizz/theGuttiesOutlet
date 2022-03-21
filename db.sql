@@ -128,3 +128,6 @@ insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Va
 insert into pictestertwo(sneakerPath, name, price, description) values('/pics/New-Balance-576photo-newBalance.jpg', 'New-Balance-576', 249, 'Show you have a deep bag');
 insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Nike-Dunkphoto-dunk.jpeg ', 'Nike-Dunk', 249, 'The originator');
 insert into pictestertwo(sneakerPath, name, price, description) values('/pics/Nike-Cortezphoto-Cortez.jpg', 'Nike-Cortez', 69, 'Money makin Mitch!');
+
+
+-- this will be my temporary users table to test authentication before the reimplimentation fo the entire schema

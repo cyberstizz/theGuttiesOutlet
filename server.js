@@ -19,6 +19,8 @@ const homeRouter = require('./routes/home/homeRouter');
 const paymentsRouter = require('./routes/payments/paymentsRouter');
 const testRouter = require('./routes/test/testRouter');
 const authRouter = require('./routes/auth/authRouter');
+const loginRouter = require('./routes/login/loginRouter');
+const logoutRouter = require('./routes/logout/logoutRouter');
 // initializing the entry point of the index.html from the build folder if in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname,'client/build')))
@@ -85,9 +87,9 @@ app.use(passport.session());
 
 // initiate use of those router variables through middleware (or app.use)
 
-app.use('/login', authRouter)
+app.use('/login', loginRouter)
 
-app.use('/logout', authRouter)
+app.use('/logout', logoutRouter)
 
 app.use('/register', authRouter)
 

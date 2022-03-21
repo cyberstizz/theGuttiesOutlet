@@ -10,7 +10,7 @@ const authRouter = express.Router({mergeParams: true});
 
 // can't forget the database object 
 
-const pool = require('../../db');
+const Pool = require('../../db');
 const { urlencoded } = require('express');
 
 // enabling cors
@@ -21,25 +21,8 @@ authRouter.use(express.json());
 authRouter.use(urlencoded({extended: true}))
 
 
-// first the login route
-
-authRouter.post('/login',  passport.authenticate('local'), async (req, res, next)=> {
-
-            const { username }  = req.user;
-            
-            console.log( `I am the login route, I have already authenticated the user and destructured the username... this is the username I have ${username}`)
-            
-            
-            console.log(`before rendering the page there are a few thigs I'd like to get out of the way
-                         this is what I have as the req.body: ${req.body.username}
-                         this is what I have as the req.sessionid: ${req.sessionID}
-                         and this is what I have as the req.user: ${req.user}`)
-            
-            
-            });
-
  // now the register route
- authRouter.post('/register', async (req, res, next) => {
+ authRouter.post('/', async (req, res, next) => {
 
 
     const { username, password } = req.body;
@@ -63,16 +46,6 @@ authRouter.post('/login',  passport.authenticate('local'), async (req, res, next
     }
   
   });
-
-  // finally the logout route
-  authRouter.get('/logout', (req, res, next) => {
-
-
-    req.logOut()
-  
-    res.redirect('/')
-  })
-
 
 
 
