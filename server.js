@@ -3,10 +3,16 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5001;
 const path = require('path');
+// first lets grab our database
+const Pool = require('./db');
 // initiating a variable representing the session for every visit
 const session = require('express-session');
 // setting a variable to represent authentication middleware called passport
 const passport = require('passport');
+// also passport requires a strategy to use so in this case we will use the local strategy
+const LocalStrategy = require('passport-local');
+//we also need middleware to help our session connect to our database
+const postgresSession = require('connect-pg-simple')(session)
 // importing all of the routes as variables known as routers
 const productsRouter = require('./routes/products/productsRouter');
 const homeRouter = require('./routes/home/homeRouter');
@@ -23,6 +29,9 @@ if (process.env.NODE_ENV === 'production') {
 app.use(session({
   secret: 'secret',
   resave: false,
+  store: new postgresSession({
+    pool: Pool
+  }),
   saveUninitialized: true,
   cookie: {
     maxAge: 1000 * 60 * 60 * 72
