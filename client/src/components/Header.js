@@ -88,9 +88,8 @@ import axios from 'axios';
                 
             
                 
-                {/* cart icon */}
 
-               <span className="cart-icon" onClick={async () => { await axios.get('/logout')}}><i class="fa fa-lock" aria-hidden="true"></i>    Logout</span>
+               <div className="cart-icon" onClick={async () => { await axios.get('/logout')}}><i class="fa fa-lock" aria-hidden="true"></i>    Logout</div>
            </div>
             </div>
 

@@ -29,6 +29,7 @@ paymentsRouter.post('/', async (req, res) => {
         const {product, token } = req.body;
 
 
+        console.log(`this is the user ${req.user}`)
 
         console.log('product:', product);
 

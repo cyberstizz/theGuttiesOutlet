@@ -24,6 +24,7 @@ logoutRouter.use(urlencoded({extended: true}))
 // first the logout route
 
 logoutRouter.get('/', (req, res, next) => {
+  console.log(`this is the logout route and this is the user I am about to logout user :${req.user}`)
 
 
     req.logOut()

@@ -2,6 +2,7 @@ const express = require('express');
 
 const homeRouter = express.Router({mergeParams: true});
 const cors = require('cors');
+const passport = require('passport');
 
 const pool = require('../../db');
 
@@ -16,7 +17,9 @@ homeRouter.use(express.json());
 
 homeRouter.get('/', async (req, res,) => {
 
-  console.log(`this is the session ${req.session}`)
+  console.log(`this is the session ${req.sessionID}`)
+
+  console.log(`this is the req.user :${req.user}`)
  // everything is wrapped into a try catch block
 
     try{

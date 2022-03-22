@@ -27,6 +27,9 @@ productsRouter.use(express.json());
 productsRouter.get('/:productId', async (req, res, next) => {
     const { productId } = req.params;
     console.log(productId)
+
+    console.log(`this is the user ${req.user}`)
+
     try{
       const myTest = await pool.query(`select * from pictestertwo where name = $1`, [`${productId}`]);
    console.log(myTest.rows[0])
@@ -49,7 +52,8 @@ productsRouter.get('/:productId', async (req, res, next) => {
    
    productsRouter.delete('/:artist',  async (req, res, next)=> {
     
-   
+    console.log(`this is the user ${req.user}`)
+
    
    console.log('--uh ohh a delete request just came in! I"ll tell you how it goes')
     
@@ -74,7 +78,8 @@ productsRouter.get('/:productId', async (req, res, next) => {
    })
     
    productsRouter.post('/:artist',  async (req, res, next)=> {
-    
+    console.log(`this is the user ${req.user}`)
+
     
     
     console.log('everyday a request is born!')
@@ -96,6 +101,8 @@ productsRouter.get('/:productId', async (req, res, next) => {
     })
 
     productsRouter.post('/checkout',  async (req, res, next)=> {
+      console.log(`this is the user ${req.user}`)
+
       stripe.sessions.checkout.create({
         Payment_methods_type: ['card'],
         mode: "payment",

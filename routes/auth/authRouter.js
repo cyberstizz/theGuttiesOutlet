@@ -28,7 +28,9 @@ authRouter.use(urlencoded({extended: true}))
     const { username, password } = req.body;
   
     
-  console.log( `I am the register route and have just desructured the req.body. this is the username ${username}`)
+  console.log( `I am the register route and have just desructured the req.body. this is the username from the req.body :${username}`)
+  console.log(`this is the req.user :${req.user}`)
+
     const results = await Pool.query('select * from users where username = $1', [username]);
   
   
@@ -37,6 +39,8 @@ authRouter.use(urlencoded({extended: true}))
       const results =  await Pool.query('insert into users (username, password, expire) values($1,$2, $3)', [username, password, 37]);
   
       console.log(`everything worked out, the values :${username} and ${password}  were entered into the database`)
+
+      res.redirect('/')
     }
   
       //what to do if the name exists
