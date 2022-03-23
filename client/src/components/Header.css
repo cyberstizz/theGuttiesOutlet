@@ -228,3 +228,11 @@ height: 5vh;
     font-size: 20px;
     margin-top: 3vh;
 }
+
+#logOutLink{
+    font-size: 20px;
+    color: #B48B22;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}

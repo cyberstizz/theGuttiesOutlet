@@ -39,8 +39,7 @@ authRouter.use(urlencoded({extended: true}))
       const results =  await Pool.query('insert into users (username, password, expire) values($1,$2, $3)', [username, password, 37]);
   
       console.log(`everything worked out, the values :${username} and ${password}  were entered into the database`)
-
-      res.redirect('/')
+      next()
     }
   
       //what to do if the name exists
@@ -51,6 +50,8 @@ authRouter.use(urlencoded({extended: true}))
       res.redirect('/')
     }
   
+  },passport.authenticate('local', { failureRedirect: '/'}), (req, res, next) =>{
+    res.redirect('/')
   });
 
 

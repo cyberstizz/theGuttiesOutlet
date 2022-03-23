@@ -63,7 +63,7 @@ import axios from 'axios';
                     myself.style.color = '#762FA0'
                  const thePop = document.getElementById("signUpModal")
                  setTimeout(() => myself.style.color = '#B48B22', 200)
-                 thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In </div>
+                 thePop.style.visibility == 'hidden' ? thePop.style.visibility = 'visible' : thePop.style.visibility = 'visible'}}> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In </div>
             
                 
                  {/* cart icon */}
@@ -115,7 +115,18 @@ import axios from 'axios';
             
                 
 
-               <div className="cart-icon" onClick={async () => { await axios.post('/logout')}}><i class="fa fa-lock" aria-hidden="true"></i>    Logout</div>
+               <div id="logOutLink" onClick={async () => {
+                    const loggingOut = document.getElementById("logOutLink")
+                    loggingOut.style.color = '#762FA0'
+                    setTimeout(() => loggingOut.style.color = '#B48B22', 200)
+
+                    const response = await axios.post('/logout');
+
+                    const login_Status = response.data.isLoggedIn;
+
+                    setIsLoggedIn(login_Status);
+          
+            }}><i class="fa fa-lock" aria-hidden="true"></i>    Logout</div>
            </div>
             </div>
 
@@ -148,7 +159,7 @@ import axios from 'axios';
 
             <div className="createAccountLink" onClick={() => {
                  const theOut = document.getElementById("signOutModal")
-                 theOut.style.visibility === 'hidden' ?  theOut.style.visibility = 'visible' : theOut.style.visibility = 'hidden'
+                 theOut.style.visibility === 'visible' ?  theOut.style.visibility = 'hidden' : theOut.style.visibility = 'visible'
                  
                  const thePop = document.getElementById("signUpModal")
                  thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'
@@ -167,6 +178,12 @@ import axios from 'axios';
                 <input type="submit" className="signInButton"></input>
 
             </form>
+
+            <div className="createAccountLink" onClick={() => {
+                 const theOut = document.getElementById("signOutModal")
+                 theOut.style.visibility === 'visible' ?  theOut.style.visibility = 'hidden' : theOut.style.visibility = 'visible'
+                
+                 }}>New here? Click here to create an account</div>
 
         </div>
         </React.Fragment>

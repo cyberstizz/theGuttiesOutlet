@@ -27,9 +27,12 @@ logoutRouter.post('/', (req, res) => {
   console.log(`this is the logout route and this is the user I am about to logout user :${req.user}`)
 
 
-    req.logout();
-  
-    res.redirect('/');
+     req.logOut();
+
+     res.json({isLoggedIn: false})
+     
+     console.log('this is directly after the res.redirect so if your reading this it ignored the redirect for some reasont')
+
   })
 
 
