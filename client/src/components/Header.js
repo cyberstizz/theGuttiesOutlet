@@ -1,10 +1,37 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import './Header.css';
 import 'font-awesome/css/font-awesome.min.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
  const Header = () => {
+
+
+    const [isLoggedIn, setIsLoggedIn] = useState('false');
+    const [user, setUser] = useState('')
+
+    useEffect(() => {
+        
+        const mountCall = async () => {
+        const response = await axios.get('/home');
+    
+        const login_Status = await response.data.isLoggedIn;
+
+        const current_User = await response.data.user;
+
+    
+        console.log(`this is the current user: ${current_User}`)
+    
+        setIsLoggedIn(login_Status);
+
+        setUser(current_User);
+
+    
+        }
+    
+        mountCall();
+    },[])
 
     const scrollFunction = () => {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 80) {
@@ -77,10 +104,9 @@ import axios from 'axios';
                 </nav>
 
             </div>
-
+            <div className="ifLoggedIn"> { isLoggedIn && `Hello ${user}`}</div>
 
             <div className='Right_Header'>
-           
 
             <div id="settingsLogoutBlock">
                 {/* the right header will have the cart icon and the login and logout buttons */}
@@ -89,7 +115,7 @@ import axios from 'axios';
             
                 
 
-               <div className="cart-icon" onClick={async () => { await axios.get('/logout')}}><i class="fa fa-lock" aria-hidden="true"></i>    Logout</div>
+               <div className="cart-icon" onClick={async () => { await axios.post('/logout')}}><i class="fa fa-lock" aria-hidden="true"></i>    Logout</div>
            </div>
             </div>
 

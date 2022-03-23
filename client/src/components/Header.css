@@ -221,3 +221,10 @@ height: 5vh;
     flex-direction: column;
     visibility: hidden;
 }
+
+.ifLoggedIn{
+    font-family: 'Permanent Marker', cursive;
+    color: #762FA0;
+    font-size: 20px;
+    margin-top: 3vh;
+}

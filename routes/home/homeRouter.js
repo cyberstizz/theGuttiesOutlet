@@ -56,7 +56,10 @@ homeRouter.get('/', async (req, res,) => {
   
   
     // res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": `${myTest.rows[0].price}`, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
-    res.status(200).json({"data": fullList})
+    res.status(200).json({"data": fullList,
+                          "isLoggedIn": req.user ? true : false,
+                          "user": req.user ? req.user : ''
+                        })
  
     //  console.log(myTest.rows[0])
    } catch(err){

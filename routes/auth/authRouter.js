@@ -47,6 +47,8 @@ authRouter.use(urlencoded({extended: true}))
   
     if(results.rows[0]){
       console.log('this login attempt failed beacause the user already exists')
+
+      res.redirect('/')
     }
   
   });

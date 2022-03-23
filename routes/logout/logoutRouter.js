@@ -23,13 +23,13 @@ logoutRouter.use(urlencoded({extended: true}))
 
 // first the logout route
 
-logoutRouter.get('/', (req, res, next) => {
+logoutRouter.post('/', (req, res) => {
   console.log(`this is the logout route and this is the user I am about to logout user :${req.user}`)
 
 
-    req.logOut()
+    req.logout();
   
-    res.redirect('/')
+    res.redirect('/');
   })
 
 
