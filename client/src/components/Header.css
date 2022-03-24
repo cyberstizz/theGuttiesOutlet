@@ -140,8 +140,8 @@
 #searchbutton:hover{
     height: 5vh;
     width: 4vw;
-    background-color: #762FA0;
-    color: #B48B22;
+    background-color: #f5d37f;
+    color: #251B66;
     margin-top: 4vh;
     border: 2px solid #251B66;
     border-top-right-radius: 20px;
@@ -239,4 +239,36 @@ height: 5vh;
     font-family: 'Permanent Marker', cursive;
     margin-left: 1vw;
     margin-top: 2vh;
+}
+
+#logOutLink:hover{
+    color: #f5d37f;
+}
+
+#LogOutPopup{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30vw;
+    margin-top: -5vh;
+    height: 60vh;
+    width: 40vw;
+    background-color: #251B66;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6vh;
+    color: #B48B22;
+    visibility: hidden;
+    z-index: 101;
+}
+
+.LogInPopup{
+    position: absolute;
+    margin: 0 auto;
+    visibility: hidden;
+}
+
+.RegisterPopup{
+    position: absolute;
+    margin: 0 auto;
+    visibility: hidden;
 }

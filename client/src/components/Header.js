@@ -4,6 +4,7 @@ import './Header.css';
 import 'font-awesome/css/font-awesome.min.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import Search from './Search';
 
  const Header = () => {
 
@@ -33,14 +34,14 @@ import axios from 'axios';
         mountCall();
     })
 
-    const scrollFunction = () => {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 80) {
-          document.getElementById("headerblock").style.height = "30vh";
-          document.getElementById("navlist").style.height = "25vh";
-        }
-    }
+    // const scrollFunction = () => {
+    //     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 80) {
+    //       document.getElementById("headerblock").style.height = "30vh";
+    //       document.getElementById("navlist").style.height = "25vh";
+    //     }
+    // }
 
-    window.onscroll = scrollFunction()
+    // window.onscroll = scrollFunction()
 
     return(
         //first there will be a header element that houses three sub headers
@@ -83,12 +84,16 @@ import axios from 'axios';
                 {/* the center header contains the search bar and the nav bar both will be block elements */}
 
                 {/* the search bar will be placed within a form for easier access to the buttons input */}
-                <form className="searchform" onSubmit=''>
+                <div className="searchform">
 
                     <input id='searchbar' type='text' placeholder="search"></input>
-                    <button id='searchbutton' type='submit' class="fa fa-search">
+                    <button id='searchbutton' type='submit' class="fa fa-search" onClick={() =>{
+                const searchString = document.getElementById('searchbar').value;
+                
+                return <Search searchString={searchString} />
+                }}>
                     </button>
-                </form>
+                </div>
 
 
                     {/* the nav bar will be below the search bar in the center of the header */}
@@ -115,16 +120,9 @@ import axios from 'axios';
             
                 
 
-               <div id="logOutLink" onClick={async () => {
-                    const loggingOut = document.getElementById("logOutLink")
-                    loggingOut.style.color = '#762FA0'
-                    setTimeout(() => loggingOut.style.color = '#B48B22', 200)
-
-                    const response = await axios.post('/logout');
-
-                    const login_Status = response.data.isLoggedIn;
-
-                    setIsLoggedIn(login_Status);
+               <div id="logOutLink" onClick={() => {
+                    const LogOutPopup = document.getElementById('LogOutPopup')
+                    LogOutPopup.style.visibility = 'visible'
           
             }}><i class="fa fa-lock" aria-hidden="true"></i>    Logout</div>
            </div>
@@ -186,6 +184,42 @@ import axios from 'axios';
                  }}>New here? Click here to create an account</div>
 
         </div>
+
+
+        {/* now  the creation of all fo the alerts/popups*/}
+
+        <div id="LogOutPopup"> Are you sure you want to log out?
+        
+        <button onClick={async () => {
+                    const loggingOut = document.getElementById("logOutLink")
+                    loggingOut.style.color = '#762FA0'
+                    setTimeout(() => loggingOut.style.color = '#B48B22', 200)
+
+                    const response = await axios.post('/logout');
+
+                    const login_Status = response.data.isLoggedIn;
+
+                    setIsLoggedIn(login_Status);
+                    const LogOutPopup = document.getElementById('LogOutPopup')
+        LogOutPopup.style.visibility = 'visible' ? 'hidden' : 'hidden'
+          
+            }}>Log Out</button>
+        <button onClick={() =>{ 
+        const LogOutPopup = document.getElementById('LogOutPopup')
+        LogOutPopup.style.visibility = 'visible' ? 'hidden' : 'hidden'
+
+
+        }}>Stay Signed In</button>
+
+        </div>
+        <div className="LogInPopup">I am the login popup</div>
+        <div className="RegisterPopup">I am the register popup</div>
+
+
+
+
+
+
         </React.Fragment>
     )
 };

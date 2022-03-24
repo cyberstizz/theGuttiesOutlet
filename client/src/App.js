@@ -11,6 +11,8 @@ import TestPage from './components/testPage';
 import NewArrivals from './components/NewArrivals';
 import BestSellers from './components/BestSellers';
 import Discounts from './components/Discounts';
+import Search from './components/Search';
+
 
 
 
@@ -41,6 +43,7 @@ state = {
         <Route path='/newArrivals' element={<NewArrivals />} />
         <Route path='/bestSellers' element={<BestSellers />} />
         <Route path='/discounts' element={<Discounts />} />
+        <Route path='/search' element={<Search />} />
         <Route path='/products/:productId' element={<ProductDescription />} />
         <Route path='/createPage' element={<CreatePage />} />
         <Route path='/deletePage' element={<DeletePage />} />

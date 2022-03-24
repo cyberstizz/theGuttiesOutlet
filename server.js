@@ -19,6 +19,7 @@ const homeRouter = require('./routes/home/homeRouter');
 const bestSellersRouter = require('./routes/bestsellers/bestSellersRouter');
 const discountsRouter = require('./routes/discounts/discountsRouter');
 const newArrivalsRouter = require('./routes/newArrivals/newArrivalsRouter');
+const searchRouter = require('./routes/search/searchRouter');
 const paymentsRouter = require('./routes/payments/paymentsRouter');
 const testRouter = require('./routes/test/testRouter');
 const authRouter = require('./routes/auth/authRouter');
@@ -103,6 +104,8 @@ app.use('/newArrivals', newArrivalsRouter);
 app.use('/bestSellers', bestSellersRouter);
 
 app.use('/discounts', discountsRouter);
+
+app.use('/search', searchRouter);
 
 app.use('/products', productsRouter);
 
