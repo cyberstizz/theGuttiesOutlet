@@ -4,7 +4,7 @@
         <div className='productsContainer'> */
 
 
-        .bestSellerssProductsListHeader{
+        .discountsProductsListHeader{
             height: 10vh;
             width: 10vw;
             margin: 0 auto;
@@ -18,7 +18,7 @@
             background-color:#251B66;
         }
         
-        .bestSellerssProductsContainer{
+        .discountsProductsContainer{
             position: relative;
             display: flex;
             flex-flow: row wrap;

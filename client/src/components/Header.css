@@ -121,6 +121,10 @@
     color: #B48B22;
 }
 
+.navitem:hover{
+    color: #f5d37f;
+}
+
 #searchbutton{
     height: 5vh;
     width: 4vw;

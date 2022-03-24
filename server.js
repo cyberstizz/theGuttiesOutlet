@@ -16,6 +16,8 @@ const postgresSession = require('connect-pg-simple')(session)
 // importing all of the routes as variables known as routers
 const productsRouter = require('./routes/products/productsRouter');
 const homeRouter = require('./routes/home/homeRouter');
+const bestSellersRouter = require('./routes/bestsellers/bestSellersRouter');
+const discountsRouter = require('./routes/discounts/discountsRouter');
 const newArrivalsRouter = require('./routes/newArrivals/newArrivalsRouter');
 const paymentsRouter = require('./routes/payments/paymentsRouter');
 const testRouter = require('./routes/test/testRouter');
@@ -97,6 +99,10 @@ app.use('/register', authRouter)
 app.use('/home', homeRouter);
 
 app.use('/newArrivals', newArrivalsRouter);
+
+app.use('/bestSellers', bestSellersRouter);
+
+app.use('/discounts', discountsRouter);
 
 app.use('/products', productsRouter);
 

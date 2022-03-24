@@ -98,8 +98,8 @@ import axios from 'axios';
                     <ul id='navlist'>
                        <Link to='/'> <li className='navitem'>Home</li></Link>
                        <Link to='/newArrivals'> <li className='navitem'>New Arrivals</li></Link> 
-                        <li className='navitem'>Best Sellers</li>
-                        <li className='navitem'>Discount</li>
+                        <Link to='/bestSellers'><li className='navitem'>Best Sellers</li></Link>
+                        <Link to='/discounts'><li className='navitem'>Discount</li></Link>
                     </ul>
                 </nav>
 
