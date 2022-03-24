@@ -2,12 +2,12 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { useEffect, useState } from 'react';
-import '../App.css';
+import './NewArrivals.css';
 import { Link } from 'react-router-dom';
 import Product from './Product';
 import axios from 'axios';
 
-const Home = () => {
+const NewArrivals = () => {
 
 const [Products, setProducts] = useState([])
 
@@ -20,7 +20,7 @@ const [Path, setPath] = useState('')
     useEffect(() => {
         
     const mountCall = async () => {
-    const response = await axios.get('/home');
+    const response = await axios.get('/newArrivals');
 
     const responseComplete = await response.data.data.map(item => item);
 
@@ -46,8 +46,8 @@ const [Path, setPath] = useState('')
     return(
         <div className='everything'>
         <Header />
-        <div className='productsListHeader'></div>
-        <div className='productsContainer'>
+        <div className='newArrivalsProductsListHeader'></div>
+        <div className='newArrivalsProductsContainer'>
         {/* <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
         <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
         <Link to={Name ? `/products/${Name}` : '/products/levelup'}><Product theName={Name ? Name : 'levelup'} thePrice={Price ? Price : 700} theDescription={Description ? Description : 'just do it'} thePath={Path ? Path : '/pics/levelupphoto-yeey.png'}/></Link>
@@ -59,4 +59,4 @@ const [Path, setPath] = useState('')
     )
 }
 
-export default Home;
+export default NewArrivals;

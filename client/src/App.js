@@ -8,7 +8,8 @@ import DeletePage from './components/DeletePage';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
 import TestPage from './components/testPage';
-import TestView from './components/TestView';
+import NewArrivals from './components/NewArrivals';
+
 
 class App extends Component {
 state = {
@@ -34,6 +35,7 @@ state = {
           
         <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/newArrivals' element={<NewArrivals />} />
         <Route path='/products/:productId' element={<ProductDescription />} />
         <Route path='/createPage' element={<CreatePage />} />
         <Route path='/deletePage' element={<DeletePage />} />

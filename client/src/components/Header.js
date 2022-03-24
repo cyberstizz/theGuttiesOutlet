@@ -31,7 +31,7 @@ import axios from 'axios';
         }
     
         mountCall();
-    },[])
+    })
 
     const scrollFunction = () => {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 80) {
@@ -96,8 +96,8 @@ import axios from 'axios';
 
                     {/* the nav will be organized into an unordered list */}
                     <ul id='navlist'>
-                        <li className='navitem'>Home</li>
-                        <li className='navitem'>New Arrivals</li>
+                       <Link to='/'> <li className='navitem'>Home</li></Link>
+                       <Link to='/newArrivals'> <li className='navitem'>New Arrivals</li></Link> 
                         <li className='navitem'>Best Sellers</li>
                         <li className='navitem'>Discount</li>
                     </ul>
