@@ -261,13 +261,23 @@ height: 5vh;
     z-index: 101;
 }
 
-.LogInPopup{
+#LogInPopup{
     position: absolute;
-    margin: 0 auto;
-    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30vw;
+    margin-top: -5vh;
+    height: 60vh;
+    width: 40vw;
+    background-color: #251B66;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6vh;
+    color: #B48B22;
+    visibility: visible;
+    z-index: 101;
 }
 
-.RegisterPopup{
+#RegisterPopup{
     position: absolute;
     margin: 0 auto;
     visibility: hidden;

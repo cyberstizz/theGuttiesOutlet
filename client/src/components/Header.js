@@ -212,8 +212,19 @@ import Search from './Search';
         }}>Stay Signed In</button>
 
         </div>
-        <div className="LogInPopup">I am the login popup</div>
-        <div className="RegisterPopup">I am the register popup</div>
+        {isLoggedIn && (
+         <div id="LogInPopup">
+             YOu are now logged in as {user}
+        <button onClick={() =>{ 
+        const LogInPopup = document.getElementById('LogInPopup')
+        LogInPopup.style.visibility = 'hidden'
+        }}>Ok</button>
+        
+        </div>
+         )
+        }
+        
+        <div id="RegisterPopup">I am the register popup</div>
 
 
 
