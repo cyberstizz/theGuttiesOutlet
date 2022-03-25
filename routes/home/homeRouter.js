@@ -54,14 +54,25 @@ homeRouter.get('/', async (req, res,) => {
    
   // console.log(`this is all the data that came back from my query: ${myTest.rows[0].name}`);
   
+  if(req.cookies.initialLogin == 'true'){
   
     // res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": `${myTest.rows[0].price}`, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
-    res.status(200).json({"data": fullList,
+    res.cookie('initialLogin','false', { maxAge: 1000 * 60 * 60 * 24, httpOnly: true }).status(200).json({"data": fullList,
                           "isLoggedIn": req.user ? true : false,
-                          "user": req.user ? req.user : ''
+                          "user": req.user ? req.user : '',
+                          "initialLogin": true
                         })
+
+    } else {
+      // res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": `${myTest.rows[0].price}`, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
+   res.status(200).json({"data": fullList,
+   "isLoggedIn": req.user ? true : false,
+   "user": req.user ? req.user : '',
+   "initialLogin": false
+ })
+   }
  
-    //  console.log(myTest.rows[0])
+   
    } catch(err){
      console.log(err.message);
    }

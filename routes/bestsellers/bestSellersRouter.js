@@ -16,6 +16,8 @@ bestSellerssRouter.use(express.json());
 
 bestSellerssRouter.get('/', async (req, res,) => {
 
+  
+
   console.log(`this is the session ${req.sessionID}`)
 
   console.log(`this is the req.user :${req.user}`)
@@ -46,14 +48,25 @@ bestSellerssRouter.get('/', async (req, res,) => {
   
   //    const myTest = await pool.query(`select * from pictestertwo where price = $1`, [`${randomArtist}`]);
    
-  // console.log(`this is all the data that came back from my query: ${myTest.rows[0].name}`);
+  console.log(`this isthe req.cookies.initialLogin ${req.cookies.initialLogin}`);
   
+  if(req.cookies.initialLogin == 'true'){
   
     // res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": `${myTest.rows[0].price}`, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
-    res.status(200).json({"data": fullList,
+    res.cookie('initialLogin','false', { maxAge: 1000 * 60 * 60 * 24, httpOnly: true }).status(200).json({"data": fullList,
                           "isLoggedIn": req.user ? true : false,
-                          "user": req.user ? req.user : ''
+                          "user": req.user ? req.user : '',
+                          "initialLogin": true
                         })
+
+    } else {
+      // res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": `${myTest.rows[0].price}`, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
+   res.status(200).json({"data": fullList,
+   "isLoggedIn": req.user ? true : false,
+   "user": req.user ? req.user : '',
+   "initialLogin": false
+ })
+   }
  
     //  console.log(myTest.rows[0])
    } catch(err){

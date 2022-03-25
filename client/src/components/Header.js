@@ -9,18 +9,23 @@ import Search from './Search';
  const Header = () => {
 
 
-    const [isLoggedIn, setIsLoggedIn] = useState('false');
+
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [user, setUser] = useState('')
+    const [initialLogin, setInitialLogin] = useState(false);
+
+    
+
 
     useEffect(() => {
         
         const mountCall = async () => {
         const response = await axios.get('/home');
     
-        const login_Status = await response.data.isLoggedIn;
+        const login_Status = response.data.isLoggedIn;
 
-        const current_User = await response.data.user;
+        const current_User = response.data.user;
+
 
     
         console.log(`this is the current user: ${current_User}`)
@@ -29,18 +34,12 @@ import Search from './Search';
 
         setUser(current_User);
 
-    
+        setInitialLogin(response.data.initialLogin)
         }
     
         mountCall();
     })
 
-    useEffect(() => {
-        if(isLoggedIn){
-            const LogInPopup = document.getElementById('LogInPopup')
-            LogInPopup.style.visibility = 'hidden' ? 'hidden' : 'visible'
-        }
-    }, [isLoggedIn])
 
     // const scrollFunction = () => {
     //     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 80) {
@@ -50,8 +49,15 @@ import Search from './Search';
     // }
 
     // window.onscroll = scrollFunction()
+    // if (initialLogin == true){
+    //     document.getElementById('LogInPopup').style.visibility = 'visible';
+    //     // document.cookie = 'initialLogin=false'
+    // } else{
+    //     document.getElementById('LogInPopup').style.visibility = 'hidden';
+    // }
 
     return(
+        
         //first there will be a header element that houses three sub headers
         <React.Fragment>
         <header id='headerblock'>
@@ -220,14 +226,15 @@ import Search from './Search';
         }}>Stay Signed In</button>
 
         </div>
-         <div id="LogInPopup">
-             YOu are now logged in as {user}
+        { initialLogin && <div id="LogInPopup">
+             You are now logged in as {user}
         <button onClick={() =>{ 
-        const LogInPopup = document.getElementById('LogInPopup')
-        LogInPopup.style.visibility = 'hidden'
+        document.cookie = 'initialLogin=false';
+        const LogInPopup = document.getElementById('LogInPopup');
+        LogInPopup.style.visibility = 'hidden';
         }}>Ok</button>
         
-        </div>
+        </div>}
         
         <div id="RegisterPopup">I am the register popup</div>
 

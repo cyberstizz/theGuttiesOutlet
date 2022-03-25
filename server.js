@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5001;
 const path = require('path');
+var cookieParser = require('cookie-parser')
 // first lets grab our database
 const Pool = require('./db');
 // initiating a variable representing the session for every visit
@@ -29,6 +30,8 @@ const logoutRouter = require('./routes/logout/logoutRouter');
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname,'client/build')))
 }  
+
+app.use(cookieParser())
 
 // initiate use of the session variable by setting up its config in app.use
 // also I set the cookie to expire in three days
@@ -88,6 +91,18 @@ passport.deserializeUser( async(id, done) => {
 app.use(passport.initialize());
 
 app.use(passport.session());
+
+// now creating middleware to recognize if its the first signin for the user
+// app.use((req, res, next) => {
+//   let cookie = req.cookies.initialLogin;
+
+//   if(cookie === undefined){
+//     res.cookie('initialLogin', false)
+//   }
+
+
+// next()
+// })
 
 // initiate use of those router variables through middleware (or app.use)
 

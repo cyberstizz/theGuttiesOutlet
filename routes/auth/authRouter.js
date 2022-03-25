@@ -47,7 +47,7 @@ authRouter.use(urlencoded({extended: true}))
     if(results.rows[0]){
       console.log('this login attempt failed beacause the user already exists')
 
-      res.redirect('/')
+      res.cookie('initialLogin',true, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true }).redirect('/')
     }
   
   },passport.authenticate('local', { failureRedirect: '/'}), (req, res, next) =>{
