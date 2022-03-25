@@ -4,25 +4,26 @@
         <div className='productsContainer'> */
 
 
-        .newArrivalsProductsListHeader{
-            height: 10vh;
-            width: 10vw;
-            margin: 0 auto;
-            margin-top: 2vh;
-            padding-bottom: 1vh;
-            border-bottom: solid 3px #B48B22;
-            background-image: url('../newArrivals.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-color:#251B66;
-        }
-        
-        .newArrivalsProductsContainer{
-            position: relative;
-            display: flex;
-            flex-flow: row wrap;
-            overflow: visible;
-            margin-left: .5vw;
-            margin-right: 1vw;
-            margin-top: 2vh;}
+.newArrivalsProductsListHeader{
+    height: 7vh;
+    width: 10vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-top: 6.5vh;
+    padding-bottom: -10px;
+    border-bottom: solid 3px #B48B22;
+    background-image: url('../newarrivalsBlue.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:#251B66;
+}
+
+.newArrivalsProductsContainer{
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    overflow: visible;
+    margin-left: .5vw;
+    margin-right: 1vw;
+    margin-top: 2vh;}

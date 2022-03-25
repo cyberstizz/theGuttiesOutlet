@@ -12,11 +12,6 @@
     background-image: url('./guttieslogoblue.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-color: black;
-}
-
-.everything{
-    background-color: black;
 }
 
 #randomButton{
@@ -35,7 +30,6 @@
     margin-left: .5vw;
     margin-right: 1vw;
     margin-top: 2vh;
-    background-color: black;
 }
 
 .productsListHeader{
@@ -44,10 +38,9 @@
     margin: 0 auto;
     margin-top: 2vh;
     padding-bottom: 1vh;
-    border-bottom: solid 3px #2c972c;
-    background-image: url('./redAndBlack.png');
+    border-bottom: solid 3px #B48B22;
+    background-image: url('./guttieslogoblue.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-color: black;
-    color: black;
 }
+

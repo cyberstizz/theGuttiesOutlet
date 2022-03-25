@@ -1,5 +1,5 @@
 const express = require('express');
-const discountsRouter = express.Router({mergeParams: true});
+const searchRouter = express.Router({mergeParams: true});
 const cors = require('cors');
 const passport = require('passport');
 
@@ -7,14 +7,18 @@ const pool = require('../../db');
 
 
 // enabling cors
-discountsRouter.use(cors());
+searchRouter.use(cors());
  
 // allowing access to the requst.body
-discountsRouter.use(express.json());
+searchRouter.use(express.json());
 
 // the home route
 
-discountsRouter.get('/', async (req, res,) => {
+searchRouter.post('/:searchString', async (req, res,) => {
+
+    const searchString = req.params.searchString;
+
+    console.log(`this is the search string ${searchString}`)
 
   console.log(`this is the session ${req.sessionID}`)
 
@@ -23,7 +27,7 @@ discountsRouter.get('/', async (req, res,) => {
 
     try{
     
-    const fullListCall = await pool.query('select * from pictestertwo order by price asc limit 6')
+    const fullListCall = await pool.query('select * from pictestertwo where name = $1', [searchString])
   
     console.log('okay I just queried the database for the first time succesfully, hopefully that char thing hasnt happened yet')
   
@@ -66,4 +70,6 @@ discountsRouter.get('/', async (req, res,) => {
 
   //exporting the homeRouter for use in the main server file
 
-  module.exports = discountsRouter;
+  module.exports = searchRouter;
+
+  

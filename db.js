@@ -15,9 +15,9 @@ const proConfig = {
 
 const localConfig = {
     user: "postgres",
-    password: "waterfall",
+    password: "chicken",
     host: "localhost",
-    database: "postgres",
+    database: "stizz",
     port: 5432
 }
 

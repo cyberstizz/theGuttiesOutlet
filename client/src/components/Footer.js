@@ -25,10 +25,10 @@ import { Link } from "react-router-dom";
 
                 <ul className="footer-list-block">
                     <li className="footer-section-header">sitemap</li>
-                    <li className="footer-list-item">Home</li>
-                    <li className="footer-list-item">New Arrivals</li>
-                    <li className="footer-list-item">Best Sellers</li>
-                    <li className="footer-list-item">Discount</li>
+                  <Link to='/'><li className="footer-list-item">Home</li></Link>
+                  <Link to='/newArrivals'><li className="footer-list-item">New Arrivals</li></Link>
+                  <Link to='/bestSellers'><li className="footer-list-item">Best Sellers</li></Link>
+                  <Link to='/discounts'><li className="footer-list-item">Discount</li></Link>
 
                 </ul>
             </section>

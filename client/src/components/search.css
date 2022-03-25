@@ -4,21 +4,21 @@
         <div className='productsContainer'> */
 
 
-        .bestSellerssProductsListHeader{
-            height: 7vh;
+        .searchProductsListHeader{
+            height: 10vh;
             width: 10vw;
             margin: 0 auto;
-            box-sizing: border-box;
-            margin-top: 6.5vh;
-            padding-bottom: -10px;
+            margin-top: 2vh;
+            padding-bottom: 1vh;
             border-bottom: solid 3px #B48B22;
-            background-image: url('../bestsellersBlue.png');
+            background-image: url('../newArrivals.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            background-color:#251B66;
         }
         
-        .bestSellerssProductsContainer{
+        .searchProductsContainer{
             position: relative;
             display: flex;
             flex-flow: row wrap;

@@ -10,6 +10,7 @@ import Search from './Search';
 
 
     const [isLoggedIn, setIsLoggedIn] = useState('false');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [user, setUser] = useState('')
 
     useEffect(() => {
@@ -33,6 +34,13 @@ import Search from './Search';
     
         mountCall();
     })
+
+    useEffect(() => {
+        if(isLoggedIn){
+            const LogInPopup = document.getElementById('LogInPopup')
+            LogInPopup.style.visibility = 'hidden' ? 'hidden' : 'visible'
+        }
+    }, [isLoggedIn])
 
     // const scrollFunction = () => {
     //     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 80) {
@@ -212,7 +220,6 @@ import Search from './Search';
         }}>Stay Signed In</button>
 
         </div>
-        {isLoggedIn && (
          <div id="LogInPopup">
              YOu are now logged in as {user}
         <button onClick={() =>{ 
@@ -221,8 +228,6 @@ import Search from './Search';
         }}>Ok</button>
         
         </div>
-         )
-        }
         
         <div id="RegisterPopup">I am the register popup</div>
 

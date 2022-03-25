@@ -5,7 +5,7 @@
 #footerBlock{
     height: 50vh;
     width: 100vw;
-    background-color: black;
+    background-color: #B48B22;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -57,13 +57,13 @@
     padding-bottom: 2vh;
     font-family: 'Permanent Marker', cursive;
     font-size: 25px;
-    color: #2c972c;
+    color: #251B66;
     margin-left: 3vw;
 }
 
 .footer-list-item{
     font-family: 'Permanent Marker', cursive;
-    color: #2c972c;
+    color: #0D2A57;
     margin-left: 3vw;
     padding-bottom: .5vh;
     font-size: 20px;
