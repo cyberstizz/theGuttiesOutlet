@@ -273,7 +273,7 @@ height: 5vh;
     font-family: 'Permanent Marker', cursive;
     font-size: 6vh;
     color: #B48B22;
-    visibility: visible;
+    visibility: hidden;
     z-index: 101;
 }
 

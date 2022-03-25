@@ -5,17 +5,17 @@
 
 
         .discountsProductsListHeader{
-            height: 10vh;
+            height: 7vh;
             width: 10vw;
             margin: 0 auto;
-            margin-top: 2vh;
+            box-sizing: border-box;
+            margin-top: 6.5vh;
             padding-bottom: 1vh;
             border-bottom: solid 3px #B48B22;
-            background-image: url('../newArrivals.png');
+            background-image: url('../discountsTransparent.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            background-color:#251B66;
         }
         
         .discountsProductsContainer{
