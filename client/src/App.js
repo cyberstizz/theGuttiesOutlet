@@ -43,7 +43,7 @@ state = {
         <Route path='/newArrivals' element={<NewArrivals />} />
         <Route path='/bestSellers' element={<BestSellers />} />
         <Route path='/discounts' element={<Discounts />} />
-        <Route path='/search' element={<Search />} />
+        <Route path='/search/:query' element={<Search />} />
         <Route path='/products/:productId' element={<ProductDescription />} />
         <Route path='/createPage' element={<CreatePage />} />
         <Route path='/deletePage' element={<DeletePage />} />

@@ -14,6 +14,8 @@ import Search from './Search';
     const [user, setUser] = useState('')
     const [initialLogin, setInitialLogin] = useState(false);
     const [showCookiePopup, setShowCookiePopup] = useState(false)
+    const [searchField, setSearchField] = useState('')
+
 
     
 
@@ -42,6 +44,13 @@ import Search from './Search';
     
         mountCall();
     })
+
+    const handleSearchText = async (event) =>{
+        event.preventDefault();
+        const searchQuery = event.target.value;
+        console.log(searchQuery)
+        setSearchField(searchQuery);
+    };
 
 
     // const scrollFunction = () => {
@@ -102,14 +111,8 @@ import Search from './Search';
 
                 {/* the search bar will be placed within a form for easier access to the buttons input */}
                 <div className="searchform">
-
-                    <input id='searchbar' type='text' placeholder="search"></input>
-                    <button id='searchbutton' type='submit' class="fa fa-search" onClick={() =>{
-                const searchString = document.getElementById('searchbar').value;
-                
-                return <Search searchString={searchString} />
-                }}>
-                    </button>
+                    <input id='searchbar' type='text' onChange={handleSearchText}></input>
+                  <Link to={`/search/${searchField}`}><button id='searchbutton' type='submit' class="fa fa-search"></button></Link>
                 </div>
 
 

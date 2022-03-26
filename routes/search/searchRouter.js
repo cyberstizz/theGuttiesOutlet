@@ -16,7 +16,7 @@ searchRouter.use(express.json());
 
 searchRouter.post('/:searchString', async (req, res,) => {
 
-    const searchString = req.params.searchString;
+    const {searchString} = req.params;
 
     console.log(`this is the search string ${searchString}`)
 
@@ -29,7 +29,6 @@ searchRouter.post('/:searchString', async (req, res,) => {
     
     const fullListCall = await pool.query('select * from pictestertwo where name = $1', [searchString])
   
-    console.log('okay I just queried the database for the first time succesfully, hopefully that char thing hasnt happened yet')
   
     const fullList = fullListCall.rows;
   
@@ -54,7 +53,38 @@ searchRouter.post('/:searchString', async (req, res,) => {
   
   
     // res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": `${myTest.rows[0].price}`, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
-    res.status(200).json({"data": fullList,
+    res.redirect(`/search/${searchString}`)
+ 
+    //  console.log(myTest.rows[0])
+   } catch(err){
+     console.log(err.message);
+   }
+   
+  });
+
+
+  //now the get route
+  searchRouter.get('/:searchString', async (req, res,) => {
+
+    const searchString = req.params.searchString;
+    console.log(`this is the search string ${searchString}`)
+
+  console.log(`this is the session ${req.sessionID}`)
+
+  console.log(`this is the req.user :${req.user}`)
+ // everything is wrapped into a try catch block
+
+    try{
+    
+    const fullListCall = await pool.query('select * from pictestertwo where name = $1', [searchString])
+  
+  
+    const fullList = fullListCall.rows;
+  
+
+  
+    // res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": `${myTest.rows[0].price}`, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
+    res.json({"data": fullList,
                           "isLoggedIn": req.user ? true : false,
                           "user": req.user ? req.user : ''
                         })

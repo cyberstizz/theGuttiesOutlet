@@ -1,15 +1,16 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import './NewArrivals.css';
 import { Link } from 'react-router-dom';
 import Product from './Product';
 import axios from 'axios';
 
-const Search = (props) => {
+const Search = () => {
 
-    const searchString = props.seasrchString;
+    const { query } = useParams();
 
 const [Products, setProducts] = useState([])
 
@@ -22,7 +23,7 @@ const [Path, setPath] = useState('')
     useEffect(() => {
         
     const mountCall = async () => {
-    const response = await axios.post(`/search/:${searchString}`);
+    const response = await axios.get(`/search/${query}`);
 
     const responseComplete = await response.data.data.map(item => item);
 
