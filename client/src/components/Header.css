@@ -282,3 +282,19 @@ height: 5vh;
     margin: 0 auto;
     visibility: hidden;
 }
+
+#cookiePopup{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30vw;
+    margin-top: -5vh;
+    height: 60vh;
+    width: 40vw;
+    background-color: #251B66;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6vh;
+    color: #B48B22;
+    visibility: hidden;
+    z-index: 101;
+}

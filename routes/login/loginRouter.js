@@ -26,6 +26,7 @@ loginRouter.use(urlencoded({extended: true}))
 // first the login route
 
 loginRouter.post('/',  passport.authenticate('local', { failureRedirect: '/'}), async (req, res, next)=> {
+    
 
     
     console.log( `I am the login route, I have already authenticated the user and destructured the username... this is the username I have ${req.user}`)

@@ -8,6 +8,16 @@ email_address varchar(20) unique not null,
 physical_address varchar(50)
 );
 
+--temporarily
+create table users(
+    username varchar(30) unique not null,
+    password varchar(60) primary key,
+    expire int
+);
+
+alter table users
+alter column password varchar(60);
+
 --create the products table with the product id as the primary key
 
 create table products(

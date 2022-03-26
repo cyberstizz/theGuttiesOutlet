@@ -13,6 +13,9 @@ const authRouter = express.Router({mergeParams: true});
 const Pool = require('../../db');
 const { urlencoded } = require('express');
 
+//bringing in encryption package to hash passwords
+const bcrypt = require('bcrypt');
+
 // enabling cors
 authRouter.use(cors());
  
@@ -26,28 +29,28 @@ authRouter.use(urlencoded({extended: true}))
 
 
     const { username, password } = req.body;
+
+    const hash = bcrypt.hashSync(password, 12);
   
     
   console.log( `I am the register route and have just desructured the req.body. this is the username from the req.body :${username}`)
-  console.log(`this is the req.user :${req.user}`)
 
     const results = await Pool.query('select * from users where username = $1', [username]);
   
   
     // what to do if the name does not exist
     if(results.rows[0] == undefined){
-      const results =  await Pool.query('insert into users (username, password, expire) values($1,$2, $3)', [username, password, 37]);
+      const results =  await Pool.query('insert into users (username, password, expire) values($1,$2, $3)', [username, hash, 37]);
   
-      console.log(`everything worked out, the values :${username} and ${password}  were entered into the database`)
-      next()
+      console.log(`everything worked out, the values :${username} and ${hash}  were entered into the database`)
+      res.cookie('initialLogin',true, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true }).redirect('/')
     }
   
       //what to do if the name exists
   
     if(results.rows[0]){
-      console.log('this login attempt failed beacause the user already exists')
+      console.log('this registration attempt failed beacause the user already exists')
 
-      res.cookie('initialLogin',true, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true }).redirect('/')
     }
   
   },passport.authenticate('local', { failureRedirect: '/'}), (req, res, next) =>{

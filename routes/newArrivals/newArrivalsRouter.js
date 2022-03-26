@@ -16,6 +16,15 @@ newArrivalsRouter.use(express.json());
 
 newArrivalsRouter.get('/', async (req, res,) => {
 
+
+  //creating logic to determine if cookies should be announced
+if(req.session.visits == undefined){
+  req.session.visits = 1
+} else {
+  req.session.visits = req.session.visits + 1;
+}
+console.log(`for this particular session this is visit numbeer ${req.session.visits}`)
+
   console.log(`this is the session ${req.sessionID}`)
 
   console.log(`this is the req.user :${req.user}`)
@@ -53,7 +62,8 @@ newArrivalsRouter.get('/', async (req, res,) => {
     res.cookie('initialLogin','false', { maxAge: 1000 * 60 * 60 * 24, httpOnly: true }).status(200).json({"data": fullList,
                           "isLoggedIn": req.user ? true : false,
                           "user": req.user ? req.user : '',
-                          "initialLogin": true
+                          "initialLogin": true,
+                          "ShowCookiePopup": req.session.visits < 2 ? true : false
                         })
 
     } else {

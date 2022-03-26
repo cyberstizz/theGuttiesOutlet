@@ -13,6 +13,7 @@ import Search from './Search';
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [user, setUser] = useState('')
     const [initialLogin, setInitialLogin] = useState(false);
+    const [showCookiePopup, setShowCookiePopup] = useState(false)
 
     
 
@@ -35,6 +36,8 @@ import Search from './Search';
         setUser(current_User);
 
         setInitialLogin(response.data.initialLogin)
+
+        setShowCookiePopup(response.data.ShowCookiePopup)
         }
     
         mountCall();
@@ -239,7 +242,15 @@ import Search from './Search';
         <div id="RegisterPopup">I am the register popup</div>
 
 
-
+        { showCookiePopup && <div id="cookiePopup">
+             At gutties we use cookies to enhance your experience
+        <button onClick={() =>{ 
+        document.cookie = 'initialLogin=false';
+        const cookiePopup = document.getElementById('cookiePopup');
+        cookiePopup.style.visibility = 'hidden';
+        }}>Ok</button>
+        
+        </div>}
 
 
 

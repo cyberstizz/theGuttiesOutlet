@@ -14,6 +14,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 //we also need middleware to help our session connect to our database
 const postgresSession = require('connect-pg-simple')(session)
+//encryption package for hashing and decrypting passwords
+const bcrypt = require('bcrypt');
 // importing all of the routes as variables known as routers
 const productsRouter = require('./routes/products/productsRouter');
 const homeRouter = require('./routes/home/homeRouter');
@@ -63,7 +65,7 @@ if(completedCall[0] === undefined){
 }
 
 // now check to see if the passowrd is correct
-if(completedCall[0].password !== password){
+if(!bcrypt.compareSync(password, completedCall[0].password)){
 
   return done(null, false)
 } 
@@ -91,6 +93,7 @@ passport.deserializeUser( async(id, done) => {
 app.use(passport.initialize());
 
 app.use(passport.session());
+
 
 // now creating middleware to recognize if its the first signin for the user
 // app.use((req, res, next) => {
