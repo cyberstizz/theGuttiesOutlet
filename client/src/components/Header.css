@@ -191,33 +191,37 @@
     border-top: 3px solid black;
     z-index: 4;
     display: flex;
+    align-items: center;
     flex-direction: column;
     visibility: hidden;
 }
 .signinTopContainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     height: 10vh;
 }
 .signupTopContainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     height: 10vh;
 }
 
 .xOutButton{
-    height: 5vh;
-    width: 4vw;
-    margin-left: 13vw;
-    background-color: #251B66;
-    color: #B48B22;
+    position: absolute;
+    height: 4vh;
+    width: 1.9vw;
+    margin-left: 9.5vw;
+    margin-bottom: 2.5vw;
+    background-color: #B48B22;
+    border-color: #B48B22;
+    color: #251B66;
     font-size: large;
     text-align: center;
 }
 
 .loginText{
 height: 5vh;
-
+text-align: center;
 }
 
 #signUpModal{
@@ -231,6 +235,7 @@ height: 5vh;
     border: 3px solid #251B66;
     border-top: 3px solid black;
     z-index: 3;
+    align-items: center;
     display: flex;
     flex-direction: column;
     visibility: hidden;
@@ -266,7 +271,7 @@ height: 5vh;
     background-color: white;
     font-family: 'Permanent Marker', cursive;
     font-size: 6vh;
-    color: #0D2A57;
+    color: #762FA0;
     visibility: hidden;
     z-index: 101;
 }
@@ -286,6 +291,8 @@ height: 5vh;
     visibility: visible;
     z-index: 101;
 }
+
+
 
 #RegisterPopup{
     position: absolute;
@@ -312,7 +319,7 @@ height: 5vh;
 .upsignInButton{
     margin-top: 2vh;
     background-color: #251B66;
-    color: #762FA0;
+    color: #d48aff;
     border-radius: 8px;
     font-family: 'Permanent Marker', cursive;
     font-size: 20px;
@@ -320,7 +327,9 @@ height: 5vh;
 
 .insignInButton{
     margin-top: 2vh;
-    background-color: #762FA0;
+    background-color: #251B66;
+    width: 12vw;
+    align-self: center;
     color: #B48B22;
     border-radius: 8px;
     font-family: 'Permanent Marker', cursive;
@@ -331,6 +340,23 @@ height: 5vh;
     color: black;
 
 }
+.createAccountLink:hover{
+    margin-top: 1vh;
+    color: #762FA0;
+
+}
+
+.closeLink{
+    margin-top: 1vh;
+    color: black;
+
+}
+
+.closeLink:hover{
+    margin-top: 1vh;
+    color: #d48aff;
+
+}
 .usernameCaption{
     margin-left: 4.5px;
 }
@@ -338,9 +364,13 @@ height: 5vh;
     font-family: 'Permanent Marker', cursive;
     font-size: large;
     color: #251B66;
+    margin-right: 2vw;
 }
 .signInPassword{
     font-family: 'Permanent Marker', cursive;
     font-size: large;
     color: #251B66;  
+    margin-top: 2vh;
+    margin-right: 2vw;
+
 }

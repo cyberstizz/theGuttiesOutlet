@@ -156,7 +156,7 @@ import axios from 'axios';
                 <div className="loginText">Login</div>
                 <button className="xOutButton" onClick={() => {
                  const thePop = document.getElementById("signInModal")
-                 thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}>&#9747;</button>
+                 thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}>&#x2715;</button>
 
 
             </div>
@@ -191,7 +191,7 @@ import axios from 'axios';
                 <div className="loginText">Signup</div>
                 <button className="xOutButton" onClick={() => {
                  const thePop = document.getElementById("signInModal")
-                 thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}>&#9747;</button>
+                 thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}>&#x2715;</button>
 
 
             </div>
@@ -204,7 +204,7 @@ import axios from 'axios';
 
             </form>
 
-            <div className="createAccountLink" onClick={() => {
+            <div className="closeLink" onClick={() => {
                  const theOut = document.getElementById("signUpModal")
                  theOut.style.visibility === 'visible' ?  theOut.style.visibility = 'hidden' : theOut.style.visibility = 'visible'
                 
