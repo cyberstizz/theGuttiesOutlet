@@ -179,10 +179,13 @@
 }
 
 
-#signUpModal{
+#signInModal{
     position: absolute;
     width: 19.65vw;
     height: 40vh;
+    font-size: 20px;
+    color: #251B66;
+    font-family: 'Permanent Marker', cursive;
     background-color: #B48B22;
     border: 3px solid #251B66;
     border-top: 3px solid black;
@@ -191,7 +194,11 @@
     flex-direction: column;
     visibility: hidden;
 }
-
+.signinTopContainer{
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+}
 .signupTopContainer{
     display: flex;
     flex-direction: row;
@@ -213,11 +220,14 @@ height: 5vh;
 
 }
 
-#signOutModal{
+#signUpModal{
     position: absolute;
     width: 19.65vw;
     height: 40vh;
-    background-color: green;
+    font-size: 20px;
+    color: #B48B22;
+    font-family: 'Permanent Marker', cursive;
+    background-color: #762FA0;
     border: 3px solid #251B66;
     border-top: 3px solid black;
     z-index: 3;
@@ -253,10 +263,10 @@ height: 5vh;
     margin-top: -5vh;
     height: 60vh;
     width: 40vw;
-    background-color: #251B66;
+    background-color: white;
     font-family: 'Permanent Marker', cursive;
     font-size: 6vh;
-    color: #B48B22;
+    color: #0D2A57;
     visibility: hidden;
     z-index: 101;
 }
@@ -297,4 +307,40 @@ height: 5vh;
     color: #B48B22;
     visibility: hidden;
     z-index: 101;
+}
+
+.upsignInButton{
+    margin-top: 2vh;
+    background-color: #251B66;
+    color: #762FA0;
+    border-radius: 8px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+}
+
+.insignInButton{
+    margin-top: 2vh;
+    background-color: #762FA0;
+    color: #B48B22;
+    border-radius: 8px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+}
+.createAccountLink{
+    margin-top: 1vh;
+    color: black;
+
+}
+.usernameCaption{
+    margin-left: 4.5px;
+}
+.signInUsername{
+    font-family: 'Permanent Marker', cursive;
+    font-size: large;
+    color: #251B66;
+}
+.signInPassword{
+    font-family: 'Permanent Marker', cursive;
+    font-size: large;
+    color: #251B66;  
 }

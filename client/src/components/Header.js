@@ -4,7 +4,6 @@ import './Header.css';
 import 'font-awesome/css/font-awesome.min.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import Search from './Search';
 
  const Header = () => {
 
@@ -88,7 +87,7 @@ import Search from './Search';
                 <div id='signIn' onClick={() => {
                     const myself = document.getElementById("signIn")
                     myself.style.color = '#762FA0'
-                 const thePop = document.getElementById("signUpModal")
+                 const thePop = document.getElementById("signInModal")
                  setTimeout(() => myself.style.color = '#B48B22', 200)
                  thePop.style.visibility == 'hidden' ? thePop.style.visibility = 'visible' : thePop.style.visibility = 'visible'}}> <i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign In </div>
             
@@ -149,25 +148,25 @@ import Search from './Search';
             </div>
 
         </header>
-        <div id="signUpModal">
+        <div id="signInModal">
         {/* this modal will contain seven divs for different sections */}
 
     {/* the first div is a container of two divs. one div is the word login and the other is an x out button */}
-            <div className="signupTopContainer">
+            <div className="signinTopContainer">
                 <div className="loginText">Login</div>
                 <button className="xOutButton" onClick={() => {
-                 const thePop = document.getElementById("signUpModal")
+                 const thePop = document.getElementById("signInModal")
                  thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}>&#9747;</button>
 
 
             </div>
             {/* next will be a form to sign in of course */}
             <form action="/login" method="POST" className="signInForm">
-                <span className="usernameCaption">Username</span>
+                <span className="usernameCaption">   User </span>
                 <input type="text" className="signInUsername" placeholder="enter your username" name="username"></input>
                 <span className="emailCaption">Email</span>
                 <input type="text" className="signInPassword" placeholder="enter your email" name="password"></input>
-                <input type="submit" className="signInButton"></input>
+                <input type="submit" className="insignInButton"></input>
 
 
             </form>
@@ -176,10 +175,10 @@ import Search from './Search';
 
 
             <div className="createAccountLink" onClick={() => {
-                 const theOut = document.getElementById("signOutModal")
-                 theOut.style.visibility === 'visible' ?  theOut.style.visibility = 'hidden' : theOut.style.visibility = 'visible'
+                 const theOut = document.getElementById("signUpModal")
+                 theOut.style.visibility === 'hidden' ?  theOut.style.visibility = 'visible' : theOut.style.visibility = 'visible'
                  
-                 const thePop = document.getElementById("signUpModal")
+                 const thePop = document.getElementById("signInModal")
                  thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'
                  
                  }}>New here? Click here to create an account</div>
@@ -187,21 +186,29 @@ import Search from './Search';
         </div>
 
         {/* and another form to sign up */}
-        <div id='signOutModal'>
+        <div id='signUpModal'>
+        <div className="signupTopContainer">
+                <div className="loginText">Signup</div>
+                <button className="xOutButton" onClick={() => {
+                 const thePop = document.getElementById("signInModal")
+                 thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}>&#9747;</button>
+
+
+            </div>
             <form action="/register" method="POST" className="signUpForm">
-                <span className="usernameCaption">Username</span>
+                <span className="usernameCaption"> User </span>
                 <input type="text" className="signInUsername" placeholder="create your username" name="username"></input>
                 <span className="emailCaption">Email</span>
                 <input type="text" className="signInPassword" placeholder="enter an email address" name="password"></input>
-                <input type="submit" className="signInButton"></input>
+                <input type="submit" className="upsignInButton" value="Join Gutties"></input>
 
             </form>
 
             <div className="createAccountLink" onClick={() => {
-                 const theOut = document.getElementById("signOutModal")
+                 const theOut = document.getElementById("signUpModal")
                  theOut.style.visibility === 'visible' ?  theOut.style.visibility = 'hidden' : theOut.style.visibility = 'visible'
                 
-                 }}>New here? Click here to create an account</div>
+                 }}>Close</div>
 
         </div>
 
@@ -210,7 +217,7 @@ import Search from './Search';
 
         <div id="LogOutPopup"> Are you sure you want to log out?
         
-        <button onClick={async () => {
+        <button class="insignInButton" onClick={async () => {
                     const loggingOut = document.getElementById("logOutLink")
                     loggingOut.style.color = '#762FA0'
                     setTimeout(() => loggingOut.style.color = '#B48B22', 200)
@@ -224,7 +231,7 @@ import Search from './Search';
         LogOutPopup.style.visibility = 'visible' ? 'hidden' : 'hidden'
           
             }}>Log Out</button>
-        <button onClick={() =>{ 
+        <button class="insignInButton" onClick={() =>{ 
         const LogOutPopup = document.getElementById('LogOutPopup')
         LogOutPopup.style.visibility = 'visible' ? 'hidden' : 'hidden'
 
