@@ -17,6 +17,17 @@
     top: 0;
 }
 
+#mobileHeaderblock{
+    position: sticky;
+    display: none;
+    flex-direction: row;
+    background-color: #0D2A57;
+    height: 20vh;
+    width: 100vw;
+    z-index: 100;
+    top: 0;
+}
+
 #navlist{
     list-style: none;
     display: flex;
@@ -135,8 +146,12 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-
-
+.mobilesignUpForm{
+    display: none;
+}
+.mobilesignInForm{
+    display: none;
+}
 #searchbutton:hover{
     height: 5vh;
     width: 4vw;
@@ -205,6 +220,16 @@
     flex-direction: column-reverse;
     height: 10vh;
 }
+.mobilesigninTopContainer{
+    display: none;
+    flex-direction: column-reverse;
+    height: 10vh;
+}
+.mobilesignupTopContainer{
+    display: none;
+    flex-direction: column-reverse;
+    height: 10vh;
+}
 
 .xOutButton{
     position: absolute;
@@ -218,10 +243,16 @@
     font-size: large;
     text-align: center;
 }
+.mobilexOutButton{
+    display: none;
+}
 
 .loginText{
 height: 5vh;
 text-align: center;
+}
+.loginText{
+    display: none;
 }
 
 #signUpModal{
@@ -324,7 +355,9 @@ text-align: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 20px;
 }
-
+.mobileupsignInButton{
+    display: none;
+}
 .insignInButton{
     margin-top: 2vh;
     background-color: #251B66;
@@ -335,30 +368,45 @@ text-align: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 20px;
 }
+.mobileinsignInButton{
+    display: none;
+}
 .createAccountLink{
     margin-top: 1vh;
     color: black;
 
 }
+.mobilecreateAccountLink{
+    display: none;
+}
 .createAccountLink:hover{
     margin-top: 1vh;
     color: #762FA0;
-
+}
+.mobilecreateAccountLink:hover{
+    display: none;
 }
 
 .closeLink{
     margin-top: 1vh;
     color: black;
-
+}
+.mobilecloseLink{
+    display: none;
 }
 
 .closeLink:hover{
     margin-top: 1vh;
     color: #d48aff;
-
+}
+.mobilecloseLink:hover{
+    display: none;
 }
 .usernameCaption{
     margin-left: 4.5px;
+}
+.mobileusernameCaption{
+display: none;
 }
 .signInUsername{
     font-family: 'Permanent Marker', cursive;
@@ -366,11 +414,508 @@ text-align: center;
     color: #251B66;
     margin-right: 2vw;
 }
+.mobilesignInUsername{
+   display: none;
+}
 .signInPassword{
     font-family: 'Permanent Marker', cursive;
     font-size: large;
     color: #251B66;  
     margin-top: 2vh;
     margin-right: 2vw;
+}
+.mobilesignInPassword{
+    display: none;
+}
+
+
+
+
+
+
+#mobileLogOutPopup{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    margin-left: 30vw;
+    margin-top: -5vh;
+    height: 60vh;
+    width: 40vw;
+    background-color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6vh;
+    color: #762FA0;
+    visibility: hidden;
+    z-index: 101;
+}
+
+#mobileLogInPopup{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    margin-left: 30vw;
+    margin-top: -5vh;
+    height: 60vh;
+    width: 40vw;
+    background-color: #251B66;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6vh;
+    color: #B48B22;
+    visibility: visible;
+    z-index: 101;
+}
+
+
+
+#mobileRegisterPopup{
+    position: absolute;
+    margin: 0 auto;
+    visibility: hidden;
+    display: none;
+}
+
+#mobilecookiePopup{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    margin-left: 30vw;
+    margin-top: -5vh;
+    height: 60vh;
+    width: 40vw;
+    background-color: #251B66;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6vh;
+    color: #B48B22;
+    visibility: hidden;
+    z-index: 101;
+}
+
+
+
+
+
+@media only screen and (max-width: 640px){
+
+
+#headerblock{
+    position: sticky;
+    display: none;
+    flex-direction: row;
+    background-color: #0D2A57;
+    height: 20vh;
+    width: 100vw;
+    z-index: 100;
+    top: 0;
+}
+
+#mobileHeaderblock{
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    background-color: #0D2A57;
+    height: 20vh;
+    width: 100vw;
+    z-index: 100;
+    top: 0;
+}
+
+#mobilenavlist{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.mobileLeft_Header{
+    width: 35vw;
+    border-right: 1px solid #B48B22;
+    display:flex
+}
+
+.mobilelogo-signIn-block{
+    width: 20px;
+    height: 14vh;
+    position: flex;
+    display: flex;
+    flex-direction: row;
+    margin-left: 10vw;
+}
+
+.mobilesignUpForm{
+    display: flex;
+}
+.mobilesignInForm{
+    display: flex;
+}
+
+.mobilelogo{
+    background-image: url('../5c94dbc22f034501a72288ae529b65fe\ \(3\).png');
+    height: 14vh;
+    width: 16vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: -7vw;
+    margin-top: 3vh;
+}
+
+.mobilecart-signIn-block{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3vw;
+    margin-top: 4vh;
+    height: 12vh;
+}
+
+#mobilesignIn{
+    font-family: 'Permanent Marker', cursive;
+    color: #B48B22;
+    font-size: 20px;
+    margin-left: .5vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+#mobilesignIn:hover{
+    font-family: 'Permanent Marker', cursive;
+    color: green;
+    font-size: 20px;
+    margin-left: 1vw;
+    margin-top: 3vh;
+}
+
+.mobilecart-icon{
+    font-size: 20px;
+    color: #B48B22;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}
+
+.mobilecart-icon:hover{
+    font-size: 20px;
+    color: green;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}
+
+#mobileloginIcon{
+    margin-left: 2vw;
+}
+
+.mobileCenter_Header{
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+}
+
+.mobilesearchform{
+    display: block;
+    align-items: center;
+    margin-left: 1vw;
+    height: 20vh;
+    width: 20vw;
+}
+
+#mobilesearchbar{
+    display: inline-block;
+    margin-top: 7.2vh;
+    height: 4.77vh;
+    width: 28vw;
+    border: solid 2px green;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    z-index: 2;
+    text-align: center;
+    margin-left: 2vh;
+}
+
+#mobilenavlist{
+    margin-left: 5vw;
+}
+
+.mobilenavitem{
+    margin-left: 4vw;
+    font-family: 'Permanent Marker', cursive;
+    font-size: larger;
+    color: #B48B22;
+}
+
+.mobilenavitem:hover{
+    color: #f5d37f;
+}
+
+#mobilesearchbutton{
+    display: inline-block;
+    height: 5.8vh;
+    width: 8.5vw;
+    background-color: #B48B22;
+    color: #251B66;
+    border: 2px solid #251B66;
+    z-index: 2;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 7.15vh;
+}
+
+
+#mobilesearchbutton:hover{
+    height: 4.9vh;
+    margin-top: -1vh;
+    width: 4vw;
+    background-color: #f5d37f;
+    color: #251B66;
+    border: 2px solid #251B66;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+
+.mobileRight_Header{
+    width: 20vw;
+}
+
+
+#mobilecart{
+    font-size: 30px;
+    margin-top: 3vh;
+}
+
+.mobilesearchIcon{
+    font-size: 30px;
+    margin-top: 3vh;
+}
+
+#mobilesettingsLogoutBlock{
+    width: 10vw;
+    height: 12vh;
+    margin-left: 8vw;
+    margin-top: 5vh;
+}
+
+#mobilesettingsButton{
+    font-family: 'Permanent Marker', cursive;
+    color: #B48B22;
+    font-size: 20px;
+    margin-left: 1vw;
+    margin-top: 4.8vh;
+}
+
+
+#mobilesignInModal{
+    position: absolute;
+    width: 19.65vw;
+    height: 40vh;
+    font-size: 20px;
+    color: #251B66;
+    font-family: 'Permanent Marker', cursive;
+    background-color: #B48B22;
+    border: 3px solid #251B66;
+    border-top: 3px solid black;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+}
+.signinTopContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 10vh;
+}
+.mobilesignupTopContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 10vh;
+}
+
+.mobilexOutButton{
+    position: absolute;
+    height: 4vh;
+    width: 1.9vw;
+    margin-left: 9.5vw;
+    margin-bottom: 2.5vw;
+    background-color: #B48B22;
+    border-color: #B48B22;
+    color: #251B66;
+    font-size: large;
+    text-align: center;
+}
+
+.mobileloginText{
+height: 5vh;
+text-align: center;
+}
+
+#mobilesignUpModal{
+    position: absolute;
+    width: 19.65vw;
+    height: 40vh;
+    font-size: 20px;
+    color: #B48B22;
+    font-family: 'Permanent Marker', cursive;
+    background-color: #762FA0;
+    border: 3px solid #251B66;
+    border-top: 3px solid black;
+    z-index: 3;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.mobileifLoggedIn{
+    font-family: 'Permanent Marker', cursive;
+    color: #762FA0;
+    font-size: 10px;
+    margin-top: 6vh;
+    width: 10vw;
+    height: 5vh;
+    border: solid 2px green;
+}
+
+#mobilelogOutLink{
+    font-size: 20px;
+    color: #B48B22;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}
+
+#mobilelogOutLink:hover{
+    color: #f5d37f;
+}
+
+#mobileLogOutPopup{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30vw;
+    margin-top: -5vh;
+    height: 60vh;
+    width: 40vw;
+    background-color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6vh;
+    color: #762FA0;
+    visibility: hidden;
+    z-index: 101;
+}
+
+#mobileLogInPopup{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30vw;
+    margin-top: -5vh;
+    height: 60vh;
+    width: 40vw;
+    background-color: #251B66;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6vh;
+    color: #B48B22;
+    visibility: visible;
+    z-index: 101;
+}
+
+
+
+#mobileRegisterPopup{
+    display: flex;
+    position: absolute;
+    margin: 0 auto;
+    visibility: hidden;
+}
+
+#mobilecookiePopup{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30vw;
+    margin-top: -5vh;
+    height: 60vh;
+    width: 40vw;
+    background-color: #251B66;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6vh;
+    color: #B48B22;
+    visibility: hidden;
+    z-index: 101;
+}
+
+.mobileupsignInButton{
+    display: flex;
+    margin-top: 2vh;
+    background-color: #251B66;
+    color: #d48aff;
+    border-radius: 8px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+}
+
+.mobileinsignInButton{
+    display: flex;
+    margin-top: 2vh;
+    background-color: #251B66;
+    width: 6vw;
+    align-self: center;
+    color: #B48B22;
+    border-radius: 8px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: x-small;
+}
+.mobilecreateAccountLink{
+    display: flex;
+    margin-top: 1vh;
+    color: black;
+    font-size: x-small;
+}
+.mobilecreateAccountLink:hover{
+    margin-top: 1vh;
+    color: #762FA0;
+    font-size: small;
+}
+
+.mobilecloseLink{
+    margin-top: 1vh;
+    color: black;
+
+}
+
+.mobilecloseLink:hover{
+    margin-top: 1vh;
+    color: #d48aff;
+
+}
+.mobileusernameCaption{
+    margin-left: 4.5px;
+}
+.mobilesignInUsername{
+    font-family: 'Permanent Marker', cursive;
+    font-size: large;
+    color: #251B66;
+    margin-right: 2vw;
+}
+.mobilesignInPassword{
+    font-family: 'Permanent Marker', cursive;
+    font-size: large;
+    color: #251B66;  
+    margin-top: 2vh;
+    margin-right: 2vw;
+
+}
+
+.mobilesigninTopContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 10vh;
+}
+.mobilesignupTopContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 10vh;
+}
+
 
 }

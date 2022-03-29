@@ -264,6 +264,200 @@ import axios from 'axios';
 
 
 
+
+
+
+        <header id='mobileHeaderblock'>
+
+{/* inside there are three sub headers left center and right */}
+<div className='mobileLeft_Header'>
+
+    {/* the left header contains the logo */}
+
+  <section className="mobilelogo-signIn-block">
+
+  <Link to='/'><div className='mobilelogo'> </div></Link>
+
+    <div className="mobilecart-signIn-block">
+
+    <div id='mobilesignIn' onClick={() => {
+        const myself = document.getElementById("mobilesignIn")
+        myself.style.color = '#762FA0'
+     const thePop = document.getElementById("mobilesignInModal")
+     setTimeout(() => myself.style.color = '#B48B22', 200)
+     thePop.style.visibility == 'hidden' ? thePop.style.visibility = 'visible' : thePop.style.visibility = 'visible'}}> <i class="fa fa-user-circle-o" aria-hidden="true"></i> </div>
+
+    
+     {/* cart icon */}
+
+  <Link to='/Cart/:user'><span className="mobilecart-icon"><i className="fa fa-shopping-cart" aria-hidden="true"></i></span></Link>
+
+    </div>
+
+  </section>
+
+
+
+</div>
+
+<div className='mobileCenter_Header'>
+
+    {/* the center header contains the search bar and the nav bar both will be block elements */}
+
+    {/* the search bar will be placed within a form for easier access to the buttons input */}
+    <div className="mobliesearchform">
+        <input id='mobilesearchbar' type='text' onChange={handleSearchText}></input>
+        </div>
+
+      <Link to={`/search/${searchField}`}><button id='mobilesearchbutton' class="fa fa-search"></button></Link>
+
+
+        {/* the nav bar will be below the search bar in the center of the header */}
+    {/* <nav>
+
+        <ul id='navlist'>
+           <Link to='/'> <li className='navitem'>Home</li></Link>
+           <Link to='/newArrivals'> <li className='navitem'>New Arrivals</li></Link> 
+            <Link to='/bestSellers'><li className='navitem'>Best Sellers</li></Link>
+            <Link to='/discounts'><li className='navitem'>Discount</li></Link>
+        </ul>
+    </nav> */}
+
+</div>
+<div className="mobileifLoggedIn"> { isLoggedIn && `Hello ${user}`}</div>
+
+<div className='mobileRight_Header'>
+
+<div id="mobliesettingsLogoutBlock">
+    {/* the right header will have the cart icon and the login and logout buttons */}
+    <div id='mobilesettingsButton'> <i class="fa fa-cog" aria-hidden="true"></i> </div>
+    
+
+    
+
+   <div id="mobilelogOutLink" onClick={() => {
+        const LogOutPopup = document.getElementById('mobileLogOutPopup')
+        LogOutPopup.style.visibility = 'visible'
+
+}}><i class="fa fa-lock" aria-hidden="true"></i></div>
+</div>
+</div>
+
+</header>
+<div id="mobilesignInModal">
+{/* this modal will contain seven divs for different sections */}
+
+{/* the first div is a container of two divs. one div is the word login and the other is an x out button */}
+<div className="mobilesigninTopContainer">
+    <div className="moblieloginText">Login</div>
+    <button className="mobliexOutButton" onClick={() => {
+     const thePop = document.getElementById("mobilesignInModal")
+     thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}>&#x2715;</button>
+
+
+</div>
+{/* next will be a form to sign in of course */}
+<form action="/login" method="POST" className="mobilesignInForm">
+    <span className="mobileusernameCaption">   User </span>
+    <input type="text" className="mobilesignInUsername" placeholder="enter your username" name="username"></input>
+    <span className="mobileemailCaption">Email</span>
+    <input type="text" className="mobilesignInPassword" placeholder="enter your email" name="password"></input>
+    <input type="submit" className="mobileinsignInButton"></input>
+
+
+</form>
+
+{/* finally a  text link at the bottom to register*/}
+
+
+<div className="mobilecreateAccountLink" onClick={() => {
+     const theOut = document.getElementById("mobilesignUpModal")
+     theOut.style.visibility === 'hidden' ?  theOut.style.visibility = 'visible' : theOut.style.visibility = 'visible'
+     
+     const thePop = document.getElementById("mobilesignInModal")
+     thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'
+     
+     }}>New here? Click here to create an account</div>
+
+</div>
+
+{/* and another form to sign up */}
+<div id='mobilesignUpModal'>
+<div className="mobilesignupTopContainer">
+    <div className="mobileloginText">Signup</div>
+    <button className="mobilexOutButton" onClick={() => {
+     const thePop = document.getElementById("mobilesignInModal")
+     thePop.style.visibility === 'hidden' ?  thePop.style.visibility = 'visible' : thePop.style.visibility = 'hidden'}}>&#x2715;</button>
+
+
+</div>
+<form action="/register" method="POST" className="mobilesignUpForm">
+    <span className="mobileusernameCaption"> User </span>
+    <input type="text" className="mobilesignInUsername" placeholder="create your username" name="username"></input>
+    <span className="mobileemailCaption">Email</span>
+    <input type="text" className="mobilesignInPassword" placeholder="enter an email address" name="password"></input>
+    <input type="submit" className="mobileupsignInButton" value="Join Gutties"></input>
+
+</form>
+
+<div className="mobilecloseLink" onClick={() => {
+     const theOut = document.getElementById("mobilesignUpModal")
+     theOut.style.visibility === 'visible' ?  theOut.style.visibility = 'hidden' : theOut.style.visibility = 'visible'
+    
+     }}>Close</div>
+
+</div>
+
+
+{/* now  the creation of all fo the alerts/popups*/}
+
+<div id="mobileLogOutPopup"> Are you sure you want to log out?
+
+<button class="mobileinsignInButton" onClick={async () => {
+        const loggingOut = document.getElementById("mobilelogOutLink")
+        loggingOut.style.color = '#762FA0'
+        setTimeout(() => loggingOut.style.color = '#B48B22', 200)
+
+        const response = await axios.post('/logout');
+
+        const login_Status = response.data.isLoggedIn;
+
+        setIsLoggedIn(login_Status);
+        const LogOutPopup = document.getElementById('mobileLogOutPopup')
+LogOutPopup.style.visibility = 'visible' ? 'hidden' : 'hidden'
+
+}}>Log Out</button>
+<button class="mobileinsignInButton" onClick={() =>{ 
+const LogOutPopup = document.getElementById('mobileLogOutPopup')
+LogOutPopup.style.visibility = 'visible' ? 'hidden' : 'hidden'
+
+
+}}>Stay Signed In</button>
+
+</div>
+{ initialLogin && <div id="mobileLogInPopup">
+ You are now logged in as {user}
+<button onClick={() =>{ 
+document.cookie = 'initialLogin=false';
+const LogInPopup = document.getElementById('mobileLogInPopup');
+LogInPopup.style.visibility = 'hidden';
+}}>Ok</button>
+
+</div>}
+
+<div id="mobileRegisterPopup">I am the register popup</div>
+
+
+{ showCookiePopup && <div id="mobilecookiePopup">
+ At gutties we use cookies to enhance your experience
+<button onClick={() =>{ 
+document.cookie = 'initialLogin=false';
+const cookiePopup = document.getElementById('mobilecookiePopup');
+cookiePopup.style.visibility = 'hidden';
+}}>Ok</button>
+
+</div>}
+
         </React.Fragment>
     )
 };

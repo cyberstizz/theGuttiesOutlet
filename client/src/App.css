@@ -26,7 +26,7 @@
     position: relative;
     display: flex;
     flex-flow: row wrap;
-    overflow: visible;
+    overflow: auto;
     margin-left: .5vw;
     margin-right: 1vw;
     margin-top: 2vh;
@@ -44,3 +44,49 @@
     background-position: center;
 }
 
+@media only screen and (max-width: 640px){
+
+    *{
+        text-decoration: none;
+    }
+    
+    #comingsoon{
+        height: 100vh;
+        width: 100vw;
+        font-size: 20px;
+        background-image: url('./guttieslogoblue.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    #randomButton{
+        height: 20vh;
+        width: 30vw;
+        margin-left: 20vw;
+        font-family: 'Permanent Marker', cursive;
+        color: black;
+    }
+    
+    .productsContainer{
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        overflow: auto;
+        margin-left: .5vw;
+        margin-right: 1vw;
+        margin-top: 2vh;
+    }
+    
+    .productsListHeader{
+        height: 10vh;
+        width: 35vw;
+        margin: 0 auto;
+        margin-top: 2vh;
+        padding-bottom: 1vh;
+        border-bottom: solid 3px #B48B22;
+        background-image: url('./guttieslogoblue.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+}
