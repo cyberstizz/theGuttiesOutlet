@@ -39,3 +39,114 @@
     display: flex;
     flex-direction: column;
 }
+.mobileentireCard{
+    position: relative;
+    margin: 4vh 1vw;
+    height: 50vh;
+    width: 30vw;
+    text-decoration: none;
+    border-radius: 12px;
+    border: solid 2px #0D2A57;
+    background-color: #0D2A57;
+    font-family: 'Permanent Marker', cursive;
+    color: #B48B22;
+    font-size: 17px;
+    display: none;
+    flex-direction: column;
+}
+
+ .mobileentireCard:hover{
+    position: relative;
+    margin: 3vh 1vw;
+    height: 50vh;
+    width: 30vw;
+    border: solid #0D2A57 2px;
+    text-decoration: none;
+    border-radius: 12px;
+    background-color: #B48B22;
+    font-family: 'Permanent Marker', cursive;
+    color: #333c49;
+    font-size: 17px;
+    display: none;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 640px){
+
+    .entireCard{
+        position: relative;
+        margin: 4vh 1vw;
+        height: 50vh;
+        width: 30vw;
+        text-decoration: none;
+        border-radius: 12px;
+        border: solid 2px #0D2A57;
+        background-color: #0D2A57;
+        font-family: 'Permanent Marker', cursive;
+        color: #B48B22;
+        font-size: 17px;
+        display: none;
+        flex-direction: column;
+    }
+    
+     .entireCard:hover{
+        position: relative;
+        margin: 3vh 1vw;
+        height: 50vh;
+        width: 30vw;
+        border: solid #0D2A57 2px;
+        text-decoration: none;
+        border-radius: 12px;
+        background-color: #B48B22;
+        font-family: 'Permanent Marker', cursive;
+        color: #333c49;
+        font-size: 17px;
+        display: none;
+        flex-direction: column;
+    }
+    #sneakerpicture{
+        width: 461;
+        height: 270;
+    }
+    .mobileentireCard{
+        position: relative;
+        margin: 4vh 1vw;
+        margin-left: 2vw;
+        height: 50vh;
+        width: 93vw;
+        text-decoration: none;
+        border-radius: 12px;
+        border: solid 2px #0D2A57;
+        background-color: #0D2A57;
+        font-family: 'Permanent Marker', cursive;
+        color: #B48B22;
+        font-size: 17px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+     .mobileentireCard:hover{
+        position: relative;
+        margin: 3vh 1vw;
+        margin-left: 2vw;
+        height: 50vh;
+        width: 30vw;
+        border: solid #0D2A57 2px;
+        text-decoration: none;
+        border-radius: 12px;
+        background-color: #B48B22;
+        font-family: 'Permanent Marker', cursive;
+        color: #333c49;
+        font-size: 17px;
+        display: flex;
+        flex-direction: column;
+    }
+    #mobilesneakerpicture{
+        width: 93vw;
+        height: 60;
+        background-size: cover;
+        background-position: center;
+    }
+    
+
+}
