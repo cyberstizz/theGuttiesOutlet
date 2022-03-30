@@ -305,23 +305,22 @@ import axios from 'axios';
     {/* the center header contains the search bar and the nav bar both will be block elements */}
 
     {/* the search bar will be placed within a form for easier access to the buttons input */}
-    <div className="mobliesearchform">
+    <div className="mobilesearchform">
         <input id='mobilesearchbar' type='text' onChange={handleSearchText}></input>
-        </div>
 
       <Link to={`/search/${searchField}`}><button id='mobilesearchbutton' class="fa fa-search"></button></Link>
-
+      </div>
 
         {/* the nav bar will be below the search bar in the center of the header */}
-    {/* <nav>
+    <nav>
 
-        <ul id='navlist'>
-           <Link to='/'> <li className='navitem'>Home</li></Link>
-           <Link to='/newArrivals'> <li className='navitem'>New Arrivals</li></Link> 
-            <Link to='/bestSellers'><li className='navitem'>Best Sellers</li></Link>
-            <Link to='/discounts'><li className='navitem'>Discount</li></Link>
+        <ul id='mobilenavlist'>
+           <Link to='/'> <li className='mobilenavitem'>Home</li></Link>
+           <Link to='/newArrivals'> <li className='mobilenavitem'>New </li></Link> 
+            <Link to='/bestSellers'><li className='mobilenavitem'>Best </li></Link>
+            <Link to='/discounts'><li className='mobilenavitem'>Discount</li></Link>
         </ul>
-    </nav> */}
+    </nav>
 
 </div>
 <div className="mobileifLoggedIn"> { isLoggedIn && `Hello ${user}`}</div>
