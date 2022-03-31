@@ -490,6 +490,22 @@ display: none;
     z-index: 101;
 }
 
+#mobilesignUpModal{
+    position: absolute;
+    width: 19.65vw;
+    height: 40vh;
+    font-size: 20px;
+    color: #B48B22;
+    font-family: 'Permanent Marker', cursive;
+    background-color: #762FA0;
+    border: 3px solid #251B66;
+    border-top: 3px solid black;
+    z-index: 3;
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    visibility: hidden;
+}
 
 
 
@@ -711,7 +727,7 @@ display: none;
 #mobilesignInModal{
     position: absolute;
     width: 40vw;
-    height: 40vh;
+    height: 43vh;
     font-size: 20px;
     color: #251B66;
     font-family: 'Permanent Marker', cursive;
@@ -755,28 +771,31 @@ text-align: center;
 .mobilesignInForm{
     display: flex;
     flex-direction: column;
+    width: 38vw;
 }
 .mobileusernameCaption{
     display: flex;
-    margin-left: 17vw;
+    margin-left: 4vw;
+    align-self: center;
+    width: 12vw;
 }
 .mobilesignInUsername{
     display: flex;
-    width: 47vw;
+    width: 35vw;
     font-size: xx-small;
 }
 .mobileemailCaption{
     display: flex;
-    margin-left: 17vw;
+    margin-left: 10vw;
+    margin-top: 4vw;
+    margin-bottom: 0vh;
 }
 .mobilesignInPassword{
     display: flex;
-    width: 47vw;
+    width: 35vw;
+    margin-top: 0vh;
 }
-.mobileinsignInButton{
-    display: flex;
-    width: 30vw;
-}
+
 #mobilesignUpModal{
     position: absolute;
     width: 19.65vw;
@@ -887,7 +906,7 @@ text-align: center;
     display: flex;
     margin-top: 2vh;
     background-color: #251B66;
-    width: 6vw;
+    width: 14vw;
     align-self: center;
     color: #B48B22;
     border-radius: 8px;
@@ -895,12 +914,14 @@ text-align: center;
     font-size: x-small;
 }
 .mobilecreateAccountLink{
-    display: flex;
+    display: block;
     margin-top: 1vh;
     color: black;
     font-size: x-small;
+    border: solid 2px green;
 }
 .mobilecreateAccountLink:hover{
+    display: block;
     margin-top: 1vh;
     color: #762FA0;
     font-size: small;
