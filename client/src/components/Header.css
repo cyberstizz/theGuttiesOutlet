@@ -558,6 +558,7 @@ display: none;
 
 .mobilesignUpForm{
     display: flex;
+    flex-direction: column;
 }
 .mobilesignInForm{
     display: flex;
@@ -748,7 +749,7 @@ display: none;
 .mobilesignupTopContainer{
     display: flex;
     flex-direction: column-reverse;
-    height: 10vh;
+    height: 40vh;
 }
 
 .mobilexOutButton{
@@ -782,7 +783,11 @@ text-align: center;
 .mobilesignInUsername{
     display: flex;
     width: 35vw;
-    font-size: xx-small;
+    font-size: 20px;
+}
+input::-webkit-input-placeholder {
+    font-size: 12px;
+    line-height: 3;
 }
 .mobileemailCaption{
     display: flex;
@@ -798,8 +803,8 @@ text-align: center;
 
 #mobilesignUpModal{
     position: absolute;
-    width: 19.65vw;
-    height: 40vh;
+    width: 47vw;
+    height: 45vh;
     font-size: 20px;
     color: #B48B22;
     font-family: 'Permanent Marker', cursive;
@@ -918,7 +923,6 @@ text-align: center;
     margin-top: 1vh;
     color: black;
     font-size: x-small;
-    border: solid 2px green;
 }
 .mobilecreateAccountLink:hover{
     display: block;
@@ -929,6 +933,7 @@ text-align: center;
 
 .mobilecloseLink{
     margin-top: 1vh;
+    display: block;
     color: black;
 
 }
