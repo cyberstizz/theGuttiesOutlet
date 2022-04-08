@@ -41,7 +41,7 @@ const dispatch = useDispatch();
 
     const [Description, setDescription] = useState('');
 
-    const [Price, setPrice] = useState();
+    const [Price, setPrice] = useState(0);
 
     const [SneakerPath, setSneakerPath] = useState('');
 
@@ -108,6 +108,8 @@ const dispatch = useDispatch();
             // used to destructure the data we need individually
 
             const firstCallResponse = await firstCall.data;
+
+            console.log(firstCallResponse)
 
             // this is where we destructure for the name price description and path
 

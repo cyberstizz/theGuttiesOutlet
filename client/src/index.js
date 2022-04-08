@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import CartReducer from './components/reducers/CartReducer';
+import {CartReducer, saveToSession} from './components/reducers/CartReducer';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 const store = createStore(CartReducer);
+
+store.subscribe(() => saveToSession(store.getState()))
 
 ReactDOM.render(
   <React.StrictMode>

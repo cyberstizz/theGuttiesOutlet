@@ -1,10 +1,45 @@
 import React from 'react';
 
-const initialState = {
-    items: []
+
+const loadState = () => {
+    try {
+        const sessionState = sessionStorage.getItem('state')
+
+        if(sessionState != null){
+            return JSON.parse(sessionState);
+        }
+
+        return {
+            items: []
+        }
+        
+    } catch (error) {
+        return {
+            items: []
+        };
+    }
+
+    return {
+        items: []
+    };
+
+};
+
+const initialState = loadState()
+
+
+
+export const saveToSession = (state) => {
+    console.log(state)
+    try {
+        sessionStorage.setItem('state', JSON.stringify(state))
+        
+    } catch (error) {
+        console.log(error)
+    }
 }
 
- const CartReducer = (state = initialState, action) => {
+ export const CartReducer = (state = initialState, action) => {
 
     switch(action.type){
         case 'ADD_TO_CART':
@@ -22,4 +57,3 @@ const initialState = {
     return state
 };
 
-export default CartReducer;

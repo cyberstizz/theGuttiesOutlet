@@ -12,10 +12,19 @@ import { useEffect } from 'react';
 
   console.log(theItems)
 
+
   let totalPrice = 0;
 
+  let theFinalPrice = 0;
+  
+  theItems.forEach(item => theFinalPrice += item.price)
+
+
   if(theItems){
-    theItems.forEach(item => totalPrice = totalPrice + item.price)
+    theItems.forEach(item =>  {
+      console.log(typeof(item.price))
+      totalPrice = (totalPrice + Number(item.price))
+    })
   }
   console.log(`this is the total price ${totalPrice}`)
 
@@ -40,7 +49,14 @@ import { useEffect } from 'react';
 
           if(theItems){ 
             return <div className='fullCartBlock'>
-              <div className='cartTotal'><p>Cart</p></div>
+              <div className='cartTotal'><p>Cart</p>
+              
+              <ul>
+               {theItems.map(item => <li>{item.name}</li>)}
+              </ul>
+              <p>{`total price = ${theFinalPrice}`}</p>
+              
+              </div>
               <div className='cartItems'>
                 Cart items
               {theItems.map((item) => 

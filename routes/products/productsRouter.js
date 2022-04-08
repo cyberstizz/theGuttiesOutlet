@@ -37,7 +37,7 @@ productsRouter.get('/:productId', async (req, res, next) => {
    console.log(myTest.rows[0].price)
    console.log(myTest.rows[0].description)
    
-     res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": `${myTest.rows[0].price}`, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
+     res.status(200).json({"theName": `${myTest.rows[0].name}`, "thePrice": myTest.rows[0].price, "theDescription": `${myTest.rows[0].description}`, "theSneakerPath": `${myTest.rows[0].sneakerpath}` });
    
      //  console.log(myTest.rows[0])
     } catch(err){
