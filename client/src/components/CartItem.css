@@ -10,18 +10,18 @@
 
 .entireCard{
     position: relative;
-    margin: 4vh 1vw;
-    height: 50vh;
-    width: 30vw;
+    margin: 2vh 1vw;
+    height: 48vh;
+    width: 45vw;
     text-decoration: none;
     border-radius: 12px;
     border: solid 2px #0D2A57;
-    background-color: #0D2A57;
+    background-color: #f3ebd7;
     font-family: 'Permanent Marker', cursive;
     color: #B48B22;
     font-size: 17px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
  .entireCard:hover{
@@ -69,6 +69,32 @@
     font-size: 17px;
     display: none;
     flex-direction: column;
+}
+
+
+.itemInfoContainer{
+margin-top: 1vw;
+margin-left: 1vw;
+width: 13vw;
+}
+
+#nameSpace{
+margin-top: 2vw;
+margin-bottom: 1vw;
+font-size: large;
+border-bottom: 2px solid black;
+}
+
+#ageSpace{
+margin-top: 3vw;
+margin-bottom: 1vw;
+border-bottom: 2px solid black;
+}
+
+#quantitySpace{
+margin-top: 3vw;
+margin-bottom: 1vw;
+border-bottom: 2px solid black;
 }
 
 @media only screen and (max-width: 640px){

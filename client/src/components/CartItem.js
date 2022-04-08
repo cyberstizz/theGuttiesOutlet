@@ -1,4 +1,5 @@
 import React from 'react';
+import './CartItem.css';
 
 
 const CartItem = (props) => {
@@ -10,9 +11,11 @@ const CartItem = (props) => {
         <div className="entireCard" style={{ textDecoration: 'none' }}>
           
         <img src={thePath} width="461" height="270" id="sneakerpicture" />
+        <div className='itemInfoContainer'>
         <section id="nameSpace">{theName}</section>
         <section id="ageSpace">Price ${thePrice}</section>
         <div id="quantitySpace">Quantity: {theQuantity}</div>
+        </div>
         </div>
         <div className="mobileentireCard" style={{ textDecoration: 'none' }}>
           
