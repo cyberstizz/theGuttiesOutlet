@@ -5,11 +5,34 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import './ProductDescription.css';
 import axios from 'axios';
+import { addToCart } from './reducers/AddToCart';
 import StripeCheckout from 'react-stripe-checkout';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
+// creating the two functions that will be needed to connect this component to the store
 
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         addToTheCart: (item) => {dispatch(addToCart(item))}
+//     }
+// }
+
+// const mapStateToProps = (state) => {
+//     return {
+//         items: state.items
+//     }
+// }
 
 const ProductDescription = () => {
+
+//first thing is to initiate the state with useSelector
+
+const statesItems = useSelector(state => state.items );
+
+const dispatch = useDispatch();
+
+
+
     // we start out our component by  setting up ourt params and state hooks
 
     const { productId } = useParams();
@@ -23,13 +46,14 @@ const ProductDescription = () => {
     const [SneakerPath, setSneakerPath] = useState('');
 
     const [Quantity, setQuantity] = useState(1);
+    
+    const [item, setItem] = useState({});
 
     // next we defind a function to call the quantity hook
 
     const selectChangeHandler = (event) => {
         event.preventDefault();
-        setQuantity(event.target.value)
-
+        setQuantity(event.target.value);
     }
 
     //next is a function to handle the token property of the stripeCheckout component
@@ -98,6 +122,15 @@ const ProductDescription = () => {
             setDescription(theDescription);
             setSneakerPath(theSneakerPath);
 
+            // now creating a name object utilizing all of thes properties
+            // to use for the Redux state
+            setItem({
+                name: theName,
+                price: thePrice,
+                description: theDescription,
+                sneakerPath: theSneakerPath
+            })
+
             // now this is where the function CallTheDatabase ends meaning it has not been called
         }
 
@@ -106,6 +139,12 @@ const ProductDescription = () => {
 
         callTheDatabase()
     })
+
+    // now a function to be called when a user clicks add to cart
+    const handleClick = (item) => {
+            //  props.addToTheCart(item)
+            dispatch(addToCart(item))
+    }
 
 // and now below is the jsx of the actual component
 
@@ -140,7 +179,7 @@ const ProductDescription = () => {
                 <div className="purchaseSections" id="price"><div style={{color: 'green', marginLeft: '5vw', "font-family": "'Permanent Marker', cursive"}}><span style={{color: 'white', marginLeft: '-1.2vw'}}>Total:  </span>${!Quantity ? Price : (Price * Quantity)}</div> <span style={{marginTop: '1vh', marginLeft: '1vw'}}></span></div>
                 {/* this div is for the estimated delivery */}
                  {/* and the two buttons are below */}
-                <div className="buttonsDiv"><Link to={`cart/${productId}`}><button id="purchaseButtonCart">Add to cart</button></Link> 
+                <div className="buttonsDiv"><button id="purchaseButtonCart" onClick={() => handleClick(item)}>Add to cart</button> 
                 <StripeCheckout 
                    stripeKey={'pk_test_51KD0MTBGolAm0YdrCJ4QlFJf3Bdv4WckkNGl6tKyrBvXE5GvP9WCWpOQEzyNT1wQD6zCKZQNj7AmDF1dRfWiZ7Y400CfbKGLoM'}
                    token={handleToken}
@@ -166,7 +205,14 @@ const ProductDescription = () => {
 
     )
 }
+
+// creating an action to be dispatched to the redux store
+// this action will receive a name object, that has all of the products properties
+
+
+
+// export default connect(mapStateToProps, mapDispatchToProps)(ProductDescription)
        
-
-
 export default ProductDescription;
+
+

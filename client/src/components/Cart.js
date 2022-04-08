@@ -1,86 +1,68 @@
 import React, { useState } from 'react';
 import './Cart.css';
-import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import CartItem from './CartItem';
+import { useEffect } from 'react';
+
 
 
  const Cart = () => {
 
-  const [name, setName] = useState();
+  const theItems = useSelector((state) => state.items)
 
-  const [age, setAge] = useState();
+  console.log(theItems)
 
-  const [skill, setSkill] = useState();
+  let totalPrice = 0;
 
-  // function to set the state of the name field
-
-  const handleNameChange = (event) => {
-      event.preventDefault();
-
-      let nameEntered = event.target.value
-
-      console.log(nameEntered)
-      setName(nameEntered);
-
-      console.log(name)
-  };
-
-// function to set the state of the age field
-
-  const handleAgeChange = (event) => {
-    event.preventDefault();
-
-    let ageEntered = event.target.value
-
-    console.log(ageEntered)
-    setAge(ageEntered);
-
-    console.log(age)
-}
+  if(theItems){
+    theItems.forEach(item => totalPrice = totalPrice + item.price)
+  }
+  console.log(`this is the total price ${totalPrice}`)
 
 
-const handleSkillChange = (event) => {
-  event.preventDefault();
 
-  let skillEntered = event.target.value
+   useEffect( ()=> {
+           if(theItems){ 
+             return <div className='fullCartBlock'>
+               <div className='cartTotal'><p>Cart</p></div>
+               <div className='cartItems'>
+                 Cart items
+               {theItems.map((item) => 
+              <CartItem key={item.name} theName={item.name} thePrice={item.price} theQuantity={1} thePath={item.sneakerPath} />
+                                                  
+              )}</div>
+              </div>
+           } else{
+ return <div className='cartBlock'>there are no items in your cart</div>
+           }
 
-  console.log(skillEntered)
-  setSkill(skillEntered);
+          }, [])
 
-  console.log(skill)
-}
+          if(theItems){ 
+            return <div className='fullCartBlock'>
+              <div className='cartTotal'><p>Cart</p></div>
+              <div className='cartItems'>
+                Cart items
+              {theItems.map((item) => 
+             <CartItem key={item.name} theName={item.name} thePrice={item.price} theQuantity={1} thePath={item.sneakerPath} />
+                                                 
+             )}</div>
+             </div>
+          } else{
+return <div className='cartBlock'>there are no items in your cart</div>
+          }
 
-     const handleSubmit = async (event) => {
-
-        event.preventDefault();
-
-      console.log(`this is the name: ${name} this is the age: ${age} this is the skill: ${skill}`)
-        const postRequest = await fetch('http://localhost:5001/products/:artist', {
-            method: 'POST',
-            headers: { 'Content-Type':'application/json' },
-            body: JSON.stringify({
-              name: `${name}`,
-              age: `${age}`,
-              skill: `${skill}`
-            })
-        });
-     }
-
-    return(
-        <React.Fragment>
-
-        {/* <form onSubmit ={handleSubmit}>
-
-          <input type='text' placeholder='name' onChange={handleNameChange} />
-          <input type='text' placeholder='age' onChange={handleAgeChange} />
-          <input type='text' placeholder='skill' onChange={handleSkillChange} />
-          <input type='submit' placeholder='Create An artist' />
-        
-        </form> */}
-        <div className='cartBlock'>Cart page</div>
-
-         </React.Fragment>
-
-    )
 };
 
+
+// const mapStateToProps = (state) => {
+//   return {
+//     items: state.items
+//   }
+
+// };
+
+// export default connect(mapStateToProps)(Cart);
 export default Cart;
+
+
