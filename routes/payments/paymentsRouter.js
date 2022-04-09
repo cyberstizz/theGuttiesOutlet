@@ -15,6 +15,8 @@ const pool = require('../../db');
 
 // enabling cors
 paymentsRouter.use(cors());
+
+
  
 // allowing access to the requst.body
 paymentsRouter.use(express.json());
@@ -26,12 +28,15 @@ paymentsRouter.use(express.json());
 
 
 paymentsRouter.post('/', async (req, res) => {
-        const {product, token } = req.body;
+        const {product, products, token } = req.body;
 
 
 
         console.log('product:', product);
 
+        console.log('products:', products);
+
+if(product === undefined){
     // you must first create a unique identifier in to make sure customers are not double charged
         const idempotencyKey = uuid();
 
@@ -42,41 +47,35 @@ paymentsRouter.post('/', async (req, res) => {
             source: token.id
         }).then(customer => {
             stripe.charges.create({
-            amount: product.price * 100,
+            amount: products.price * 100,
             currency: 'usd',
             customer: customer.id,
             receipt_email: token.email,
-            description: product.description
+            description: products.products
         }, {idempotencyKey})
-    }).then(result => res.status(200).json(result))
+    }).then(result => {
+        console.log(result)
+        res.json(result)
+    })
+} else{
+      // you must first create a unique identifier in to make sure customers are not double charged
+      const idempotencyKey = uuid();
 
 
-        // let transport = nodemailer.createTransport({
-        //     host: 'www.charles.lamb.dev@gmail.com',
-        //     port: 2525,
-        //     auth: {
-        //        user: 'put_your_username_here',
-        //        pass: 'put_your_password_here'
-        //     }
-        // });
-
-
-
-        // const message = {
-        //     from: 'charles.lamb.dev@gmail.com', // Sender address
-        //     to: 'charles.lamb.dev@gmail.com',         // recipient
-        //     subject: 'just testing emails from ther server', // Subject 
-        //     text: 'everything seems to be working!' // message
-        // };
-
-
-        // transport.sendMail(message, function(err, info) {
-        //     if (err) {
-        //       console.log(err)
-        //     } else {
-        //       console.log(info);
-        //     }
-        // });
+      //you first create a customer instance
+       stripe.customers.create({
+          email: token.email,
+          source: token.id
+      }).then(customer => {
+          stripe.charges.create({
+          amount: product.price * 100,
+          currency: 'usd',
+          customer: customer.id,
+          receipt_email: token.email,
+          description: product.description
+      }, {idempotencyKey})
+  }).then(result => res.json(result))
+}
    });
     
    

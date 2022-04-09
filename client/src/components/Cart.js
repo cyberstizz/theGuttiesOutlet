@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import CartItem from './CartItem';
 import { useEffect } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -34,8 +35,10 @@ import StripeCheckout from 'react-stripe-checkout';
     console.log(token);
 
     const products = {
-        products: theItems,
+        name: 'cart',
         price: theFinalPrice,
+        description: 'cart items',
+        quantity: 1
     };
 
     const body = {
@@ -48,6 +51,8 @@ import StripeCheckout from 'react-stripe-checkout';
     }
 
 
+
+
     return fetch('/payments', {
         method: "POST",
         headers,
@@ -55,6 +60,10 @@ import StripeCheckout from 'react-stripe-checkout';
     }).then(response => {
         const { status } = response;
         console.log(response)
+      //   if(status == 200){
+      //     Window = '/';
+      // }
+
     }).catch(error => console.log(error));
 
     }
@@ -93,7 +102,7 @@ import StripeCheckout from 'react-stripe-checkout';
                    name='checkout'
                    amount={theFinalPrice * 100}
                 > 
-                <button id="purchaseButtonBuy">Buy now</button>
+                <button id="purchaseButtonBuy">Complete Order</button>
                 </StripeCheckout>
               
               </div>
