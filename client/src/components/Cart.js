@@ -8,9 +8,12 @@ import { useNavigate } from "react-router-dom";
 
 
 
+
  const Cart = () => {
 
   const theItems = useSelector((state) => state.items)
+
+  const dispatch = useDispatch();
 
   console.log(theItems)
 
@@ -20,6 +23,8 @@ import { useNavigate } from "react-router-dom";
   let theFinalPrice = 0;
   
   theItems.forEach(item => theFinalPrice += item.price)
+
+  const itemsDescription = `total items: ${theItems.map(item => item.name,)}`
 
 
   if(theItems){
@@ -37,7 +42,7 @@ import { useNavigate } from "react-router-dom";
     const products = {
         name: 'cart',
         price: theFinalPrice,
-        description: 'cart items',
+        products: itemsDescription,
         quantity: 1
     };
 
@@ -60,9 +65,12 @@ import { useNavigate } from "react-router-dom";
     }).then(response => {
         const { status } = response;
         console.log(response)
-      //   if(status == 200){
-      //     Window = '/';
-      // }
+        if(status == 200){
+
+          dispatch({type: 'CLEAR_CART'});
+
+          document.location.href = '/';
+      }
 
     }).catch(error => console.log(error));
 

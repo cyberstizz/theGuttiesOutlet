@@ -53,6 +53,12 @@ export const saveToSession = (state) => {
         //     //         item.title !== action.payload.title ? {...item,quantity: action.payload.quantity} : {item}
         //     // })
         //     //     };
+        case 'CLEAR_CART':
+            return {
+                items: []
+            };
+            default:
+            return state;
     }
     return state
 };
