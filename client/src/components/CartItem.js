@@ -8,21 +8,21 @@ const CartItem = (props) => {
 
     return(
         <React.Fragment>
-        <div className="entireCard" style={{ textDecoration: 'none' }}>
+        <div className="cartEntireCard" style={{ textDecoration: 'none' }}>
           
-        <img src={thePath} width="461" height="270" id="sneakerpicture" />
-        <div className='itemInfoContainer'>
-        <section id="nameSpace">{theName}</section>
-        <section id="ageSpace">Price ${thePrice}</section>
-        <div id="quantitySpace">Quantity: {theQuantity}</div>
+        <img src={thePath} width="461" height="270" id="cartSneakerpicture" />
+        <div className='cartItemInfoContainer'>
+        <section id="cartNameSpace">{theName}</section>
+        <section id="cartAgeSpace">Price ${thePrice}</section>
+        <div id="cartQuantitySpace">Quantity: {theQuantity}</div>
         </div>
         </div>
-        <div className="mobileentireCard" style={{ textDecoration: 'none' }}>
+        <div className="cartMobileentireCard" style={{ textDecoration: 'none' }}>
           
-          <img src={thePath} width="461" height="270" id="mobilesneakerpicture" />
-      <section id="nameSpace">{theName}</section>
-      <section id="ageSpace">$ {thePrice}</section>
-      <div id="mobilequantitySpace"></div>
+          <img src={thePath} width="461" height="270" id="cartMobilesneakerpicture" />
+      <section id="cartNameSpace">{theName}</section>
+      <section id="cartAgeSpace">$ {thePrice}</section>
+      <div id="cartMobilequantitySpace"></div>
       </div>
         </React.Fragment>
     )

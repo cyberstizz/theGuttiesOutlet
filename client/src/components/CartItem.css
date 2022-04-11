@@ -8,7 +8,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Permanent+Marker&display=swap');
 
-.entireCard{
+.cartEntireCard{
     position: relative;
     margin: 2vh 1vw;
     height: 48vh;
@@ -24,22 +24,7 @@
     flex-direction: row;
 }
 
- .entireCard:hover{
-    position: relative;
-    margin: 3vh 1vw;
-    height: 50vh;
-    width: 30vw;
-    border: solid #0D2A57 2px;
-    text-decoration: none;
-    border-radius: 12px;
-    background-color: #B48B22;
-    font-family: 'Permanent Marker', cursive;
-    color: #333c49;
-    font-size: 17px;
-    display: flex;
-    flex-direction: column;
-}
-.mobileentireCard{
+.cartMobileentireCard{
     position: relative;
     margin: 4vh 1vw;
     height: 50vh;
@@ -55,43 +40,27 @@
     flex-direction: column;
 }
 
- .mobileentireCard:hover{
-    position: relative;
-    margin: 3vh 1vw;
-    height: 50vh;
-    width: 30vw;
-    border: solid #0D2A57 2px;
-    text-decoration: none;
-    border-radius: 12px;
-    background-color: #B48B22;
-    font-family: 'Permanent Marker', cursive;
-    color: #333c49;
-    font-size: 17px;
-    display: none;
-    flex-direction: column;
-}
 
-
-.itemInfoContainer{
+.cartItemInfoContainer{
 margin-top: 1vw;
 margin-left: 1vw;
 width: 13vw;
 }
 
-#nameSpace{
+#cartNameSpace{
 margin-top: 2vw;
 margin-bottom: 1vw;
 font-size: large;
 border-bottom: 2px solid black;
 }
 
-#ageSpace{
+#cartAgeSpace{
 margin-top: 3vw;
 margin-bottom: 1vw;
 border-bottom: 2px solid black;
 }
 
-#quantitySpace{
+#cartQuantitySpace{
 margin-top: 3vw;
 margin-bottom: 1vw;
 border-bottom: 2px solid black;
@@ -99,7 +68,7 @@ border-bottom: 2px solid black;
 
 @media only screen and (max-width: 640px){
 
-    .entireCard{
+    .cartEntireCard{
         position: relative;
         margin: 4vh 1vw;
         height: 50vh;
@@ -115,26 +84,12 @@ border-bottom: 2px solid black;
         flex-direction: column;
     }
     
-     .entireCard:hover{
-        position: relative;
-        margin: 3vh 1vw;
-        height: 50vh;
-        width: 30vw;
-        border: solid #0D2A57 2px;
-        text-decoration: none;
-        border-radius: 12px;
-        background-color: #B48B22;
-        font-family: 'Permanent Marker', cursive;
-        color: #333c49;
-        font-size: 17px;
-        display: none;
-        flex-direction: column;
-    }
-    #sneakerpicture{
+    
+    #cartSneakerpicture{
         width: 461;
         height: 270;
     }
-    .mobileentireCard{
+    .cartMobileentireCard{
         position: relative;
         margin: 4vh 1vw;
         margin-left: 2vw;
@@ -151,23 +106,7 @@ border-bottom: 2px solid black;
         flex-direction: column;
     }
     
-     .mobileentireCard:hover{
-        position: relative;
-        margin: 4vh 1vw;
-        margin-left: 2vw;
-        height: 50vh;
-        width: 93vw;
-        border: solid #0D2A57 2px;
-        text-decoration: none;
-        border-radius: 12px;
-        background-color: #B48B22;
-        font-family: 'Permanent Marker', cursive;
-        color: #333c49;
-        font-size: 17px;
-        display: flex;
-        flex-direction: column;
-    }
-    #mobilesneakerpicture{
+    #cartMobilesneakerpicture{
         width: 93vw;
         height: 60;
         background-size: cover;

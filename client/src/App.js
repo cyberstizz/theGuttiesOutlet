@@ -12,6 +12,7 @@ import NewArrivals from './components/NewArrivals';
 import BestSellers from './components/BestSellers';
 import Discounts from './components/Discounts';
 import Search from './components/Search';
+import Success from './components/Success';
 
 
 
@@ -50,6 +51,8 @@ state = {
         <Route path='products/:user/Cart/:user' element={<Cart />} />
         <Route path='/test' element={<TestPage />} />
         <Route path='/Cart/:user' element={<Cart />} />
+        <Route path='/success' element={<Success />} />
+
 
 
 

@@ -20,6 +20,8 @@
 }
 
 .cartTotal{
+    border-right: solid 4px #B48B22;
+    border-left: solid 4px #B48B22;
     position: absolute;
     right: 0;
     margin-right: 3vw;
@@ -37,6 +39,7 @@
 }
 
 .cartItems{
+    border: solid 4px #B48B22;
     display: inline-flex;
     flex-direction: column;
     font-family: 'Permanent Marker', cursive;

@@ -69,7 +69,7 @@ import { useNavigate } from "react-router-dom";
 
           dispatch({type: 'CLEAR_CART'});
 
-          document.location.href = '/';
+          document.location.href = '/success';
       }
 
     }).catch(error => console.log(error));
@@ -99,7 +99,7 @@ import { useNavigate } from "react-router-dom";
           if(theItems){ 
             return <div className='fullCartBlock'>
               <div className='cartTotal'><p>Checkout</p>  
-              <ul style={{listStyle: 'none'}}>
+              <ul style={{listStyle: 'none', marginRight: '2vw', borderRight: 'solid 4px #B48B22', borderLeft: 'solid 4px #B48B22', width: '22vw', alignSelf: 'center', paddingRight: '2vw'}}>
                {theItems.map(item => <li>{item.name} : {item.price}</li>)}
               </ul>
             
