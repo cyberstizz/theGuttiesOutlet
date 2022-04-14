@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
             <section className="footer-logo-section">
 
 
-            <div className="footer-logo"> </div>
+            <Link to='/'><div className="footer-logo"> </div></Link>
 
             <div className="footer-conception-year"> @2021 </div>
 
@@ -38,8 +38,8 @@ import { Link } from "react-router-dom";
             <section className="footer-center">
             <ul className="footer-list-block">
                     <li className="footer-section-header">Company</li>
-                    <li className="footer-list-item">About Us</li>
-                    <li className="footer-list-item">Contact</li>
+                    <Link to='/about_us'> <li className="footer-list-item">About Us</li></Link>
+                    <Link to='/contact'>  <li className="footer-list-item">Contact</li></Link>
                 </ul>
 
 
@@ -50,9 +50,9 @@ import { Link } from "react-router-dom";
 
             <ul className="footer-list-block">
                     <li className="footer-section-header">Policies</li>
-                    <li className="footer-list-item">Privacy Policy</li>
-                    <li className="footer-list-item">Cookie Policy</li>
-                    <li className="footer-list-item">Terms Of Use</li>
+                    <Link to='/privacy_policy'> <li className="footer-list-item">Privacy Policy</li></Link>
+                    <Link to='/cookie_policy'> <li className="footer-list-item">Cookie Policy</li></Link>
+                    <Link to='/terms_of_use'> <li className="footer-list-item">Terms Of Use</li></Link>
                 </ul>
 
             </section>
@@ -76,7 +76,7 @@ import { Link } from "react-router-dom";
             <section className="mobilefooter-logo-section">
 
 
-            <div className="mobilefooter-logo"> </div>
+            <Link to='/'><div className="mobilefooter-logo"> </div></Link> 
 
             <div className="mobilefooter-conception-year"> @2021 </div>
 
@@ -98,9 +98,9 @@ import { Link } from "react-router-dom";
 
             <section className="mobilefooter-center">
             <ul className="mobilefooter-list-block">
-                    <li className="mobilefooter-section-header">Company</li>
-                    <li className="mobilefooter-list-item">About Us</li>
-                    <li className="mobilefooter-list-item">Contact</li>
+            <li className="mobilefooter-section-header">Company</li>
+            <Link to='/about_us'> <li className="mobilefooter-list-item">About Us</li></Link>
+            <Link to='/contact'>  <li className="mobilefooter-list-item">Contact</li></Link>
                 </ul>
 
 
@@ -110,10 +110,10 @@ import { Link } from "react-router-dom";
             <section className="mobilefooter-right">
 
             <ul className="mobilefooter-list-block">
-                    <li className="mobilefooter-section-header">Policies</li>
-                    <li className="mobilefooter-list-item">Privacy Policy</li>
-                    <li className="mobilefooter-list-item">Cookie Policy</li>
-                    <li className="mobilefooter-list-item">Terms Of Use</li>
+             <li className="mobilefooter-section-header">Policies</li>
+            <Link to='/privacy_policy'><li className="mobilefooter-list-item">Privacy Policy</li></Link>
+            <Link to='/cookie_policy'><li className="mobilefooter-list-item">Cookie Policy</li></Link>
+            <Link to='/terms_of_use'><li className="mobilefooter-list-item">Terms Of Use</li></Link>
                 </ul>
 
             </section>

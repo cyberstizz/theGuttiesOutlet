@@ -10,7 +10,7 @@ const CartItem = (props) => {
         <React.Fragment>
         <div className="cartEntireCard" style={{ textDecoration: 'none' }}>
           
-        <img src={thePath} width="461" height="270" id="cartSneakerpicture" />
+        <img src={thePath} id="cartSneakerpicture" />
         <div className='cartItemInfoContainer'>
         <section id="cartNameSpace">{theName}</section>
         <section id="cartAgeSpace">Price ${thePrice}</section>
@@ -19,9 +19,9 @@ const CartItem = (props) => {
         </div>
         <div className="cartMobileentireCard" style={{ textDecoration: 'none' }}>
           
-          <img src={thePath} width="461" height="270" id="cartMobilesneakerpicture" />
-      <section id="cartNameSpace">{theName}</section>
-      <section id="cartAgeSpace">$ {thePrice}</section>
+          <img src={thePath} id="cartMobilesneakerpicture" />
+      <section id="cartMobileNameSpace">{theName}</section>
+      <section id="cartMobileAgeSpace">$ {thePrice}</section>
       <div id="cartMobilequantitySpace"></div>
       </div>
         </React.Fragment>

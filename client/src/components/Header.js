@@ -134,8 +134,8 @@ import axios from 'axios';
 
             <div id="settingsLogoutBlock">
                 {/* the right header will have the cart icon and the login and logout buttons */}
-                <div id='settingsButton'> <i class="fa fa-cog" aria-hidden="true"></i> Settings </div>
-                
+                <Link to='/settings'> <div id='settingsButton'> <i class="fa fa-cog" aria-hidden="true"></i>Settings </div></Link>
+
             
                 
 
@@ -329,7 +329,7 @@ import axios from 'axios';
 
 <div id="mobliesettingsLogoutBlock">
     {/* the right header will have the cart icon and the login and logout buttons */}
-    <div id='mobilesettingsButton'> <i class="fa fa-cog" aria-hidden="true"></i> </div>
+   <Link to='/settings'> <div id='mobilesettingsButton'> <i class="fa fa-cog" aria-hidden="true"></i> </div></Link>
     
 
     

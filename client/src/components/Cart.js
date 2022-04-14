@@ -99,11 +99,11 @@ import { useNavigate } from "react-router-dom";
           if(theItems){ 
             return <div className='fullCartBlock'>
               <div className='cartTotal'><p>Checkout</p>  
-              <ul style={{listStyle: 'none', marginRight: '2vw', borderRight: 'solid 4px #B48B22', borderLeft: 'solid 4px #B48B22', width: '22vw', alignSelf: 'center', paddingRight: '2vw'}}>
-               {theItems.map(item => <li>{item.name} : {item.price}</li>)}
+              <ul id='checkoutItems'>
+               {theItems.map(item => <li key={item.name}>{item.name} : {item.price}</li>)}
               </ul>
             
-              <p>{`Grand total = ${theFinalPrice}`}</p>
+              <p id='theGrandTotal'>Grand total = <span style={{color: 'green'}}>{theFinalPrice}</span></p>
               <StripeCheckout 
                    stripeKey={'pk_test_51KD0MTBGolAm0YdrCJ4QlFJf3Bdv4WckkNGl6tKyrBvXE5GvP9WCWpOQEzyNT1wQD6zCKZQNj7AmDF1dRfWiZ7Y400CfbKGLoM'}
                    token={handleToken}

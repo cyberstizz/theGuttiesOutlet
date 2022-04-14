@@ -13,7 +13,12 @@ import BestSellers from './components/BestSellers';
 import Discounts from './components/Discounts';
 import Search from './components/Search';
 import Success from './components/Success';
-
+import AboutUs from './components/AboutUse';
+import Contact from './components/Contact';
+import CookiePolicy from './components/CookiePolicy';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import Settings from './components/Settings';
+import TermsOfUse from './components/TermsOfUse';
 
 
 
@@ -52,6 +57,12 @@ state = {
         <Route path='/test' element={<TestPage />} />
         <Route path='/Cart/:user' element={<Cart />} />
         <Route path='/success' element={<Success />} />
+        <Route path='/settings' element={<Settings />} />
+        <Route path='/about_us' element={<AboutUs />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/privacy_policy' element={<PrivacyPolicy />} />
+        <Route path='/cookie_policy' element={<CookiePolicy />} />
+        <Route path='/terms_of_use' element={<TermsOfUse />} />
 
 
 

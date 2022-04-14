@@ -11,7 +11,7 @@
 .cartEntireCard{
     position: relative;
     margin: 2vh 1vw;
-    height: 48vh;
+    height: 32vh;
     width: 45vw;
     text-decoration: none;
     border-radius: 12px;
@@ -45,6 +45,11 @@
 margin-top: 1vw;
 margin-left: 1vw;
 width: 13vw;
+}
+
+#cartSneakerpicture{
+    width: 461px;
+    height: 225px;
 }
 
 #cartNameSpace{
@@ -86,32 +91,49 @@ border-bottom: 2px solid black;
     
     
     #cartSneakerpicture{
-        width: 461;
-        height: 270;
+        width: 30vw;
+        height: 24vh;
     }
     .cartMobileentireCard{
         position: relative;
         margin: 4vh 1vw;
         margin-left: 2vw;
-        height: 50vh;
-        width: 93vw;
+        height: 53vh;
+        width: 45vw;
         text-decoration: none;
         border-radius: 12px;
         border: solid 2px #0D2A57;
-        background-color: #0D2A57;
+        background-color: #f3ebd7;
         font-family: 'Permanent Marker', cursive;
         color: #B48B22;
-        font-size: 17px;
+        font-size: 7px;
         display: flex;
         flex-direction: column;
     }
     
     #cartMobilesneakerpicture{
-        width: 93vw;
+        width: 43vw;
         height: 60;
         background-size: cover;
         background-position: center;
     }
-    
+
+    #cartMobileNameSpace{
+        height: 5vh;
+        font-size: 22px;
+        border-bottom: solid 2px black;
+    }
+
+      #cartMobileAgeSpace{
+        height: 5vh;
+        font-size: 22px;
+        border-bottom: solid 2px black;
+      }
+
+      #cartMobilequantitySpace{
+        height: 5vh;
+        font-size: 22px;
+        border-bottom: solid 2px black;
+      }
 
 }
