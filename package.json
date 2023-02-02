@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build",
-    "test": "mocha ./routes/home/homeRouter.test.js"
+    "test": "mocha ./routes/products/productsRouter.test.js"
   },
   "keywords": [],
   "author": "",

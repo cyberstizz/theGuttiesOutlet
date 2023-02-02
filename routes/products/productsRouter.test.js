@@ -8,7 +8,7 @@ chai.should();
 describe("the product router", () => {
     it("should return a status of 200", () => {
         chai.request(productsRouter)
-        .get('/')
+        .get('/3')
         .end((err, res) => {
             res.should.have.status(200)
         })
