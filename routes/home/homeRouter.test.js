@@ -1,6 +1,6 @@
-import chai from 'chai';
-import chaiHttp from 'chai-http';
-import homeRouter from './homeRouter';
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const homeRouter = require('./homeRouter');
 
 chai.use(chaiHttp);
 chai.should();
@@ -11,6 +11,6 @@ describe("the home router", () => {
         .get('/')
         .end((err, res) => {
             res.should.have.status(200)
-        }
+        })
     })
 })
