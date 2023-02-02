@@ -1,6 +1,6 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const homeRouter = require('./homeRouter');
+const productsRouter = require('./homeRouter');
 
 chai.use(chaiHttp);
 chai.should();
