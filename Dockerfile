@@ -5,3 +5,7 @@ WORKDIR /app
 
 #copying the package.json to the images /app direcory
 COPY package*json ./
+
+#installing those dependencies to the server
+RUN npm install
+
