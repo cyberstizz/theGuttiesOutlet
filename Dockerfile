@@ -11,3 +11,6 @@ RUN npm install
 
 # Copy the server source code to the container
 COPY . .
+
+#now creating and switching to the client directory in the images client folder
+WORKDIR /app/client
