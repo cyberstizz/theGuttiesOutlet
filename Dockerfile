@@ -26,3 +26,8 @@ RUN npm run build
 
 #moving back into the /app directory
 WORKDIR /app
+
+#installing the serve package
+RUN npm install -g serve
+
+#
