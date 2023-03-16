@@ -23,3 +23,6 @@ RUN npm install
 
 #now creating the build file in the images client directory
 RUN npm run build
+
+#moving back into the /app directory
+WORKDIR /app
