@@ -14,3 +14,6 @@ COPY . .
 
 #now creating and switching to the client directory in the images client folder
 WORKDIR /app/client
+
+#now copying the package.json files from the source codes client directory into the images client directory
+COPY client/package*.json ./
