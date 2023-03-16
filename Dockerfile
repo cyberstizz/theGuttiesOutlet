@@ -17,3 +17,6 @@ WORKDIR /app/client
 
 #now copying the package.json files from the source codes client directory into the images client directory
 COPY client/package*.json ./
+
+#now installing those client dependencies into the images client directory
+RUN npm install
