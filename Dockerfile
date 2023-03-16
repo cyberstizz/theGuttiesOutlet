@@ -9,3 +9,5 @@ COPY package*json ./
 #installing those dependencies to the server
 RUN npm install
 
+# Copy the server source code to the container
+COPY . .
