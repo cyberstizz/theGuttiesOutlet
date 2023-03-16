@@ -32,3 +32,5 @@ RUN npm install -g serve
 
 #opening the port 5001
 EXPOSE 5001
+
+CMD ["serve", "-s", "client/build", "-l", "5001"]
