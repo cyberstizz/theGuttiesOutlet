@@ -30,4 +30,5 @@ WORKDIR /app
 #installing the serve package
 RUN npm install -g serve
 
-#
+#opening the port 5001
+EXPOSE 5001
