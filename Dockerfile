@@ -20,3 +20,6 @@ COPY client/package*.json ./
 
 #now installing those client dependencies into the images client directory
 RUN npm install
+
+#now creating the build file in the images client directory
+RUN npm run build
