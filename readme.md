@@ -3,7 +3,7 @@
 ![](./src/main/resources/squintreadmepic.jpg)
 
 
-#             **Squint**
+#             **Gutties Outlet**
 
 ## This is a React application
 
