@@ -1,58 +1,63 @@
-##Gutties Outlet Description
-
-Gutties Outlet is an online retail store speacilizing in low prices and fast delivery,
-users can create an account and take advantage of some of the most popular sneakers
-at outlet prices.
-
-<u>Technologies
-NodeJs
-Express
-PostgreSql
-React
-React Router
-PG
-PassportJs
-Stripe
-Cors
-Mocha
-Chai
-
-Design Execution
-The website will take a mobile first approach, and contain a database with six tables. ON the
-server an Express Router will be used to modularize the code. This project will be deployed on
-Heroku.
-
-Testing
-this project will be tested using Mocha and Chai
-
-Below is the Entity Relationship Diagram for Gutties Outlets database
-
-![](https://github.com/cyberstizz/theGuttiesOutlet/blob/master/client/public/images/Gutties%20Outlet.jpeg)
 
 
-itnerary
--Create read me
--Deploy to netlify to test locally
+![](./src/main/resources/squintreadmepic.jpg)
 
 
---Database--
--Build entity relationship diagram
--Write queries
--Enter queries into local databse
+#             **Squint**
 
---Server--
--Write api endpoints
--install technologies
--Connect Express to React
--Connect Express to Postgresql
--Create all routes
--Implement user authentication with PassportJs
+## This is a React application
 
---Client--
--Create mobile version of front end
--Create tablet version of front end
--Create laptop version of front end
--Create desktop version of front end
--setup stripe billing
--Write tests
--Deploy to Heroku
+### this project includes
+* React
+* React Router
+* Redux
+* Node/Express js
+* Stripe
+* Passport.js
+* Postgresql
+
+
+### Synopsis
+Gutties outlet was a sneaker store created in 2021 focused around
+low prices and quick delivery. the store offered several types of
+footwear from exclusive sneakers to sandals and crocs. The website
+closed in late 2022 but the repo still exists
+
+
+### how to use it
+Gutties can only be used as a demo now but it still works similar to how it
+did before. it is an online store similar to the likes of Amazon, when you 
+first enter the website the first thing that you see are a list of producst
+from which you can browse or search for other products within the marketplace.
+to view an item individually just click on it. and to save to your cart or make 
+a purchase, just go to the items page and click on the appropriate action.
+
+
+### Biggest challenges
+my biggest challenge with gutties outlet was learning about why state manaagement
+is important. sure it is common knowledge to the seasoned developer, however when
+you come from a front end background and start with smaller projects you can tend
+to misunderstand why state management is so important.
+
+in this case I tried to manage a cart before understanding Redux on a deeper level,
+and this project taught me why you need a state management library to keep state 
+consistent across components, and especially if you have a cart.
+
+further, this project introduced me to e commerce within a web application as I had
+no idea how it worked. For this application I used the Stripe api for purchases on
+a users account, and all purchases went to the business account of Gutties Outlet.
+
+
+
+### Code Review
+the code uses Node js as the backend and React as the frontend to display the ui.
+
+as mentioned earlier Redux is used as the state management tool and stripe is used
+as the merchant.
+
+### final thought
+gutties outlet was a very educational project and I will never forget the
+valuable lessons I learned while building it.
+
+
+### for more projects by CyberStizz visit: [Charleslambjr.com](https://www.charleslambjr.com/)
