@@ -31,7 +31,9 @@ state = {
     // fetching the GET route from the Express server which matches the GET route from server.js
     //broadway check this out
   callBackendAPI = async () => {
-    const response = await fetch('http://localhost:5001/');
+    const response = process.env.NODE_ENV === 'production'
+    ? await fetch('https://mogulfashion-65ec42dc2783.herokuapp.com')
+    : await fetch('http://localhost:5001');
     const body = await response.json();
 
     if (response.status !== 200) {
