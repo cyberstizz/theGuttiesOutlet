@@ -31,16 +31,13 @@ $ npm run dev
 
 ## Files
 
-- src: the file that implements de solution.
-- assets: resources that are used in an application.
+- src: contains all of the main files and coponentes
 - components: reusable pieces of code that define the appearance and behavior of a part of the UI.
-- pages: the different areas of the portfolio.
-- constants: values that cannot be altered by the program during normal execution.
 
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en) and [Vite](https://vitejs.dev/) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en) and [Postgresql](https://www.postgresql.org/) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
@@ -58,12 +55,12 @@ $ npm run build
 This software uses the following open source packages:
 
 - [React](https://reactjs.org/)
-- [ReactRouter](https://vitejs.dev/)
-- [Redux](https://tailwindcss.com/)
-- [Express](https://tailwindcss.com/)
-- [Stripe](https://tailwindcss.com/)
-- [PassportJs](https://tailwindcss.com/)
-- [Postgresql](https://tailwindcss.com/)
+- [ReactRouter](https://reactrouter.com/en/main)
+- [Redux](https://redux.js.org/)
+- [Express](https://expressjs.com/)
+- [Stripe](https://stripe.com/)
+- [PassportJs](https://www.passportjs.org/)
+- [Postgresql](https://www.postgresql.org/)
 
 
 
