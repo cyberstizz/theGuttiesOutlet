@@ -21,7 +21,7 @@ closed in late 2022 but the repo still exists
 
 ## Features
 
-* Vite
+* How to run locally
 ```bash
 # Install dependencies
 $ npm i
