@@ -1,27 +1,83 @@
-
-
-![](./src/main/resources/squintreadmepic.jpg)
-
-
-#             **Gutties Outlet**
-
-## This is a React application
-
-### this project includes
-* React
-* React Router
-* Redux
-* Node/Express js
-* Stripe
-* Passport.js
-* Postgresql
-
-
-### Synopsis
+# Gutties Outlet
 Gutties outlet was a sneaker store created in 2021 focused around
 low prices and quick delivery. the store offered several types of
 footwear from exclusive sneakers to sandals and crocs. The website
 closed in late 2022 but the repo still exists
+
+<p align="center">
+  <br>
+  <img src="./src/main/resources/squintreadmepic.jpg" alt="wb" width="400">
+  <br>
+</p>
+<p align="center" >
+  <a href="#features">Features</a> •
+  <a href="#Files">Files</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#packages">Packages</a>   
+</p>
+<p align="center" >
+<a href="https://www.charleslambjr.com/">Try it out here</a> 
+</p>
+
+## Features
+
+* Vite
+```bash
+# Install dependencies
+$ npm i
+# run the app
+$ npm run dev
+```
+
+## Files
+
+- src: the file that implements de solution.
+- assets: resources that are used in an application.
+- components: reusable pieces of code that define the appearance and behavior of a part of the UI.
+- pages: the different areas of the portfolio.
+- constants: values that cannot be altered by the program during normal execution.
+
+
+## How To Use
+
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en) and [Vite](https://vitejs.dev/) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone git@github.com:cyberstizz/theGuttiesOutlet.git
+
+# Install dependencies
+$ npm i
+
+# Run the app
+$ npm run build
+```
+
+## Packages
+
+This software uses the following open source packages:
+
+- [React](https://reactjs.org/)
+- [ReactRouter](https://vitejs.dev/)
+- [Redux](https://tailwindcss.com/)
+- [Express](https://tailwindcss.com/)
+- [Stripe](https://tailwindcss.com/)
+- [PassportJs](https://tailwindcss.com/)
+- [Postgresql](https://tailwindcss.com/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### how to use it
